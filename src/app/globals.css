@@ -2,6 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Rebond Grotesque";
+  src: url("/fonts/Rebond Grotesque Thin.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rebond Grotesque";
+  src: url("/fonts/Rebond Grotesque Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rebond Grotesque";
+  src: url("/fonts/Rebond Grotesque.otf") format("otf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rebond Grotesque";
+  src: url("/fonts/Rebond Grotesque Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rebond Grotesque";
+  src: url("/fonts/Rebond Grotesque Semibold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rebond Grotesque";
+  src: url("/fonts/Rebond Grotesque Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -24,10 +72,31 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  font-family: "Rebond Grotesque", sans-serif;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.header-bg {
+  background-image: url("/images/header-bg.png");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.button-bg {
+  background-image: url("/images/button-bg.png");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.rl-green-border {
+  background-image: url("/images/right-left-green-border.png");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
