@@ -6,7 +6,7 @@ import Achievement from "./components/Achievement";
 import Integration from "./components/Integration";
 export default function Home() {
   return (
-    <main className="flex flex-col items-center px-9 py-11 bg-neutral-900 max-md:px-5">
+    <main className="flex flex-col items-center px-9 py-11 bg-neutral-900 mx-auto max-md:px-5 w-full max-w-[90rem]">
       <Header />
       <Hero />
       <Gaming />
