@@ -95,3 +95,9 @@ body {
   background-position: center;
   background-repeat: no-repeat;
 }
+.line-bg {
+  background-image: url("/images/green-line.png");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}

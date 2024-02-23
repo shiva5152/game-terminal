@@ -18,7 +18,8 @@ const config: Config = {
       },
       colors: {
         "lime-400": "#8efe49",
-        "zinc-600": "#5f5f5f"
+        "zinc-600": "#5f5f5f",
+        "neutral-900": "#181818",
 
       },
     },
