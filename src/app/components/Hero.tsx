@@ -1,9 +1,9 @@
+import Image from "next/image";
 import React from "react";
-import Header from "./Header";
 
 const Hero = () => {
   return (
-    <>
+    <div className="mx-auto flex flex-col items-center relative">
       <div className="mt-40 text-7xl font-bold text-center text-white max-md:mt-10 max-md:max-w-full max-md:text-4xl">
         <p>
           Multitude of trending <span className="text-lime-400">Web3 </span>
@@ -31,7 +31,30 @@ const Hero = () => {
           className="mt-1 w-6 aspect-square"
         />
       </button>
-    </>
+      {/* 3d models */}
+      <div className="absolute  top-0 left-[17%]">
+        <Image
+          src="/images/speaker.svg"
+          alt="speaker"
+          width={180}
+          height={180}
+        />
+      </div>
+      <div className="absolute  bottom-[10%] -left-[20%]">
+        <Image src="/images/vr-box.svg" alt="vr-box" width={270} height={270} />
+      </div>
+      <div className="absolute -top-[1%] -right-[10%]">
+        <Image
+          src="/images/head-phone.svg"
+          alt="headphone"
+          width={201}
+          height={201}
+        />
+      </div>
+      <div className="absolute  -bottom-[5%] -right-[2%]">
+        <Image src="/images/game.svg" alt="game" width={201} height={201} />
+      </div>
+    </div>
   );
 };
 
