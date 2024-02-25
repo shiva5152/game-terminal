@@ -1,8 +1,22 @@
-import React from "react";
+"use client";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const Gaming = () => {
+  const gameRef = useRef<HTMLDivElement | null>(null);
+  const { scrollYProgress } = useScroll({
+    target: gameRef,
+    offset: ["0 1", "1.5 1"],
+  });
+  const opacity = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
+  const scale = useTransform(scrollYProgress, [0, 0.5], [0.6, 1]);
+
   return (
-    <div className="self-stretch mt-44 max-md:mt-10 max-md:max-w-full">
+    <motion.div
+      ref={gameRef}
+      style={{ opacity, scale }}
+      className="self-stretch mt-44 max-md:mt-10 max-md:max-w-full"
+    >
       <div className="flex gap-5 max-md:flex-col max-md:gap-0 max-md:">
         <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
           <div className="flex flex-col mt-24 font-bold max-md:mt-10 max-md:max-w-full">
@@ -30,7 +44,7 @@ const Gaming = () => {
           />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

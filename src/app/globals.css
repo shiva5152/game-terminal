@@ -69,6 +69,22 @@ body {
   background: rgb(23 23 23);
   font-family: "Rebond Grotesque", sans-serif;
 }
+/* scroll bar */
+body::-webkit-scrollbar {
+  width: 10px;
+  background: #181818;
+}
+
+/* This will change the scrollbar thumb (the moving part) */
+body::-webkit-scrollbar-thumb {
+  background: #8efe49; /* color of the scrollbar thumb */
+  border-radius: 10px; /* roundness of the scrollbar thumb */
+}
+
+/* This will change the scrollbar thumb when it's hovered */
+body::-webkit-scrollbar-thumb:hover {
+  background: #8efe49; /* color of the scrollbar thumb when hovered */
+}
 
 @layer utilities {
   .text-balance {

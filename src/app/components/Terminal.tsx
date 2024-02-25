@@ -1,5 +1,3 @@
-import React from "react";
-
 const Terminal = () => {
   return (
     <div className="flex items-center mx-auto flex-col">

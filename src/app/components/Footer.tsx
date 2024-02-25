@@ -1,8 +1,9 @@
 import React from "react";
+import { SparklesCore } from "./ui/sparkles";
 
 const Footer = () => {
   return (
-    <div className="flex flex-col items-center self-stretch px-14  py-9 mt-0 text-base leading-6 bg-neutral-900 rounded-[30px] max-md:px-5 max-md:mt-10 max-md:max-w-full">
+    <div className="flex relative flex-col items-center self-stretch px-14  py-9 mt-0 text-base leading-6 bg-neutral-900 rounded-[30px] max-md:px-5 max-md:mt-10 max-md:max-w-full">
       <div className="grid grid-cols-5 grid-rows-1 gap-4 w-full  text-zinc-600 max-md:flex-wrap max-md:max-w-full">
         <img
           loading="lazy"
@@ -48,6 +49,17 @@ const Footer = () => {
       />
       <div className="mt-9 text-white font-thin tracking-wide whitespace-nowrap">
         © 2024 GameTerminal.com. All Rights Reserved.
+      </div>
+      <div className="w-full absolute inset-0 h-full">
+        <SparklesCore
+          id="tsparticlesfullpage"
+          background="transparent"
+          minSize={0.6}
+          maxSize={1.4}
+          particleDensity={100}
+          className="w-full h-full"
+          particleColor="#FFFFFF"
+        />
       </div>
     </div>
   );

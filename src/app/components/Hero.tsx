@@ -1,5 +1,7 @@
+"use client";
 import Image from "next/image";
 import React from "react";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
@@ -32,7 +34,7 @@ const Hero = () => {
         />
       </button>
       {/* 3d models */}
-      <div className="absolute  top-0 left-[17%]">
+      {/* <div className="absolute  top-0 left-[17%]">
         <Image
           src="/images/speaker.svg"
           alt="speaker"
@@ -53,7 +55,45 @@ const Hero = () => {
       </div>
       <div className="absolute  -bottom-[5%] -right-[2%]">
         <Image src="/images/game.svg" alt="game" width={201} height={201} />
-      </div>
+      </div> */}
+      <motion.div
+        className="absolute top-0 left-[17%]"
+        animate={{ y: ["0%", "5%", "0%"] }}
+        transition={{ duration: 4.1, repeat: Infinity }}
+      >
+        <Image
+          src="/images/speaker.svg"
+          alt="speaker"
+          width={180}
+          height={180}
+        />
+      </motion.div>
+      <motion.div
+        className="absolute bottom-[10%] -left-[20%]"
+        animate={{ y: ["0%", "-8%", "0%"] }}
+        transition={{ duration: 3.4, repeat: Infinity }}
+      >
+        <Image src="/images/vr-box.svg" alt="vr-box" width={270} height={270} />
+      </motion.div>
+      <motion.div
+        className="absolute -top-[1%] -right-[10%]"
+        animate={{ y: ["0%", "10%", "0%"] }}
+        transition={{ duration: 5.5, repeat: Infinity }}
+      >
+        <Image
+          src="/images/head-phone.svg"
+          alt="headphone"
+          width={201}
+          height={201}
+        />
+      </motion.div>
+      <motion.div
+        className="absolute -bottom-[5%] -right-[2%]"
+        animate={{ y: ["0%", "-7%", "0%"] }}
+        transition={{ duration: 3, repeat: Infinity }}
+      >
+        <Image src="/images/game.svg" alt="game" width={201} height={201} />
+      </motion.div>
     </div>
   );
 };
