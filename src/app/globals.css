@@ -123,3 +123,9 @@ body::-webkit-scrollbar-thumb:hover {
   background-position: center;
   background-repeat: no-repeat;
 }
+.terminal-bg {
+  background-image: url("/images/terminal-bg.png");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
