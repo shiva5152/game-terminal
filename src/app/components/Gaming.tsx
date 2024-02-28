@@ -1,6 +1,8 @@
 "use client";
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { cn } from "@/utils/cn";
+import { sectionHeading, sectionSubHeading } from "@/utils/styles";
 
 const Gaming = () => {
   const gameRef = useRef<HTMLDivElement | null>(null);
@@ -12,39 +14,42 @@ const Gaming = () => {
   const scale = useTransform(scrollYProgress, [0, 0.5], [0.6, 1]);
 
   return (
-    <motion.div
+    <div
       ref={gameRef}
-      style={{ opacity, scale }}
+      // style={{ opacity, scale }}
       className="self-stretch mt-44 max-md:mt-10 max-md:max-w-full"
     >
-      <div className="flex gap-5 max-md:flex-col max-md:gap-0 max-md:">
+      <div className="flex gap-5 max-md:flex-col-reverse max-md:gap-0 max-md:">
         <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
-          <div className="flex flex-col mt-24 font-bold max-md:mt-10 max-md:max-w-full">
-            <div className="text-5xl text-white max-md:max-w-full max-md:text-4xl">
+          <div className="flex flex-col mt-24 font-bold max-md:mt-6 max-md:max-w-full">
+            <div className={cn(sectionHeading)}>
               PLAY, WIN AND MAKE YOUR OWN{" "}
               <span className="text-lime-400">GAMING IDENTITY</span>
             </div>
-            <div className="mt-10 text-xl font-light leading-7 text-zinc-600 tracking-wide max-md:max-w-full">
+            <div className={cn(sectionSubHeading)}>
               Game Terminal provides a unified gaming identity system, allowing
               users to maintain a single identity across all games. This
               simplifies the gaming experience by eliminating the need for
               multiple In-Game Names (IGNs) and offers opportunities to rank up
               on the ecosystem leaderboard.
             </div>
-            <button className="overflow-hidden button-bg relative flex-col justify-center self-start px-11 py-8 mt-8 text-sm leading-7 text-black whitespace-nowrap aspect-[4] fill-lime-400 max-md:px-5">
-              CREATE YOUR PROFILE NOW
+            <button className="overflow-hidden button-bg mx-auto md:mx-0 relative flex-col justify-center items-center self-start px-11 py-8 mt-4 md:mt-8 text-[0.5rem] md:text-sm leading-7 text-black whitespace-nowrap aspect-[4] fill-lime-400 max-md:px-5 max-md:w-[158px]">
+              Create Your Profile Now
             </button>
+            {/* <button className="overflow-hidden button-bg relative  flex-col justify-center items-center px-16 py-7 mt-48  max-w-full text-[0.5rem] md:text-sm leading-7 text-black whitespace-nowrap aspect-[3.15] fill-lime-400 max-md:px-5 max-md:mt-4  w-full">
+              Create Your Profile Now
+            </button> */}
           </div>
         </div>
-        <div className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
+        <div className="flex flex-col ml-5 w-6/12 rounded-2xl max-md:ml-0 max-md:w-full">
           <img
             loading="lazy"
             srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/899539ab3b4c3c86a9870e601f66046034d3d780e29ebb0031d3f9f489a1d868?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/899539ab3b4c3c86a9870e601f66046034d3d780e29ebb0031d3f9f489a1d868?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/899539ab3b4c3c86a9870e601f66046034d3d780e29ebb0031d3f9f489a1d868?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/899539ab3b4c3c86a9870e601f66046034d3d780e29ebb0031d3f9f489a1d868?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/899539ab3b4c3c86a9870e601f66046034d3d780e29ebb0031d3f9f489a1d868?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/899539ab3b4c3c86a9870e601f66046034d3d780e29ebb0031d3f9f489a1d868?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/899539ab3b4c3c86a9870e601f66046034d3d780e29ebb0031d3f9f489a1d868?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/899539ab3b4c3c86a9870e601f66046034d3d780e29ebb0031d3f9f489a1d868?apiKey=caf73ded90744adfa0fe2d98abed61c0&"
-            className="grow w-full aspect-square max-md:max-w-full"
+            className="grow  w-full aspect-[1.92] object-cover object-top md:object-center rounded-2xl md:aspect-square max-md:max-w-full"
           />
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

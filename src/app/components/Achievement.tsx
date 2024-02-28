@@ -36,77 +36,51 @@ const achievementData = [
   },
 ];
 
+const cardData = [
+  {
+    id: 1,
+    text: "50+",
+    description: "games listed",
+  },
+  {
+    id: 2,
+    text: "100+",
+    description: "guilds across the games",
+  },
+  {
+    id: 3,
+    text: "10M+",
+    description: "monthly active gamers across these games",
+  },
+];
+
 const Achievement = () => {
   return (
     <>
-      <div className="self-stretch mt-40 max-md:mt-10 max-md:max-w-full">
-        <div className="flex gap-5 max-md:flex-col max-md:gap-0 max-md:">
-          <div className="flex flex-col w-[33%] max-md:ml-0 max-md:w-full">
-            <div className="flex overflow-hidden rl-green-border  relative flex-col grow justify-center items-center px-0 py-11 whitespace-nowrap fill-neutral-900 min-h-[143px] stroke-[1px] stroke-lime-400 max-md:px-5 max-md:mt-10 max-md:max-w-full">
-              {/* <img
-                loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/618e27b6a06327eea908cf7c3128bd8df14cb3a7afbb3e313ff9e502bd6bb8d1?apiKey=caf73ded90744adfa0fe2d98abed61c0&"
-                className="object-cover absolute inset-0 size-full"
-              /> */}
-
-              {/* <div className="flex relative flex-col">
-                <div className="text-4xl font-extrabold leading-7 text-lime-400">
-                  50+
-                </div>
-                <div className="mt-4 text-base font-medium leading-7 text-center text-white">
-                  games listed
-                </div>
-              </div> */}
-              <EvervaultCard text="50+" description="games listed" />
-            </div>
-          </div>
-          <div className="flex flex-col ml-5 w-[33%] max-md:ml-0 max-md:w-full">
-            <div className="flex overflow-hidden rl-green-border relative flex-col grow justify-center items-center px-0 py-11 whitespace-nowrap fill-neutral-900 min-h-[143px] stroke-[1px] stroke-lime-400 max-md:px-5 max-md:mt-10 max-md:max-w-full">
-              {/* <img
-                loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/c54441946ab71fc155e638b47b9b0eb3664b498aa2f56a05116c8078c708e904?apiKey=caf73ded90744adfa0fe2d98abed61c0&"
-                className="object-cover absolute inset-0 size-full"
-              /> */}
-              {/* <div className="flex relative flex-col">
-                <div className="self-center text-4xl font-extrabold leading-7 text-lime-400">
-                  100+
-                </div>
-                <div className="mt-4 text-base font-medium leading-7 text-center text-white">
-                  guilds across the games
-                </div>
-              </div> */}
-              <EvervaultCard
-                text="100+"
-                description="guilds across the games"
-              />
-            </div>
-          </div>
-          <div className="flex flex-col ml-5 w-[33%] max-md:ml-0 max-md:w-full">
-            <div className="flex overflow-hidden rl-green-border relative flex-col grow px-0 py-11 whitespace-nowrap fill-neutral-900 min-h-[143px] stroke-[1px] stroke-lime-400 max-md:px-5 max-md:mt-10 max-md:max-w-full">
-              {/* <img
-                loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/396bd8410d74c7b9c7f4ad416dc586d8c06b36760237545c6a6a5fd9bdc801b0?apiKey=caf73ded90744adfa0fe2d98abed61c0&"
-                className="object-cover absolute inset-0 size-full"
-              /> */}
-              {/* <div className="relative self-center text-4xl font-extrabold leading-7 text-lime-400">
-                10M+
+      <div className="self-stretch mt-10 md:mt-40 max-md:mt-10 max-md:max-w-full">
+        <div className="flex gap-5 max-md:flex-col ">
+          {cardData.map((card) => (
+            <div
+              key={card.id}
+              className="flex flex-col w-[33%] max-md:ml-0 max-md:w-full"
+            >
+              <div className="flex overflow-hidden rl-green-border  relative flex-col grow justify-center items-center px-0 py-0 md:py-11 whitespace-nowrap fill-neutral-900 h-auto md:min-h-[143px] stroke-[1px] stroke-lime-400 max-md:px-5 max-md:mt-0 max-md:max-w-full">
+                <EvervaultCard
+                  text={card.text}
+                  description={card.description}
+                />
               </div>
-              <div className="relative mt-8 text-base font-medium text-center text-white">
-                monthly active gamers across these games
-              </div> */}
-              <EvervaultCard
-                text="10M+"
-                description="monthly active gamers across these games"
-              />
             </div>
-          </div>
+          ))}
         </div>
       </div>
-      <InfiniteMovingCards
-        direction="right"
-        speed="normal"
-        items={achievementData}
-      />
+      <div className="">
+        <InfiniteMovingCards
+          direction="right"
+          speed="fast"
+          items={achievementData}
+        />
+      </div>
     </>
   );
 };

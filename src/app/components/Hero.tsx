@@ -1,12 +1,16 @@
 "use client";
 import Image from "next/image";
 import React from "react";
+import { useMediaQuery } from "react-responsive";
 import { motion } from "framer-motion";
 
 const Hero = () => {
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-device-width: 768px)",
+  });
   return (
     <div className="mx-auto flex flex-col items-center relative">
-      <div className="mt-40 text-7xl font-bold text-center text-white max-md:mt-10 max-md:max-w-full max-md:text-4xl">
+      <div className="mt-40 text-7xl font-bold text-center text-white max-md:mt-10 max-md:max-w-full max-md:text-xl">
         <p>
           Multitude of trending <span className="text-lime-400">Web3 </span>
         </p>
@@ -14,9 +18,10 @@ const Hero = () => {
           games on one <span className=" text-lime-400">platform</span>
         </p>
       </div>
-      <div className="mt-7 text-xl font-light leading-7 tracking-wide text-center text-zinc-600 max-md:max-w-full">
+      <div className="mt-7 text-xl font-light leading-7 tracking-wide text-center text-zinc-600 max-md:max-w-full  max-md:text-xs">
         Game Terminal is a Web3 aggregator between gaming creators and gamers on
-        <br />a solitary gaming platform bridging the gap between Web2 and Web3.
+        <br className="hidden md:block" />a solitary gaming platform bridging
+        the gap between Web2 and Web3.
       </div>
       <button className="flex justify-center flex-col items-center">
         <div className="mt-16 text-xs font-medium text-center text-white whitespace-nowrap max-md:mt-10">
@@ -33,67 +38,54 @@ const Hero = () => {
           className="mt-1 w-6 aspect-square"
         />
       </button>
-      {/* 3d models */}
-      {/* <div className="absolute  top-0 left-[17%]">
-        <Image
-          src="/images/speaker.svg"
-          alt="speaker"
-          width={180}
-          height={180}
-        />
-      </div>
-      <div className="absolute  bottom-[10%] -left-[20%]">
-        <Image src="/images/vr-box.svg" alt="vr-box" width={270} height={270} />
-      </div>
-      <div className="absolute -top-[1%] -right-[10%]">
-        <Image
-          src="/images/head-phone.svg"
-          alt="headphone"
-          width={201}
-          height={201}
-        />
-      </div>
-      <div className="absolute  -bottom-[5%] -right-[2%]">
-        <Image src="/images/game.svg" alt="game" width={201} height={201} />
-      </div> */}
-      <motion.div
-        className="absolute top-0 left-[17%]"
-        animate={{ y: ["0%", "5%", "0%"] }}
-        transition={{ duration: 4.1, repeat: Infinity }}
-      >
-        <Image
-          src="/images/speaker.svg"
-          alt="speaker"
-          width={180}
-          height={180}
-        />
-      </motion.div>
-      <motion.div
-        className="absolute bottom-[10%] -left-[20%]"
-        animate={{ y: ["0%", "-8%", "0%"] }}
-        transition={{ duration: 3.4, repeat: Infinity }}
-      >
-        <Image src="/images/vr-box.svg" alt="vr-box" width={270} height={270} />
-      </motion.div>
-      <motion.div
-        className="absolute -top-[1%] -right-[10%]"
-        animate={{ y: ["0%", "10%", "0%"] }}
-        transition={{ duration: 5.5, repeat: Infinity }}
-      >
-        <Image
-          src="/images/head-phone.svg"
-          alt="headphone"
-          width={201}
-          height={201}
-        />
-      </motion.div>
-      <motion.div
-        className="absolute -bottom-[5%] -right-[2%]"
-        animate={{ y: ["0%", "-7%", "0%"] }}
-        transition={{ duration: 3, repeat: Infinity }}
-      >
-        <Image src="/images/game.svg" alt="game" width={201} height={201} />
-      </motion.div>
+
+      {isDesktopOrLaptop ? (
+        <>
+          <motion.div
+            className=" absolute top-0 left-[17%]"
+            animate={{ y: ["0%", "5%", "0%"] }}
+            transition={{ duration: 4.1, repeat: Infinity }}
+          >
+            <Image
+              src="/images/speaker.svg"
+              alt="speaker"
+              width={180}
+              height={180}
+            />
+          </motion.div>
+          <motion.div
+            className="absolute  bottom-[10%] -left-[20%]"
+            animate={{ y: ["0%", "-8%", "0%"] }}
+            transition={{ duration: 3.4, repeat: Infinity }}
+          >
+            <Image
+              src="/images/vr-box.svg"
+              alt="vr-box"
+              width={270}
+              height={270}
+            />
+          </motion.div>
+          <motion.div
+            className="absolute  -top-[1%] -right-[10%]"
+            animate={{ y: ["0%", "10%", "0%"] }}
+            transition={{ duration: 5.5, repeat: Infinity }}
+          >
+            <Image
+              src="/images/head-phone.svg"
+              alt="headphone"
+              width={201}
+              height={201}
+            />
+          </motion.div>
+          <motion.div
+            className="absolute  -bottom-[5%] -right-[2%]"
+            animate={{ y: ["0%", "-7%", "0%"] }}
+            transition={{ duration: 3, repeat: Infinity }}
+          >
+            <Image src="/images/game.svg" alt="game" width={201} height={201} />
+          </motion.div>
+        </>
+      ) : null}
     </div>
   );
 };

@@ -1,5 +1,50 @@
 import React from "react";
 import Image from "next/image";
+import { cn } from "@/utils/cn";
+import { sectionHeading, sectionSubHeading } from "@/utils/styles";
+
+const ecosystemData = [
+  {
+    id: 1,
+    title: "Player Engagement Framework",
+    description:
+      "Game Terminal employs a robust player incentivization framework, stimulating sustained engagement, diversified game exploration, and the organic expansion of community networks.",
+    image: {
+      src: "/images/player.svg",
+      alt: "player",
+    },
+  },
+  {
+    id: 2,
+    title: "Developer Reward Mechanism",
+    description:
+      "Innovators in game development are granted supplementary rewards correlated with the frequency and depth of engagements within their respective gaming domains, complemented by standard settlement fee allocations.",
+    image: {
+      src: "/images/developer.svg",
+      alt: "developer",
+    },
+  },
+  {
+    id: 3,
+    title: "Lifetime Incentives for Influencers",
+    description:
+      "Key Opinion Leaders (KOLs) and Ambassadors are offered perpetual incentives for each successfully onboarded player they refer, fostering enduring relationships and amplifying community growth trajectories.",
+    image: {
+      src: "/images/calendar.svg",
+      alt: "calendar",
+    },
+  },
+  {
+    id: 4,
+    title: "Tokenized Rewards for Node Operators",
+    description:
+      "Node operators, serving as indispensable pillars of the ecosystem, are duly compensated for their pivotal role in facilitating gameplay and functioning ensuring the integrity and transparency of gaming operations across our ecosystem",
+    image: {
+      src: "/images/coin.svg",
+      alt: "coin",
+    },
+  },
+];
 
 const Ecosystem = () => {
   return (
@@ -7,10 +52,12 @@ const Ecosystem = () => {
       <div className="flex gap-5 max-md:flex-col max-md:gap-0 max-md:">
         <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
           <div className="flex flex-col grow mt-2.5 max-md:mt-10 max-md:max-w-full">
-            <div className="text-5xl font-bold text-white max-md:max-w-full max-md:text-4xl">
+            <div className={cn(sectionHeading, "md:text-start font-bold")}>
+              {/* text-5xl font-bold text-white max-md:max-w-full max-md:text-4xl */}
               Ecosystem
             </div>
-            <div className="mt-4 text-xl font-light leading-7 tracking-wide text-zinc-600 max-md:max-w-full">
+            <div className={cn(sectionSubHeading, "md:text-start")}>
+              {/* mt-4 text-xl font-light leading-7 tracking-wide text-zinc-600 max-md:max-w-full */}
               Game Terminal focuses on rewarding all types of contributors in
               the ecosystem who are shaping the future of Web3 together.
             </div>
@@ -20,38 +67,43 @@ const Ecosystem = () => {
               alt="ecosystem"
               loading="lazy"
               src={"/images/ecosystem.svg"}
-              className="my-auto max-w-[60%] aspect-[1.01]"
+              className="my-auto mx-auto md:mx-0 max-w-[60%] aspect-[1.01]"
             />
           </div>
         </div>
         <div className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
-          <div className="grow pt-2 pl-5 w-full rounded-3xl bg-neutral-900 max-md:mt-10 max-md:max-w-full">
-            <div className="py-1 pl-5 mt-4 rounded-3xl bg-neutral-900 max-md:max-w-full">
-              <div className="flex gap-5 max-md:flex-col max-md:gap-0 max-md:">
-                <div className="flex flex-col w-4/5 max-md:ml-0 max-md:w-full">
-                  <div className="flex flex-col self-stretch my-auto max-md:mt-8 max-md:max-w-full">
-                    <div className="text-xl font-semibold leading-7 text-white max-md:max-w-full">
-                      Player Engagement Framework
-                    </div>
-                    <div className="mt-4 text-xs font-light leading-4 tracking-wider text-zinc-600 max-md:max-w-full">
-                      Game Terminal employs a robust player incentivization
-                      framework, stimulating sustained engagement, diversified
-                      game exploration, and the organic expansion of community
-                      networks.
+          <div className="grow pt-2 md:pl-5 pl-0 w-full rounded-3xl bg-neutral-900 max-md:mt-10 max-md:max-w-full">
+            {ecosystemData.map((data) => (
+              <div
+                key={data.id}
+                className="py-1 md:pl-5 ml-0 mt-0 md:mt-4 rounded-3xl bg-neutral-900 max-md:max-w-full"
+              >
+                <div className="flex gap-5 max-md:flex-col max-md:gap-0 max-md:">
+                  <div className="flex flex-col w-4/5 max-md:ml-0 max-md:w-full">
+                    <div className="flex flex-col self-stretch my-auto max-md:mt-8 max-md:max-w-full">
+                      <div className="md:text-xl text-[0.88rem]  font-semibold leading-7 text-white max-md:max-w-full">
+                        {data.title}
+                      </div>
+                      <div className="md:mt-4 mt-0 md:text-xs text-[0.65rem] font-light leading-4 tracking-wider text-zinc-600 max-md:max-w-full">
+                        {data.description}
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="flex flex-col ml-5 w-1/5 max-md:ml-0 max-md:w-full">
-                  <img
-                    loading="lazy"
-                    srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/d774abee6ea2284131a65ac5dadee77a51d85eca256039330c6cb8962ac7b60e?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/d774abee6ea2284131a65ac5dadee77a51d85eca256039330c6cb8962ac7b60e?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/d774abee6ea2284131a65ac5dadee77a51d85eca256039330c6cb8962ac7b60e?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/d774abee6ea2284131a65ac5dadee77a51d85eca256039330c6cb8962ac7b60e?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/d774abee6ea2284131a65ac5dadee77a51d85eca256039330c6cb8962ac7b60e?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/d774abee6ea2284131a65ac5dadee77a51d85eca256039330c6cb8962ac7b60e?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/d774abee6ea2284131a65ac5dadee77a51d85eca256039330c6cb8962ac7b60e?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/d774abee6ea2284131a65ac5dadee77a51d85eca256039330c6cb8962ac7b60e?apiKey=caf73ded90744adfa0fe2d98abed61c0&"
-                    className="grow max-w-full aspect-[1.09] rounded-br-lg w-[120px] max-md:mt-8"
-                  />
+                  <div className="hidden md:flex flex-col ml-5 w-1/5 max-md:ml-0 max-md:w-full">
+                    <Image
+                      height={131}
+                      width={131}
+                      src={data.image.src}
+                      alt={data.image.alt}
+                      loading="lazy"
+                      className="grow max-w-full aspect-[1.12] rounded-br-lg w-[127px] max-md:mt-3.5"
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
+            ))}
 
-            <div className="py-1 pl-5 mt-4 rounded-3xl bg-neutral-900 max-md:max-w-full">
+            {/* <div className="py-1 pl-5 mt-4 rounded-3xl bg-neutral-900 max-md:max-w-full">
               <div className="flex gap-5 max-md:flex-col max-md:gap-0 max-md:">
                 <div className="flex flex-col w-4/5 max-md:ml-0 max-md:w-full">
                   <div className="flex flex-col self-stretch my-auto max-md:mt-8 max-md:max-w-full">
@@ -133,7 +185,7 @@ const Ecosystem = () => {
                   />
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

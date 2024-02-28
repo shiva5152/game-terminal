@@ -1,7 +1,7 @@
 const Terminal = () => {
   return (
     <div className="flex items-center mx-auto flex-col">
-      <div className="mt-44 text-5xl font-bold text-center leading-tight text-white w-[582px] max-md:mt-10 max-md:max-w-full max-md:text-4xl">
+      <div className="mt-44 text-5xl font-bold text-center leading-tight text-white  max-md:mt-10 max-md:max-w-full max-md:text-4xl">
         Start your journey with <span className="text-lime-400">Game</span>{" "}
         <span className="text-lime-400">Terminal</span>
       </div>

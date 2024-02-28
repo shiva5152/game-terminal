@@ -49,11 +49,11 @@ export const EvervaultCard = ({
           randomString={randomString}
         />
 
-        <div className="relative h-44 w-44  flex-col flex items-center justify-center text-white font-bold text-4xl">
-          <div className="relative self-center text-center w-full text-4xl font-extrabold leading-7 text-lime-400">
+        <div className="relative h-auto md:h-44 w-44  flex-col flex items-center justify-center text-white font-bold text-4xl">
+          <div className="relative self-center text-center w-full text-3xl md:text-4xl font-extrabold leading-7 text-lime-400">
             {text}
           </div>
-          <div className="relative mt-6 text-base font-medium text-center text-white">
+          <div className="relative mt-2 md:mt-6 text-xs md:text-base font-light tracking-wider md:font-medium text-center text-white">
             {description}
           </div>
         </div>
@@ -67,7 +67,7 @@ export function CardPattern({ mouseX, mouseY, randomString }: any) {
   let style = { maskImage, WebkitMaskImage: maskImage };
 
   return (
-    <div className="pointer-events-none">
+    <div className="hidden md:block pointer-events-none">
       <div className="absolute inset-0 rounded-2xl  [mask-image:linear-gradient(white,transparent)] group-hover/card:opacity-50"></div>
       <motion.div
         className="absolute inset-0 rounded-2xl bg-gradient-to-r from-green-500 to-blue-700 opacity-0  group-hover/card:opacity-100 backdrop-blur-xl transition duration-500"

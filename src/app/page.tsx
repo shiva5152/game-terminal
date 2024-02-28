@@ -11,7 +11,7 @@ import Roadmap from "./components/Roadmap";
 import GradientWrapper from "./components/Gradient-wrapper";
 export default function Home() {
   return (
-    <main className="flex flex-col items-center px-9 py-11 bg-neutral-900 mx-auto max-md:px-5 w-full max-w-[90rem]">
+    <main className="flex flex-col items-center px-5 md:px-9 py-4 md:py-11 bg-neutral-900 mx-auto w-full max-w-[90rem]">
       <Header />
       <Hero />
       <Gaming />
@@ -19,8 +19,8 @@ export default function Home() {
       <Achievement />
       <Integration />
       <Ecosystem />
-      <Terminal />
       <Roadmap />
+      <Terminal />
       <Footer />
     </main>
   );

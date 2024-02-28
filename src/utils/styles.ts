@@ -1,0 +1,2 @@
+export const sectionHeading = "text-5xl text-white max-md:max-w-full max-md:text-xl text-center md:text-left"
+export const sectionSubHeading = "mt-4 md:mt-10 text-xl font-light leading-7 text-zinc-600 tracking-wide max-md:max-w-full max-md:text-xs text-center md:text-left"
