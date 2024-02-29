@@ -7,44 +7,54 @@ const roadMapData = [
     id: 1,
     title: "2022",
     description: [
-      "Research on Web3 gaming",
-      "Idea and conceptualisation",
+      "Market research and product Idea",
+      "Team Formation",
       "Core team building",
-      "Launch social handles",
-      "Releasing tokenomics",
-      "Pre seed round complete",
+      "Enhanced game graphics and ux",
+      "Release tokenomics",
     ],
   },
   {
     id: 2,
-    title: "2022",
+    title: "2023",
     description: [
-      "AAA game designing",
-      "Growing users on social media",
-      "WebGL version launch",
-      "On-boarding advisors",
+      "Onboarding Advisors",
+      "Sentinel striker Beta launch",
+      "Multichain deployment",
+      "Collaboration with GameFi projects",
+      "Initiate waitlist for game launch",
+      "Cultivate relationships with gaming guilds",
     ],
   },
   {
     id: 3,
-    title: "2023",
+    title: "H1 2024",
     description: [
-      "Release alpha version of game",
-      "Gain live users on the game",
-      "Custom character and skins building",
-      "Arranging tournaments",
-      "Private round complete",
+      "FPS game Pre alpha release",
+      "Acquire users for Sentinel Striker",
+      "Competitive FPS tournaments",
+      "Strategize expansion into gaming studios",
+      "Expand the platform as a gaming aggregator",
+      "New website and documentation design",
+      "Onboard 50+ games to the ecosystem",
+      "Launch NFT marketplace",
+      "Deploy unified player ID",
+      "Launch multiplayer SDK and APIs",
+      "FPS game main launch",
     ],
   },
   {
     id: 4,
     title: "H2 2024",
     description: [
-      "Release alpha version of game",
-      "Gain live users on the game",
-      "Custom character and skins building",
-      "Arranging tournaments",
-      "Private round complete",
+      "Mobile version beta testing",
+      "Launching three hyper casual games",
+      "Game testing rewards and airdrops",
+      "Token generation event",
+      "Mobile version beta testing",
+      "Launching three hyper casual games",
+      "Game testing rewards and airdrops",
+      "Token generation event",
     ],
   },
 ];
@@ -58,8 +68,8 @@ const Roadmap = () => {
       <div className="mt-11 w-full max-w-[1247px] max-md:mt-10 max-md:max-w-full">
         <div className="flex flex-col md:grid md:grid-cols-4 lg:grid-cols-7 md:grid-rows-1 justify-start gap-4">
           {roadMapData.map((data, index) => (
-            <>
-              <div key={data.id} className="mb-12">
+            <React.Fragment key={data.id}>
+              <div className="mb-12">
                 <div className="flex flex-col ">
                   <div className="flex">
                     <div className="grow w-[119px] text-white whitespace-nowrap md:w-full flex mb-4 text-xl md:text-3xl font-bold text-center justify-center items-center md:px-16 px-4 py-4 h-fit rl-green-border rounded-xl  bg-neutral-900 max-md:px-5">
@@ -75,8 +85,8 @@ const Roadmap = () => {
                       key={desc}
                       className={cn(
                         "flex gap-2 justify-between mt-2 md:mt-4 ",
-                        index === 0 && "mt-3 md:mt-5",
-                        desc.split(" ").length <= 3 ? "whitespace-nowrap" : ""
+                        index === 0 && "mt-3 md:mt-5"
+                        // desc.split(" ").length <= 3 ? "whitespace-nowrap" : ""
                       )}
                     >
                       <img
@@ -84,8 +94,9 @@ const Roadmap = () => {
                         src="https://cdn.builder.io/api/v1/image/assets/TEMP/bf4951710cd5797c7d2a452934638a66dc05d5cf324cf3f9b5080149f99dc5b4?apiKey=caf73ded90744adfa0fe2d98abed61c0&"
                         className="w-6 aspect-square"
                       />
-                      <div className="grow text-white font-thin text-xs md:text-[0.9rem] tracking-wide">
-                        {desc}
+                      <div className="grow whitespace-nowrap text-white font-thin text-xs md:text-[0.9rem] tracking-wide">
+                        {desc.split(" ").slice(0, 3).join(" ")} <br />
+                        {desc.split(" ").slice(3).join(" ")}
                       </div>
                     </div>
                   ))}
@@ -93,10 +104,10 @@ const Roadmap = () => {
               </div>
               {index !== roadMapData.length - 1 ? (
                 <div className="hidden md:block py-8 mx-auto">
-                  <img src="/images/green-line.png" alt="" />
+                  <img src="/images/green-line.png" alt="hello" />
                 </div>
               ) : null}
-            </>
+            </React.Fragment>
           ))}
         </div>
       </div>

@@ -11,7 +11,7 @@ const footerData = [
   },
   {
     id: 2,
-    title: "PRODUCT",
+    title: "COMPANY",
     description: ["ABOUT US", "TEAM", "ADVISORS", "PARTNERS", "BACKERS"],
   },
   {
