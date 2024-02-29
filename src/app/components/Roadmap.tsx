@@ -62,7 +62,7 @@ const Roadmap = () => {
               <div key={data.id} className="mb-12">
                 <div className="flex flex-col ">
                   <div className="flex">
-                    <div className="grow w-[119px] whitespace-nowrap md:w-full flex mb-4 text-xl md:text-3xl font-bold text-center justify-center items-center md:px-16 px-4 py-4 h-fit rl-green-border rounded-xl  bg-neutral-900 max-md:px-5">
+                    <div className="grow w-[119px] text-white whitespace-nowrap md:w-full flex mb-4 text-xl md:text-3xl font-bold text-center justify-center items-center md:px-16 px-4 py-4 h-fit rl-green-border rounded-xl  bg-neutral-900 max-md:px-5">
                       {data.title}
                     </div>
                     <div className="py-8 md:hidden mx-auto">
@@ -84,7 +84,7 @@ const Roadmap = () => {
                         src="https://cdn.builder.io/api/v1/image/assets/TEMP/bf4951710cd5797c7d2a452934638a66dc05d5cf324cf3f9b5080149f99dc5b4?apiKey=caf73ded90744adfa0fe2d98abed61c0&"
                         className="w-6 aspect-square"
                       />
-                      <div className="grow font-thin text-xs md:text-[0.9rem] tracking-wide">
+                      <div className="grow text-white font-thin text-xs md:text-[0.9rem] tracking-wide">
                         {desc}
                       </div>
                     </div>
