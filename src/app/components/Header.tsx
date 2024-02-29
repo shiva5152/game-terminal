@@ -6,7 +6,7 @@ const Header = () => {
   const [open, setOpen] = React.useState(false);
   const toggle = () => setOpen(!open);
   return (
-    <div className="relative">
+    <div className="relative w-full">
       <div className="hidden md:block header-bg w-full">
         <div className="overflow-hidden self-stretch px-20 py-7 fill-neutral-900 stroke-[1px] stroke-lime-400 max-md:px-5 max-md:max-w-full">
           <div className="flex gap-5 flex-row  max-md:gap-0 max-md:">
@@ -62,11 +62,11 @@ const Header = () => {
         </div>
       ) : null}
       <div className="md:hidden w-full">
-        <div className="flex overflow-hidden relative flex-row gap-5 justify-between px-6 py-5  fill-neutral-900 w-full stroke-[1px] stroke-lime-400">
+        <div className="flex overflow-hidden  relative flex-row gap-5 justify-between px-6 py-5  fill-neutral-900 w-full stroke-[1px] stroke-lime-400">
           <img
             loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/951e956bdfee0945cf56c2cadd28bc1b091def606f87b6bebd0f542daa9b034a?apiKey=caf73ded90744adfa0fe2d98abed61c0&"
-            className="object-cover absolute inset-0 size-full"
+            className="object-cover absolute inset-0 w-full"
           />
           <div className="flex relative gap-3 ">
             <img
@@ -87,10 +87,10 @@ const Header = () => {
               className="aspect-square w-[32px] sm:w-[50px]"
             />
             <img
-              onClick={toggle}
+              // onClick={toggle}
               loading="lazy"
               srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/1df3c39f279a286a6983bfb37e3bed373aab7e9c67136a9f5ead3404d3792b64?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/1df3c39f279a286a6983bfb37e3bed373aab7e9c67136a9f5ead3404d3792b64?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/1df3c39f279a286a6983bfb37e3bed373aab7e9c67136a9f5ead3404d3792b64?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/1df3c39f279a286a6983bfb37e3bed373aab7e9c67136a9f5ead3404d3792b64?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/1df3c39f279a286a6983bfb37e3bed373aab7e9c67136a9f5ead3404d3792b64?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/1df3c39f279a286a6983bfb37e3bed373aab7e9c67136a9f5ead3404d3792b64?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/1df3c39f279a286a6983bfb37e3bed373aab7e9c67136a9f5ead3404d3792b64?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/1df3c39f279a286a6983bfb37e3bed373aab7e9c67136a9f5ead3404d3792b64?apiKey=caf73ded90744adfa0fe2d98abed61c0&"
-              className="rounded-full aspect-square w-[32px] sm:w-[50px]"
+              className="rounded-full aspect-square w-[32px] sm:w-[50px] mr-3 "
             />
           </div>
         </div>
