@@ -41,7 +41,7 @@ const Accordion = ({ data }: { data: IAccordionItem }) => {
             >
               {data.description.map((desc, index) => (
                 <div
-                  key={index}
+                  key={desc}
                   className={cn(
                     "mt-1 ml-4 text-[0.85rem] text-zinc-600",
                     index === 0 && "mt-3"

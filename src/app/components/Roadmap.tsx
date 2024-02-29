@@ -72,7 +72,7 @@ const Roadmap = () => {
 
                   {data.description.map((desc, index) => (
                     <div
-                      key={index}
+                      key={desc}
                       className={cn(
                         "flex gap-2 justify-between mt-2 md:mt-4 ",
                         index === 0 && "mt-3 md:mt-5",

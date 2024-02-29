@@ -37,12 +37,12 @@ const Terminal = () => {
       <div className="mt-8 w-full max-w-[1247px] max-md:mt-6 max-md:max-w-full">
         <div className="flex gap-5 max-md:flex-col max-md:gap-0 max-md:">
           {terminalData.map((data) => (
-            <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
-              <div
-                key={data.id}
-                className="flex terminal-bg flex-col overflow-hidden grow justify-center items-start px-7 py-6 w-full text-xs font-bold rounded-3xl bg-neutral-900 max-md:px-3 max-md:py-3 max-md:mt-2 max-md:max-w-full"
-              >
-                <div className="flex mt-0 md:mt-4 justify-center items-center gap-2 text-xl md:text-3xl leading-7 text-white whitespace-nowrap">
+            <div
+              key={data.id}
+              className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full"
+            >
+              <div className="flex terminal-bg flex-col overflow-hidden grow justify-center items-start px-7 py-6 w-full text-xs font-bold rounded-3xl bg-neutral-900 max-md:px-3 max-md:py-3 max-md:mt-2 max-md:max-w-full">
+                <div className="flex  justify-center items-center gap-2 text-xl md:text-3xl leading-7 text-white whitespace-nowrap">
                   <div className="grow self-start mt-1.5">{data.title}</div>
                   <img
                     loading="lazy"
@@ -53,7 +53,7 @@ const Terminal = () => {
                 <div className="self-stretch mt-4 text-xs font-light leading-5 tracking-wider text-zinc-600 max-md:max-w-full">
                   {data.description}
                 </div>
-                <button className="overflow-hidden text-[0.65rem] max-w-[118px] md:max-w-[159px] relative button-bg flex-col justify-center font-bold items-center px-8 py-8 mt-4 text-center text-black whitespace-nowrap aspect-[3.12] fill-lime-400 leading-[233%] max-md:px-5">
+                <button className="overflow-hidden text-[0.65rem] md:text-xs max-w-[118px] md:max-w-[159px] relative button-bg flex-col justify-center font-bold items-center px-8 py-8 mt-4 text-center text-black whitespace-nowrap aspect-[3.12] fill-lime-400 leading-[233%] max-md:px-5">
                   {data.buttonText}
                 </button>
               </div>

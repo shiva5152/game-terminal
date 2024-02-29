@@ -28,7 +28,7 @@ const Platform = () => {
       <img
         loading="lazy"
         src="/images/platform-mobile-bg.png"
-        className="block md:hidden w-full aspect-[1.27] max-w-[328px] rounded-2xl absolute inset-0  min-h-[259px] size-full"
+        className="block md:hidden aspect-[1.27] w-full rounded-2xl absolute inset-0  min-h-[259px] size-full"
       />
       <div className="flex relative z-10 flex-col items-center mt-6 w-full max-w-[999px] max-md:max-w-full">
         <div className={cn(sectionHeading)}>

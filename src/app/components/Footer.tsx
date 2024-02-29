@@ -64,7 +64,7 @@ const Footer = () => {
 
       <div className=" flex md:hidden flex-col justify-center px-5 pt-5 pb-10 text-base font-bold leading-9 text-white whitespace-nowrap rounded-2xl bg-neutral-900 w-full">
         {footerData.map((data, index) => (
-          <Accordion data={data} />
+          <Accordion key={data.id} data={data} />
         ))}
       </div>
       <div className="mt-9 text-xs md:text-[1rem] text-white font-thin tracking-wide whitespace-nowrap">

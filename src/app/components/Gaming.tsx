@@ -22,11 +22,11 @@ const Gaming = () => {
       <div className="flex gap-5 max-md:flex-col-reverse max-md:gap-0 max-md:">
         <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
           <div className="flex flex-col mt-24 font-bold max-md:mt-6 max-md:max-w-full">
-            <div className={cn(sectionHeading)}>
+            <div className={cn(sectionHeading, "md:text-start")}>
               PLAY, WIN AND MAKE YOUR OWN{" "}
               <span className="text-lime-400">GAMING IDENTITY</span>
             </div>
-            <div className={cn(sectionSubHeading)}>
+            <div className={cn(sectionSubHeading, "md:text-start")}>
               Game Terminal provides a unified gaming identity system, allowing
               users to maintain a single identity across all games. This
               simplifies the gaming experience by eliminating the need for
