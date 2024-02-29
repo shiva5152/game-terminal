@@ -59,7 +59,7 @@ const Roadmap = () => {
         <div className="flex flex-col md:grid md:grid-cols-4 lg:grid-cols-7 md:grid-rows-1 justify-start gap-4">
           {roadMapData.map((data, index) => (
             <>
-              <div className="mb-12">
+              <div key={data.id} className="mb-12">
                 <div className="flex flex-col ">
                   <div className="flex">
                     <div className="grow w-[119px] whitespace-nowrap md:w-full flex mb-4 text-xl md:text-3xl font-bold text-center justify-center items-center md:px-16 px-4 py-4 h-fit rl-green-border rounded-xl  bg-neutral-900 max-md:px-5">
@@ -72,6 +72,7 @@ const Roadmap = () => {
 
                   {data.description.map((desc, index) => (
                     <div
+                      key={index}
                       className={cn(
                         "flex gap-2 justify-between mt-2 md:mt-4 ",
                         index === 0 && "mt-3 md:mt-5",
