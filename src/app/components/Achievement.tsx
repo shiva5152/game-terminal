@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
-import { EvervaultCard } from "./ui/evervault-card";
+
 import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
+import { motion } from "framer-motion";
 
 const achievementData = [
   {
@@ -60,21 +61,31 @@ const Achievement = () => {
       <div className="self-stretch mt-10 md:mt-40 max-md:mt-10 max-md:max-w-full">
         <div className="flex gap-5 max-md:flex-col ">
           {cardData.map((card) => (
-            <div
+            <motion.div
               key={card.id}
+              whileHover={{ scale: 1.04 }}
+              transition={{ type: "spring", stiffness: 200 }}
               className="flex flex-col w-[33%] max-md:ml-0 max-md:w-full"
             >
-              <div className="flex overflow-hidden rl-green-border  relative flex-col grow justify-center items-center px-0 py-0 md:py-11 whitespace-nowrap fill-neutral-900 h-auto md:min-h-[143px] stroke-[1px] stroke-lime-400 max-md:px-5 max-md:mt-0 max-md:max-w-full">
-                <EvervaultCard
+              <div className="flex neomorphic-eco rounded-2xl overflow-hidden rl-green-border  relative flex-col grow justify-center items-center px-0 py-0 md:py-11 whitespace-nowrap fill-neutral-900 h-auto md:min-h-[143px] stroke-[1px] stroke-lime-400 max-md:px-5 max-md:mt-0 max-md:max-w-full">
+                {/* <EvervaultCard
                   text={card.text}
                   description={card.description}
-                />
+                /> */}
+                <div className="relative h-auto w-44  flex-col flex items-center justify-center text-white font-bold text-4xl">
+                  <div className="relative self-center text-center w-full text-3xl md:text-4xl font-extrabold leading-7 text-lime-400">
+                    {card.text}
+                  </div>
+                  <div className="relative mt-2 md:mt-6 text-xs md:text-base font-light tracking-wider md:font-medium text-center text-white">
+                    {card.description}
+                  </div>
+                </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
-      <div className="">
+      <div className="md:mt-10 mt-auto">
         <InfiniteMovingCards
           direction="right"
           speed="fast"

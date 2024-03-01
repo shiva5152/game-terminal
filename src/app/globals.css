@@ -92,6 +92,25 @@ body::-webkit-scrollbar-thumb:hover {
   }
 }
 
+.neomorphic-header {
+  background: #181818;
+  box-shadow: -42px 42px 100px #0a0a0a, 42px -42px 100px #262626;
+}
+
+.neomorphic-card {
+  background: #161616;
+  box-shadow: 10px 10px 30px #131313, -10px -10px 30px #1d1d1d;
+}
+
+.neomorphic-eco {
+  background: #161616;
+  box-shadow: 8px 8px 16px #0a0a0a, -8px -8px 16px #222222;
+}
+.neomorphic-terminal {
+  background: #161616;
+  box-shadow: 18px -18px 36px #0a0a0a, -18px 18px 36px #222222;
+}
+
 .header-bg {
   background-image: url("/images/header-bg.png");
   background-size: 100%;

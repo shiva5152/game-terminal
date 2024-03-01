@@ -7,7 +7,7 @@ const Header = () => {
   const toggle = () => setOpen(!open);
   return (
     <div className="relative w-full">
-      <div className="hidden md:block header-bg w-full">
+      <div className="hidden neomorphic-header md:block header-bg w-full">
         <div className="overflow-hidden self-stretch px-20 py-7 fill-neutral-900 stroke-[1px] stroke-lime-400 max-md:px-5 max-md:max-w-full">
           <div className="flex gap-5 flex-row  max-md:gap-0 max-md:">
             <div className="hidden md:flex flex-col w-[60%] md:ml-0 md:w-full">
@@ -19,20 +19,31 @@ const Header = () => {
                   className="max-w-full aspect-[4.55] w-[102px] sm:w-[188px]"
                 />
                 <div className=" hidden md:flex flex-col flex-1 self-start mt-3.5 font-thin text-gray-200">
-                  <div className="flex gap-10 justify-start">
-                    <div>Home</div>
-                    <div className="font-medium text-lime-400">Games</div>
-                    <div>Marketplace</div>
-                    <div>Tournament</div>
-                    <div>Nodes</div>
+                  <div className="flex gap-10  justify-start">
+                    <div className="cursor-pointer hover:font-medium hover:text-lime-400">
+                      Home
+                    </div>
+                    {/* is active-> font-medium text-lime-400 */}
+                    <div className="cursor-pointer hover:font-medium hover:text-lime-400">
+                      Games
+                    </div>
+                    <div className="cursor-pointer hover:font-medium hover:text-lime-400">
+                      Marketplace
+                    </div>
+                    <div className="cursor-pointer hover:font-medium hover:text-lime-400">
+                      Tournament
+                    </div>
+                    <div className="cursor-pointer hover:font-medium hover:text-lime-400">
+                      Nodes
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
             <div className="flex flex-col ml-5 w-[40%] max-md:ml-0 max-md:w-full">
-              <div className="flex grow gap-5 md:justify-between text-xs font-medium text-gray-200 whitespace-nowrap max-md:mt-10">
-                <div className=" hidden md:flex gap-2 w-[50%] font-thin py-1 my-auto border border-solid border-[color:var(--Dark-Dark-Gray,#292929)] rounded-[50px]">
+              <div className="flex grow gap-5 md:justify-end text-xs font-medium text-gray-200 whitespace-nowrap max-md:mt-10">
+                {/* <div className=" hidden md:flex gap-2 w-[50%] font-thin py-1 my-auto border border-solid border-[color:var(--Dark-Dark-Gray,#292929)] rounded-[50px]">
                   <img
                     loading="lazy"
                     src="https://cdn.builder.io/api/v1/image/assets/TEMP/6a552e136fc580f0eddb887f9032879991b6d46a79773ef459c42f60b6ef47ff?apiKey=caf73ded90744adfa0fe2d98abed61c0&"
@@ -44,7 +55,7 @@ const Header = () => {
                   loading="lazy"
                   src="https://cdn.builder.io/api/v1/image/assets/TEMP/82790d8804b70cb598af07bdb0eed5f2979f1ec2fd09aac5c56bbc08e53ad1a8?apiKey=caf73ded90744adfa0fe2d98abed61c0&"
                   className="aspect-square w-[32px] sm:w-[50px]"
-                />
+                /> */}
                 <img
                   onClick={toggle}
                   loading="lazy"

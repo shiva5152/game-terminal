@@ -88,7 +88,7 @@ export const InfiniteMovingCards = ({
             key={item.id}
             className="flex gap-4 h-full justify-between self-stretch px-px mt-10 max-md:flex-wrap max-md:max-w-full"
           >
-            <div className="flex flex-1 justify-center items-center px-12 py-6  rl-green-border stroke-[1px] stroke-lime-400 fill-neutral-900 max-md:px-5">
+            <div className="flex flex-1 justify-center neomorphic-card   items-center px-12 py-6  rl-green-border stroke-[1px] stroke-lime-400 bg-[#161616] max-md:px-5">
               <img
                 loading="lazy"
                 srcSet={item.srcSet}

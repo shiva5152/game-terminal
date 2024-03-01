@@ -8,7 +8,7 @@ import Ecosystem from "./components/Ecosystem";
 import Terminal from "./components/Terminal";
 import Footer from "./components/Footer";
 import Roadmap from "./components/Roadmap";
-import GradientWrapper from "./components/Gradient-wrapper";
+
 export default function Home() {
   return (
     <main className="flex flex-col items-center px-5 md:px-9 py-4 md:py-11 bg-neutral-900 mx-auto w-full max-w-[90rem]">

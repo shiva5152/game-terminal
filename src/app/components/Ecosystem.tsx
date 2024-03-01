@@ -1,7 +1,9 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import { cn } from "@/utils/cn";
 import { sectionHeading, sectionSubHeading } from "@/utils/styles";
+import { motion } from "framer-motion";
 
 const ecosystemData = [
   {
@@ -61,26 +63,33 @@ const Ecosystem = () => {
               Game Terminal focuses on rewarding all types of contributors in
               the ecosystem who are shaping the future of Web3 together.
             </div>
-            <Image
-              height={361}
-              width={365}
-              alt="ecosystem"
-              loading="lazy"
-              src={"/images/ecosystem.svg"}
-              className="my-auto mx-auto md:mx-0 max-w-[60%] aspect-[1.01]"
-            />
+            <motion.div
+              animate={{ y: ["0%", "5%", "0%"] }}
+              transition={{ duration: 4.1, repeat: Infinity }}
+            >
+              <Image
+                height={361}
+                width={365}
+                alt="ecosystem"
+                loading="lazy"
+                src={"/images/ecosystem.svg"}
+                className="my-auto mx-auto md:mx-0 max-w-[60%] aspect-[1.01]"
+              />
+            </motion.div>
           </div>
         </div>
         <div className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
           <div className="grow pt-2 md:pl-5 pl-0 w-full rounded-3xl bg-neutral-900 max-md:mt-10 max-md:max-w-full">
             {ecosystemData.map((data) => (
-              <div
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 200 }}
                 key={data.id}
-                className="py-1 md:pl-5 ml-0 mt-0 md:mt-4 rounded-3xl bg-neutral-900 max-md:max-w-full"
+                className="md:py-3 md:pt-5 py-3 md:pl-5 ml-0 mt-4 px-4 md:mx-0 text-justify rounded-3xl bg-[#161616] neomorphic-eco max-md:max-w-full"
               >
-                <div className="flex gap-5 max-md:flex-col max-md:gap-0 max-md:">
+                <div className="flex gap-5 max-md:flex-col max-md:gap-0">
                   <div className="flex flex-col w-4/5 max-md:ml-0 max-md:w-full">
-                    <div className="flex flex-col self-stretch my-auto max-md:mt-8 max-md:max-w-full">
+                    <div className="flex flex-col self-stretch my-auto max-md:mt-2 max-md:max-w-full">
                       <div className="md:text-xl text-[0.88rem]  font-semibold leading-7 text-white max-md:max-w-full">
                         {data.title}
                       </div>
@@ -96,11 +105,11 @@ const Ecosystem = () => {
                       src={data.image.src}
                       alt={data.image.alt}
                       loading="lazy"
-                      className="grow max-w-full aspect-[1.12] rounded-br-lg w-[127px] max-md:mt-3.5"
+                      className="grow max-w-full aspect-[1.12] -mb-2 rounded-br-lg w-[127px] max-md:mt-3.5"
                     />
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
