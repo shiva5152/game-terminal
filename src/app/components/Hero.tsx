@@ -57,7 +57,7 @@ const Hero = () => {
         </motion.div>
       </Link>
       <motion.div
-        className="absolute top-[4.5%] -left-[30%] md:left-auto md:-top-[1%] md:-right-[10%]"
+        className="absolute top-[8.5%] -left-[18%] md:left-auto md:-top-[1%] md:-right-[10%]"
         animate={{ y: ["0%", "10%", "0%"] }}
         transition={{ duration: 5.5, repeat: Infinity }}
       >
@@ -66,14 +66,21 @@ const Hero = () => {
           alt="headphone"
           width={201}
           height={201}
+          className="w-[150px] md:w-auto h-auto"
         />
       </motion.div>
       <motion.div
-        className="absolute -bottom-[10%] -right-[30%] md:-bottom-[5%] md:-right-[2%]"
+        className="absolute -bottom-[10%] -right-[20%] md:-bottom-[5%] md:-right-[2%]"
         animate={{ y: ["0%", "-7%", "0%"] }}
         transition={{ duration: 3, repeat: Infinity }}
       >
-        <Image src="/images/game.svg" alt="game" width={201} height={201} />
+        <Image
+          src="/images/game.svg"
+          className="w-[150px] md:w-auto h-auto"
+          alt="game"
+          width={201}
+          height={201}
+        />
       </motion.div>
       {isMounted && isDesktopOrLaptop ? (
         <>

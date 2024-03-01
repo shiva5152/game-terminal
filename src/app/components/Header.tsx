@@ -92,12 +92,12 @@ const Header = () => {
             />
           </div>
           <div className="flex relative gap-3 justify-between">
-            <img
+            {/* <img
               loading="lazy"
               alt="Search Icon"
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/82790d8804b70cb598af07bdb0eed5f2979f1ec2fd09aac5c56bbc08e53ad1a8?apiKey=caf73ded90744adfa0fe2d98abed61c0&"
               className="aspect-square w-[32px] sm:w-[50px]"
-            />
+            /> */}
             <img
               // onClick={toggle}
               loading="lazy"
