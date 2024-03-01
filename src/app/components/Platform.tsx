@@ -57,7 +57,10 @@ const Platform = () => {
         </motion.div>
         <motion.div
           variants={item}
-          className={cn(sectionSubHeading, "text-[#88888D] mt-3")}
+          className={cn(
+            sectionSubHeading,
+            "text-[#88888D] text-justify md:text-center mt-3"
+          )}
         >
           {/* self-stretch mt-12 text-xl font-light leading-7 text-center  tracking-wide max-md:mt-10 max-md:max-w-full */}
           Dive into an immersive world of trending Web3 games and exclusive
@@ -72,7 +75,7 @@ const Platform = () => {
         </button> */}
         <motion.button
           variants={item}
-          className="overflow-hidden button-bg relative  flex-col justify-center items-center px-16 py-7 mt-48 w-56 max-w-full text-[0.5rem] md:text-sm leading-7 text-black whitespace-nowrap aspect-[3.15] fill-lime-400 max-md:px-5 max-md:mt-4  max-md:w-[158px]"
+          className="overflow-hidden button-bg relative  flex-col justify-center items-center px-16 py-7 mt-48 w-56 max-w-full text-xs md:text-sm leading-7 text-black whitespace-nowrap aspect-[3.15] fill-lime-400 max-md:px-5 max-md:mt-4  max-md:w-[158px]"
         >
           Explore Games
         </motion.button>

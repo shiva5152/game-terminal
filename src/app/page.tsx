@@ -11,7 +11,7 @@ import Roadmap from "./components/Roadmap";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center px-5 md:px-9 py-4 md:py-11 bg-neutral-900 mx-auto w-full max-w-[90rem]">
+    <main className="flex flex-col overflow-x-hidden items-center px-5 md:px-9 py-4 md:py-11 bg-neutral-900 mx-auto w-full max-w-[90rem]">
       <Header />
       <Hero />
       <Gaming />

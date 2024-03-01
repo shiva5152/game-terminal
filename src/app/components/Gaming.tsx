@@ -45,14 +45,14 @@ const Gaming = () => {
           <div className="flex flex-col mt-24 font-bold max-md:mt-6 max-md:max-w-full">
             <motion.div
               variants={item}
-              className={cn(sectionHeading, "md:text-start")}
+              className={cn(sectionHeading, "md:text-start md:text-5xl")}
             >
               PLAY, WIN AND MAKE YOUR OWN{" "}
               <span className="text-lime-400">GAMING IDENTITY</span>
             </motion.div>
             <motion.div
               variants={item}
-              className={cn(sectionSubHeading, "md:text-start text-justify")}
+              className={cn(sectionSubHeading, "text-justify")}
             >
               Game Terminal provides a unified gaming identity system, allowing
               users to maintain a single identity across all games. This
@@ -62,7 +62,7 @@ const Gaming = () => {
             </motion.div>
             <motion.button
               variants={item}
-              className="overflow-hidden button-bg mx-auto md:mx-0 relative flex-col justify-center items-center self-start px-11 py-8 mt-4 md:mt-8 text-[0.5rem] md:text-sm leading-7 text-black whitespace-nowrap aspect-[3.15] fill-lime-400 max-md:px-5 "
+              className="overflow-hidden button-bg mx-auto md:mx-0 relative flex-col justify-center items-center self-start px-11 py-8 mt-4 md:mt-8 text-xs md:text-sm leading-7 text-black whitespace-nowrap aspect-[3.15] fill-lime-400 max-md:px-5 "
             >
               Launch App
             </motion.button>

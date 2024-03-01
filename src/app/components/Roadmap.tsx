@@ -60,7 +60,7 @@ const roadMapData = [
 const Roadmap = () => {
   return (
     <div className="w-full flex flex-col items-center  overflow-x-hidden">
-      <div className="mt-44 text-5xl font-bold text-center text-lime-400 whitespace-nowrap max-md:mt-10 max-md:text-4xl">
+      <div className="mt-44 text-5xl  font-bold text-center text-lime-400 whitespace-nowrap max-md:mt-10 max-md:text-xl">
         Our <span className="text-lime-400">Roadmap</span>
       </div>
       <div className="mt-11 w-full max-w-[1247px] max-md:mt-10 max-md:max-w-full">
