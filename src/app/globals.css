@@ -101,7 +101,9 @@ body::-webkit-scrollbar-thumb:hover {
 
 .neomorphic-card {
   background: #161616;
-  box-shadow: 10px 10px 30px #131313, -10px -10px 30px #1d1d1d;
+  /* box-shadow: 10px 10px 30px #131313, -10px -10px 30px #1d1d1d;
+   */
+  box-shadow: 5px 5px 10px #0b0c0d, -5px -5px 10px #1f2023;
 }
 
 .neomorphic-eco {
