@@ -110,9 +110,26 @@ body::-webkit-scrollbar-thumb:hover {
   background: #161616;
   box-shadow: 8px 8px 16px #0a0a0a, -8px -8px 16px #222222;
 }
+.neomorphic-eco:hover {
+  background: linear-gradient(225deg, #181818, #141414);
+  box-shadow: -26px 26px 72px #0e0e0e, 26px -26px 72px #1e1e1e;
+}
 .neomorphic-terminal {
   background: #161616;
   box-shadow: 18px -18px 36px #0a0a0a, -18px 18px 36px #222222;
+}
+
+.neomorphic-roadmap {
+  /* background: linear-gradient(145deg, #16181a, #131416);
+  box-shadow: 2px 2px 38px #000000, -2px -2px 32px #343940,
+    inset -6px -6px 68px rgba(41, 45, 50, 0.5); */
+
+  background: linear-gradient(225deg, #141414, #181818);
+  box-shadow: -26px 26px 72px #0e0e0e, 26px -26px 72px #1e1e1e;
+}
+.neomorphic-roadmap:hover {
+  background: linear-gradient(225deg, #181818, #141414);
+  box-shadow: -26px 26px 72px #0e0e0e, 26px -26px 72px #1e1e1e;
 }
 
 .header-bg {

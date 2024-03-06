@@ -1,8 +1,8 @@
 "use client";
-import React from "react";
-import { SparklesCore } from "./ui/sparkles";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { cn } from "@/utils/cn";
-import { BackgroundGradient } from "./ui/bg-gradient-roadmap";
+import { sectionHeading, sectionSubHeading } from "@/utils/styles";
 
 const roadMapData = [
   {
@@ -58,8 +58,37 @@ const roadMapData = [
 ];
 
 const Roadmap = () => {
+  const gameRef = useRef<HTMLDivElement | null>(null);
+  const isInView = useInView(gameRef, { once: true, margin: "-200px" });
+
+  const { scrollYProgress } = useScroll({
+    target: gameRef,
+    offset: ["0 1", "1.5 1"],
+  });
+
+  const container = {
+    hidden: { opacity: 1 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.5,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { y: 200, opacity: 0 },
+    show: { y: 0, opacity: 1, transition: { duration: 0.5 } },
+  };
+
   return (
-    <div className="w-full flex flex-col items-center  overflow-x-hidden">
+    <motion.div
+      ref={gameRef}
+      variants={container}
+      initial="hidden"
+      animate={isInView ? "show" : ""}
+      className="w-full overflow-y-hidden flex flex-col items-center  overflow-x-hidden"
+    >
       <div className="mt-44 text-5xl  font-bold text-center text-lime-400 whitespace-nowrap max-md:mt-10 max-md:text-xl">
         Our <span className="text-lime-400">Roadmap</span>
       </div>
@@ -69,9 +98,10 @@ const Roadmap = () => {
             // <BackgroundGradient key={data.id}>
 
             // </BackgroundGradient>
-            <div
+            <motion.div
+              variants={item}
               key={data.id}
-              className="flex flex-col py-5 pr-9 pl-4 h-fit text-sm leading-6 text-white rounded-xl border border-lime-400 border-opacity-50 border-solid border-t-0 border-b-0 bg-neutral-900 "
+              className="flex neomorphic-roadmap flex-col py-5 pr-9 pl-4 h-fit text-sm leading-6 text-white rounded-xl border border-lime-400 border-opacity-50 border-solid border-t-0 border-b-0 bg-neutral-900 "
             >
               <div className="text-3xl font-bold text-start text-lime-400">
                 {data.title}
@@ -96,11 +126,11 @@ const Roadmap = () => {
                   </div>
                 </div>
               ))}
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

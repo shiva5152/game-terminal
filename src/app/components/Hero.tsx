@@ -92,7 +92,7 @@ const Hero = () => {
       {isMounted && isDesktopOrLaptop ? (
         <>
           <motion.div
-            className=" absolute top-0 left-[17%]"
+            className=" absolute top-[-8%] left-[17%]"
             animate={{ y: ["0%", "5%", "0%"] }}
             transition={{ duration: 4.1, repeat: Infinity }}
           >
