@@ -138,6 +138,7 @@ body::-webkit-scrollbar-thumb:hover {
   background-position: center;
   background-repeat: no-repeat;
   height: 101px;
+  filter: drop-shadow(3px 2px 20px rgb(0 0 0 / 0.4));
 }
 
 .button-bg {
