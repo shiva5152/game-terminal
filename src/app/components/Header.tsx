@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <div className="relative w-full">
       <div className="hidden neomorphic-header md:block header-bg w-full">
-        <div className="overflow-hidden self-stretch px-20 py-7 fill-neutral-900 stroke-[1px] stroke-lime-400 max-md:px-5 max-md:max-w-full">
+        <div className="overflow-hidden self-stretch px-20 py-4 fill-neutral-900 stroke-[1px] stroke-lime-400 max-md:px-5 max-md:max-w-full">
           <div className="flex gap-5 flex-row  max-md:gap-0 max-md:">
             <div className="hidden md:flex flex-col w-[60%] md:ml-0 md:w-full">
               <div className="flex gap-12 justify-between self-stretch my-auto text-xs text-white whitespace-nowrap max-md:flex-wrap max-md:mt-10 max-md:max-w-full">

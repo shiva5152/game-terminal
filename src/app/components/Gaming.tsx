@@ -6,7 +6,7 @@ import { sectionHeading, sectionSubHeading } from "@/utils/styles";
 
 const Gaming = () => {
   const gameRef = useRef<HTMLDivElement | null>(null);
-  const isInView = useInView(gameRef, { once: true });
+  const isInView = useInView(gameRef, { once: true, margin: "-200px" });
 
   const { scrollYProgress } = useScroll({
     target: gameRef,
@@ -71,13 +71,18 @@ const Gaming = () => {
             </button> */}
           </div>
         </div>
-        <div className="flex flex-col ml-5 w-6/12 rounded-2xl max-md:ml-0 max-md:w-full">
+        <motion.div
+          initial={{ scale: 0.9, z: -15 }}
+          animate={isInView ? { scale: 1, z: 0 } : { scale: 0.9, z: -10 }}
+          transition={{ type: "spring", stiffness: 200 }}
+          className="flex flex-col ml-5 w-6/12 rounded-2xl max-md:ml-0 max-md:w-full"
+        >
           <img
             loading="lazy"
             srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/899539ab3b4c3c86a9870e601f66046034d3d780e29ebb0031d3f9f489a1d868?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/899539ab3b4c3c86a9870e601f66046034d3d780e29ebb0031d3f9f489a1d868?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/899539ab3b4c3c86a9870e601f66046034d3d780e29ebb0031d3f9f489a1d868?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/899539ab3b4c3c86a9870e601f66046034d3d780e29ebb0031d3f9f489a1d868?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/899539ab3b4c3c86a9870e601f66046034d3d780e29ebb0031d3f9f489a1d868?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/899539ab3b4c3c86a9870e601f66046034d3d780e29ebb0031d3f9f489a1d868?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/899539ab3b4c3c86a9870e601f66046034d3d780e29ebb0031d3f9f489a1d868?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/899539ab3b4c3c86a9870e601f66046034d3d780e29ebb0031d3f9f489a1d868?apiKey=caf73ded90744adfa0fe2d98abed61c0&"
             className="grow w-full aspect-[1.92] object-cover object-top md:object-center rounded-2xl md:aspect-square max-md:max-w-full"
           />
-        </div>
+        </motion.div>
       </div>
     </motion.div>
   );

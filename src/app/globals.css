@@ -68,7 +68,7 @@ html {
 }
 body {
   color: rgb(var(--foreground-rgb));
-  background: rgb(23 23 23);
+  background: #181818;
   font-family: "Rebond Grotesque", sans-serif;
 }
 /* scroll bar */
@@ -95,7 +95,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .neomorphic-header {
-  background: #181818;
+  background: transparent;
   box-shadow: -42px 42px 100px #0a0a0a, 42px -42px 100px #262626;
 }
 

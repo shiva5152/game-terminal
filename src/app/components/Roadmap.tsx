@@ -66,33 +66,37 @@ const Roadmap = () => {
       <div className="mt-11 w-full max-w-[1247px] max-md:mt-10 max-md:max-w-full">
         <div className="flex flex-col md:flex-row   justify-between gap-4">
           {roadMapData.map((data, index) => (
-            <BackgroundGradient key={data.id}>
-              <div className="flex flex-col py-5 pr-9 pl-4 h-fit text-sm leading-6 text-white rounded-xl border border-lime-400 border-opacity-50 border-solid border-t-0 border-b-0 bg-neutral-900 ">
-                <div className="text-3xl font-bold text-start text-lime-400">
-                  {data.title}
-                </div>
-                {data.description.map((desc, index) => (
-                  <div
-                    key={desc}
-                    className={cn(
-                      "flex gap-2 justify-between mt-2 md:mt-5 ",
-                      index === 0 && "mt-3 md:mt-8"
-                      // desc.split(" ").length <= 3 ? "whitespace-nowrap" : ""
-                    )}
-                  >
-                    <img
-                      loading="lazy"
-                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/bf4951710cd5797c7d2a452934638a66dc05d5cf324cf3f9b5080149f99dc5b4?apiKey=caf73ded90744adfa0fe2d98abed61c0&"
-                      className="w-6 aspect-square"
-                    />
-                    <div className="grow whitespace-nowrap text-white font-thin text-xs md:text-[0.9rem] tracking-wide">
-                      {desc.split(" ").slice(0, 3).join(" ")} <br />
-                      {desc.split(" ").slice(3).join(" ")}
-                    </div>
-                  </div>
-                ))}
+            // <BackgroundGradient key={data.id}>
+
+            // </BackgroundGradient>
+            <div
+              key={data.id}
+              className="flex flex-col py-5 pr-9 pl-4 h-fit text-sm leading-6 text-white rounded-xl border border-lime-400 border-opacity-50 border-solid border-t-0 border-b-0 bg-neutral-900 "
+            >
+              <div className="text-3xl font-bold text-start text-lime-400">
+                {data.title}
               </div>
-            </BackgroundGradient>
+              {data.description.map((desc, index) => (
+                <div
+                  key={desc}
+                  className={cn(
+                    "flex gap-2 justify-between mt-2 md:mt-5 ",
+                    index === 0 && "mt-3 md:mt-8"
+                    // desc.split(" ").length <= 3 ? "whitespace-nowrap" : ""
+                  )}
+                >
+                  <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/bf4951710cd5797c7d2a452934638a66dc05d5cf324cf3f9b5080149f99dc5b4?apiKey=caf73ded90744adfa0fe2d98abed61c0&"
+                    className="w-6 aspect-square"
+                  />
+                  <div className="grow whitespace-nowrap text-white font-thin text-xs md:text-[0.9rem] tracking-wide">
+                    {desc.split(" ").slice(0, 3).join(" ")} <br />
+                    {desc.split(" ").slice(3).join(" ")}
+                  </div>
+                </div>
+              ))}
+            </div>
           ))}
         </div>
       </div>

@@ -6,7 +6,7 @@ import { sectionHeading, sectionSubHeading } from "@/utils/styles";
 
 const Platform = () => {
   const gameRef = useRef<HTMLDivElement | null>(null);
-  const isInView = useInView(gameRef, { once: true, margin: "100px" });
+  const isInView = useInView(gameRef, { once: true, margin: "-200px" });
 
   const { scrollYProgress } = useScroll({
     target: gameRef,
@@ -40,10 +40,13 @@ const Platform = () => {
       className="flex overflow-hidden relative flex-col items-center rounded-2xl self-stretch px-16 py-3 md:pb-0  md:pt-12 mt-40 font-bold h-auto  md:min-h-[485px] max-md:px-5 max-md:mt-10 max-md:max-w-full"
       // className="flex overflow-hidden relative flex-col items-center self-stretch px-16 pt-12 mt-40 font-bold min-h-[485px] max-md:px-5 max-md:mt-10 max-md:max-w-full"
     >
-      <img
+      <motion.img
         loading="lazy"
+        initial={{ opacity: 1 }}
+        animate={{ opacity: 0.5 }}
+        transition={{ duration: 2 }}
         srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/b5ed2bc6dba8c9f9347d30a0ba85c83d5bd749f33dea36220ae9db8a42f03bae?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/b5ed2bc6dba8c9f9347d30a0ba85c83d5bd749f33dea36220ae9db8a42f03bae?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b5ed2bc6dba8c9f9347d30a0ba85c83d5bd749f33dea36220ae9db8a42f03bae?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/b5ed2bc6dba8c9f9347d30a0ba85c83d5bd749f33dea36220ae9db8a42f03bae?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/b5ed2bc6dba8c9f9347d30a0ba85c83d5bd749f33dea36220ae9db8a42f03bae?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b5ed2bc6dba8c9f9347d30a0ba85c83d5bd749f33dea36220ae9db8a42f03bae?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/b5ed2bc6dba8c9f9347d30a0ba85c83d5bd749f33dea36220ae9db8a42f03bae?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/b5ed2bc6dba8c9f9347d30a0ba85c83d5bd749f33dea36220ae9db8a42f03bae?apiKey=caf73ded90744adfa0fe2d98abed61c0&"
-        className="hidden md:block neomorphic-card bg-neutral-900 opacity-55  object-cover absolute inset-0 size-full"
+        className="hidden md:block neomorphic-card bg-neutral-900 object-cover absolute inset-0 size-full"
       />
       <img
         loading="lazy"

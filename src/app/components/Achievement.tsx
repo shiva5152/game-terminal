@@ -61,10 +61,10 @@ const Achievement = () => {
       <div className="self-stretch mt-10 md:mt-40 max-md:mt-10 max-md:max-w-full">
         <div className="flex gap-5 max-md:flex-col ">
           {cardData.map((card) => (
-            <motion.div
+            <div
               key={card.id}
-              whileHover={{ scale: 1.04 }}
-              transition={{ type: "spring", stiffness: 200 }}
+              // whileHover={{ scale: 1.04 }}
+              // transition={{ type: "spring", stiffness: 200 }}
               className="flex flex-col w-[33%] max-md:ml-0 max-md:w-full"
             >
               <div className="flex neomorphic-eco rounded-2xl overflow-hidden border border-lime-400 border-opacity-70 border-solid border-t-0 border-b-0  relative flex-col grow justify-center items-center px-0 py-2 md:py-11 whitespace-nowrap fill-neutral-900 h-auto md:min-h-[143px] stroke-[1px] stroke-lime-400 max-md:px-5 max-md:mt-0 max-md:max-w-full">
@@ -81,11 +81,11 @@ const Achievement = () => {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
-      <div className="md:mt-10 mt-auto">
+      <div className="md:mt-10 -md:px-9 w-[vw] mt-auto">
         <InfiniteMovingCards
           direction="right"
           speed="fast"
