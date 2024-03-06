@@ -16,8 +16,8 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="mx-auto min-h-[80vh] md:h-auto flex flex-col items-center justify-between relative mb-24">
-      <div className="mt-20 text-7xl  font-bold text-center text-white max-md:mt-10 max-lg:mt-40 max-md:max-w-full max-md:text-5xl">
+    <div className="mx-auto min-h-[80vh]  md:h-auto flex flex-col items-center justify-center relative mb-24">
+      <div className="relative z-10 bg-transparent text-7xl  font-bold text-center text-white max-md:mt-10 max-lg:mt-40 max-md:max-w-full max-md:text-5xl">
         <h2>
           Multitude of trending <span className="text-lime-400">Web3 </span>
         </h2>
@@ -30,11 +30,12 @@ const Hero = () => {
           <br className="hidden md:block" />a solitary gaming platform bridging
           the gap between Web2 and Web3.
         </p>
-        <div className="mx-auto">
-          <button className="overflow-hidden  button-bg md:mx-0 relative flex-col justify-center items-center self-start px-11 py-8 mt-4 md:mt-8 text-[0.5rem] md:text-sm leading-7 text-black whitespace-nowrap aspect-[3.15] fill-lime-400 max-md:px-5 ">
-            Browse Games
-          </button>
-        </div>
+        <button className="overflow-hidden  button-bg md:mx-0 relative flex-col justify-center items-center self-start px-11 py-8 mt-4 md:mt-8 text-[0.5rem] md:text-sm leading-7 text-black whitespace-nowrap aspect-[3.15] fill-lime-400 max-md:px-5 ">
+          Browse Games
+        </button>
+        {/* <div className="mx-auto">
+          
+        </div> */}
       </div>
       <Link
         href={"/#gaming"}
