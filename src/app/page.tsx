@@ -8,21 +8,26 @@ import Ecosystem from "./components/Ecosystem";
 import Terminal from "./components/Terminal";
 import Footer from "./components/Footer";
 import Roadmap from "./components/Roadmap";
+import Wrapper from "./components/ui/wrapper";
 
 export default function Home() {
   return (
     <>
-      <main className="flex flex-col overflow-x-hidden items-center px-5 md:px-9 py-4 md:py-11 bg-neutral-900 mx-auto w-full max-w-[90rem]">
-        <Header />
-        <Hero />
-        <Gaming />
-        <Platform />
+      <main className="flex flex-col overflow-x-hidden items-center w-full py-4 md:py-11 bg-neutral-900 mx-auto ">
+        <Wrapper>
+          <Header />
+          <Hero />
+          <Gaming />
+          <Platform />
+        </Wrapper>
         <Achievement />
-        <Integration />
-        <Ecosystem />
-        <Roadmap />
-        <Terminal />
-        <Footer />
+        <Wrapper>
+          <Integration />
+          <Ecosystem />
+          <Roadmap />
+          <Terminal />
+          <Footer />
+        </Wrapper>
       </main>
     </>
   );

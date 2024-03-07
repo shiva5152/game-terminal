@@ -1,9 +1,9 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
 import { cn } from "@/utils/cn";
 import { sectionHeading, sectionSubHeading } from "@/utils/styles";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform, useInView } from "framer-motion";
 
 const ecosystemData = [
   {
@@ -49,8 +49,38 @@ const ecosystemData = [
 ];
 
 const Ecosystem = () => {
+  const gameRef = useRef<HTMLDivElement | null>(null);
+  const isInView = useInView(gameRef, { once: true, margin: "-200px" });
+
+  const { scrollYProgress } = useScroll({
+    target: gameRef,
+    offset: ["0 1", "1.5 1"],
+  });
+  const opacity = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
+  const scale = useTransform(scrollYProgress, [0, 0.5], [0.6, 1]);
+
+  const container = {
+    hidden: { opacity: 1 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.5,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { y: 200, opacity: 0 },
+    show: { y: 0, opacity: 1, transition: { duration: 0.5 } },
+  };
   return (
-    <div className="self-stretch mt-40 max-md:mt-10 max-md:max-w-full">
+    <motion.div
+      ref={gameRef}
+      variants={container}
+      initial="hidden"
+      animate={isInView ? "show" : ""}
+      className="self-stretch mt-40 max-md:mt-10 max-md:max-w-full"
+    >
       <div className="flex gap-5 max-md:flex-col max-md:gap-0 max-md:">
         <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
           <div className="flex flex-col grow mt-2.5 max-md:mt-10 max-md:max-w-full">
@@ -81,7 +111,8 @@ const Ecosystem = () => {
         <div className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
           <div className="grow pt-2 md:pl-5 pl-0 w-full rounded-3xl bg-neutral-900 max-md:mt-10 max-md:max-w-full">
             {ecosystemData.map((data) => (
-              <div
+              <motion.div
+                variants={item}
                 key={data.id}
                 className="md:py-3 md:pt-5 py-3 md:pl-5 ml-0 mt-4 px-4 md:mx-0 text-justify rounded-3xl bg-[#161616] neomorphic-card max-md:max-w-full"
               >
@@ -107,12 +138,12 @@ const Ecosystem = () => {
                     />
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
