@@ -46,14 +46,14 @@ const Platform = () => {
         animate={{ opacity: 0.5 }}
         transition={{ duration: 2 }}
         srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/b5ed2bc6dba8c9f9347d30a0ba85c83d5bd749f33dea36220ae9db8a42f03bae?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/b5ed2bc6dba8c9f9347d30a0ba85c83d5bd749f33dea36220ae9db8a42f03bae?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b5ed2bc6dba8c9f9347d30a0ba85c83d5bd749f33dea36220ae9db8a42f03bae?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/b5ed2bc6dba8c9f9347d30a0ba85c83d5bd749f33dea36220ae9db8a42f03bae?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/b5ed2bc6dba8c9f9347d30a0ba85c83d5bd749f33dea36220ae9db8a42f03bae?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b5ed2bc6dba8c9f9347d30a0ba85c83d5bd749f33dea36220ae9db8a42f03bae?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/b5ed2bc6dba8c9f9347d30a0ba85c83d5bd749f33dea36220ae9db8a42f03bae?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/b5ed2bc6dba8c9f9347d30a0ba85c83d5bd749f33dea36220ae9db8a42f03bae?apiKey=caf73ded90744adfa0fe2d98abed61c0&"
-        className="hidden md:block neomorphic-card bg-neutral-900 object-cover absolute inset-0 size-full"
+        className="hidden md:block neomorphic-card object-cover absolute inset-0 size-full"
       />
       <img
         loading="lazy"
         src="/images/platform-mobile-bg.png"
         className="block md:hidden aspect-[1.27] w-full rounded-2xl absolute inset-0  min-h-[259px] size-full"
       />
-      <div className="flex relative z-10 flex-col items-center mt-6 w-full max-w-[999px] max-md:max-w-full">
+      <div className="flex relative bg-transparent z-10 flex-col items-center mt-6 w-full max-w-[999px] max-md:max-w-full">
         <motion.div variants={item} className={cn(sectionHeading)}>
           Array of Games, One Dynamic{" "}
           <span className="text-lime-400">Platform</span>
@@ -78,6 +78,10 @@ const Platform = () => {
         </button> */}
         <motion.button
           variants={item}
+          whileHover={{
+            y: -10,
+            transition: { duration: 0.3, type: "spring", stiffness: 300 },
+          }}
           className="overflow-hidden button-bg relative  flex-col justify-center items-center px-16 py-7 mt-48 w-56 max-w-full text-xs md:text-sm leading-7 text-black whitespace-nowrap aspect-[3.15] fill-lime-400 max-md:px-5 max-md:mt-4  max-md:w-[158px]"
         >
           Explore Games

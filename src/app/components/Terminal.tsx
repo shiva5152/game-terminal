@@ -83,9 +83,19 @@ const Terminal = () => {
                   <div className="self-stretch mt-4 text-xs font-light leading-5 tracking-wider text-zinc-600 max-md:max-w-full">
                     {data.description}
                   </div>
-                  <button className="overflow-hidden text-[0.65rem] md:text-xs max-w-[118px] md:max-w-[159px] relative button-bg flex-col justify-center font-bold items-center px-8 py-8 mt-4 text-center text-black whitespace-nowrap aspect-[3.12] fill-lime-400 leading-[233%] max-md:px-5">
+                  <motion.button
+                    whileHover={{
+                      y: -10,
+                      transition: {
+                        duration: 0.3,
+                        type: "spring",
+                        stiffness: 300,
+                      },
+                    }}
+                    className="overflow-hidden text-[0.65rem] md:text-xs max-w-[118px] md:max-w-[159px] relative button-bg flex-col justify-center font-bold items-center px-8 py-8 mt-4 text-center text-black whitespace-nowrap aspect-[3.12] fill-lime-400 leading-[233%] max-md:px-5"
+                  >
                     {data.buttonText}
-                  </button>
+                  </motion.button>
                 </div>
               </div>
             </motion.div>

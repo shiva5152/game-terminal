@@ -158,9 +158,6 @@ body::-webkit-scrollbar-thumb:hover {
 }
 .roadmap-bg {
   position: relative;
-  background-size: 100%;
-  background-position: top;
-  background-repeat: no-repeat;
   z-index: 1;
   border-radius: 12px;
 }
@@ -172,9 +169,9 @@ body::-webkit-scrollbar-thumb:hover {
   left: 0;
   right: 0;
   content: "";
-  background-image: url("/images/roadmap-bg.svg");
+  background-image: url("/images/roadmap-bg.png");
   background-size: 100%;
-  background-position: top;
+  background-position: center;
   background-repeat: no-repeat;
   z-index: -1;
 }
@@ -194,8 +191,6 @@ body::-webkit-scrollbar-thumb:hover {
 .integration-border {
   position: relative;
   background-size: 100%;
-  background-position: top;
-  background-repeat: no-repeat;
   z-index: 1;
 }
 .integration-border::after {
@@ -209,6 +204,25 @@ body::-webkit-scrollbar-thumb:hover {
   background-image: url("/images/inigration-green-border.png");
   background-size: 100%;
   background-position: top;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+.achievement-border {
+  position: relative;
+  background-size: 100%;
+  z-index: 1;
+}
+.achievement-border::after {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: "";
+  background-image: url("/images/green-border-bg.png");
+  background-size: 100%;
+  background-position: center;
   background-repeat: no-repeat;
   z-index: -1;
 }
@@ -245,4 +259,29 @@ body::-webkit-scrollbar-thumb:hover {
   background-position: top;
   background-repeat: no-repeat;
   z-index: -1;
+}
+
+.animated-button {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.animated-button:hover {
+  transform: translateY(0);
+}
+
+.animated-button::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  z-index: -1;
+  transition: transform 0.3s ease;
+}
+
+.animated-button:hover::before {
+  transform: translateY(10px);
 }

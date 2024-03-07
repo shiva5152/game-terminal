@@ -101,7 +101,7 @@ const Roadmap = () => {
             <motion.div
               variants={item}
               key={data.id}
-              className="flex roadmap-bg  neomorphic-card flex-col py-5 pr-9 pl-4 h-fit text-sm leading-6 text-white rounded-xl "
+              className="flex roadmap-bg  neomorphic-card flex-col py-5 pb-7 pr-9 pl-4 h-fit text-sm leading-6 text-white rounded-xl "
             >
               <div className="text-3xl font-bold text-start text-lime-400">
                 {data.title}

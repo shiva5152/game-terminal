@@ -22,20 +22,20 @@ const Header = () => {
               />
               <div className=" hidden md:flex flex-col flex-1 self-start mt-3.5 font-thin text-gray-200">
                 <div className="flex gap-10  justify-start">
-                  <div className="cursor-pointer hover:font-medium hover:text-lime-400">
+                  <div className="cursor-pointer  leading-wide hover:text-lime-400">
                     Home
                   </div>
                   {/* is active-> font-medium text-lime-400 */}
-                  <div className="cursor-pointer hover:font-medium hover:text-lime-400">
+                  <div className="cursor-pointer leading-wide hover:text-lime-400">
                     Games
                   </div>
-                  <div className="cursor-pointer hover:font-medium hover:text-lime-400">
+                  <div className="cursor-pointer leading-wide hover:text-lime-400">
                     Marketplace
                   </div>
-                  <div className="cursor-pointer hover:font-medium hover:text-lime-400">
+                  <div className="cursor-pointer leading-wide hover:text-lime-400">
                     Tournament
                   </div>
-                  <div className="cursor-pointer hover:font-medium hover:text-lime-400">
+                  <div className="cursor-pointer leading-wide hover:text-lime-400">
                     Nodes
                   </div>
                 </div>

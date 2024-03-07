@@ -30,13 +30,19 @@ const Hero = () => {
           <br className="hidden md:block" />a solitary gaming platform bridging
           the gap between Web2 and Web3.
         </p>
-        <button className="overflow-hidden  button-bg md:mx-0 relative flex-col justify-center items-center self-start px-11 py-8 mt-4 md:mt-8 text-[0.5rem] md:text-sm leading-7 text-black whitespace-nowrap aspect-[3.15] fill-lime-400 max-md:px-5 ">
+        <motion.button
+          whileHover={{
+            y: -10,
+            transition: { duration: 0.3, type: "spring", stiffness: 300 },
+          }}
+          className="overflow-hidden button-bg md:mx-0 relative flex-col justify-center items-center self-start px-11 py-8 mt-4 md:mt-8 text-[0.5rem] md:text-sm leading-7 text-black whitespace-nowrap aspect-[3.15] fill-lime-400 max-md:px-5 "
+        >
           Browse Games
-        </button>
+        </motion.button>
       </div>
       <Link
         href={"/#gaming"}
-        className="flex justify-center flex-col items-center"
+        className="flex  justify-center flex-col items-center"
       >
         <div className="mt-16 text-xs font-medium text-center text-white whitespace-nowrap max-md:mt-10">
           Scroll down

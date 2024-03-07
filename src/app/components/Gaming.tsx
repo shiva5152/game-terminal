@@ -62,6 +62,10 @@ const Gaming = () => {
             </motion.div>
             <motion.button
               variants={item}
+              whileHover={{
+                y: -10,
+                transition: { duration: 0.3, type: "spring", stiffness: 300 },
+              }}
               className="overflow-hidden button-bg mx-auto md:mx-0 relative flex-col justify-center items-center self-start px-11 py-8 mt-4 md:mt-8 text-xs md:text-sm leading-7 text-black whitespace-nowrap aspect-[3.15] fill-lime-400 max-md:px-5 "
             >
               Launch App
