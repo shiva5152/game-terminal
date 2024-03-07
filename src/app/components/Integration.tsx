@@ -103,26 +103,13 @@ const Integration = () => {
                 <div className="grow max-md:mt-2 max-md:max-w-full">
                   <div className="flex gap-5 max-md:flex-row max-md:gap-3 max-md:">
                     <div className="flex flex-col w-[18%] max-md:ml-0 max-md:w-fit">
-                      {isMounted && isDesktopOrLaptop ? (
-                        <BackgroundGradient className=" ">
-                          {/* neomorphic-eco rounded-b-2xl rounded-t-lg md:rounded-t-xl integration-border*/}
-                          <div className="flex rounded-3xl  justify-center w-[50px] h-[50px] items-center px-7 mx-auto  bg-neutral-900 md:h-[102px] md:w-[95px] max-md:px-3 max-md:mt-5">
-                            <img
-                              loading="lazy"
-                              className="w-full aspect-square"
-                              src={data.src}
-                            />
-                          </div>
-                        </BackgroundGradient>
-                      ) : (
-                        <div className="flex neomorphic-eco rounded-b-2xl rounded-t-lg md:rounded-t-xl integration-border  justify-center w-[50px] h-[50px] items-center px-7 mx-auto  bg-neutral-900 md:h-[102px] md:w-[95px] max-md:px-3 max-md:mt-5">
-                          <img
-                            loading="lazy"
-                            className="w-full aspect-square"
-                            src={data.src}
-                          />
-                        </div>
-                      )}
+                      <div className="flex neomorphic-eco rounded-b-2xl rounded-t-lg md:rounded-t-2xl integration-border  justify-center w-[50px] h-[50px] items-center px-7 mx-auto  md:h-[102px] md:w-[95px] max-md:px-3 max-md:mt-5">
+                        <img
+                          loading="lazy"
+                          className="w-full aspect-square"
+                          src={data.src}
+                        />
+                      </div>
                     </div>
                     <div className="flex flex-col ml-5 w-[82%] max-md:ml-0 max-md:w-full">
                       <div className="flex flex-col self-stretch my-auto max-md:mt-4 max-md:max-w-full">

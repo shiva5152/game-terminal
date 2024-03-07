@@ -24,7 +24,7 @@ const Hero = () => {
         <h2>
           games on one <span className=" text-lime-400">platform</span>
         </h2>
-        <p className="mt-7 text-xl font-light leading-7 tracking-wide text-center text-zinc-600 max-md:max-w-full  max-md:text-[1rem]">
+        <p className="p-[2.5rem] text-xl font-light leading-7 tracking-wide text-center text-zinc-600 max-md:max-w-full  max-md:text-[1rem]">
           Game Terminal is a Web3 aggregator between gaming creators and gamers
           on
           <br className="hidden md:block" />a solitary gaming platform bridging
@@ -89,7 +89,7 @@ const Hero = () => {
       {isMounted && isDesktopOrLaptop ? (
         <>
           <motion.div
-            className=" absolute top-[-8%] left-[17%]"
+            className=" absolute top-[-5%] left-[17%]"
             animate={{ y: ["0%", "5%", "0%"] }}
             transition={{ duration: 4.1, repeat: Infinity }}
           >
