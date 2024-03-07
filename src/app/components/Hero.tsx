@@ -17,14 +17,14 @@ const Hero = () => {
 
   return (
     <div className=" min-h-[80vh]  md:h-auto flex flex-col items-center justify-center mb-16 md:mb-24 relative">
-      <div className=" relative z-10 bg-transparent text-5xl  font-bold text-center text-white max-md:mt-10 max-lg:mt-40 max-md:max-w-full max-md:text-5xl">
+      <div className=" relative z-10 bg-transparent text-7xl  font-bold text-center text-white max-md:mt-10 max-lg:mt-40 max-md:max-w-full max-md:text-4xl">
         <h2>
           Multitude of trending <span className="text-lime-400">Web3 </span>
         </h2>
         <h2>
           games on one <span className=" text-lime-400">platform</span>
         </h2>
-        <p className="p-6 md:p-[2.5rem] text-xl font-light leading-7 tracking-wide text-center text-zinc-600 max-md:max-w-full  max-md:text-[1rem]">
+        <p className="p-6 md:p-[2.5rem] text-xl font-light leading-5 tracking-wide text-center text-zinc-600 max-md:max-w-full  max-md:text-[1rem]">
           Game Terminal is a Web3 aggregator between gaming creators and gamers
           on
           <br className="hidden md:block" />a solitary gaming platform bridging
@@ -77,7 +77,7 @@ const Hero = () => {
         />
       </motion.div>
       <motion.div
-        className="absolute bottom-[30%] -right-[20%] md:-bottom-[5%] md:-right-[2%]"
+        className="absolute bottom-[20%] -right-[20%] md:-bottom-[5%] md:-right-[2%]"
         animate={{ y: ["0%", "-7%", "0%"] }}
         transition={{ duration: 3, repeat: Infinity }}
       >
