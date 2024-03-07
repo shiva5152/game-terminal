@@ -63,22 +63,15 @@ const Terminal = () => {
         Join us to the next generation ofWeb3 gaming
       </motion.div>
       <div className="mt-14 w-full max-w-[1247px] max-md:mt-6 max-md:max-w-full">
-        <motion.div
-          variants={item}
-          className="flex gap-5 max-md:flex-col max-md:gap-4 max-md:"
-        >
+        <div className="flex gap-10 max-md:flex-col max-md:gap-4 ">
           {terminalData.map((data) => (
-            <BackgroundGradient
+            <motion.div
               key={data.id}
-              // w-6/12
-              className="flex neomorphic-terminal bg-[#161616] rounded-3xl flex-col w-[99.9%]  max-md:ml-0 max-md:w-full"
+              variants={item}
+              className="flex neomorphic-terminal terminal-bg rounded-3xl flex-col w-[99.9%]  max-md:ml-0 max-md:w-full"
             >
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className=""
-              >
-                <div className="flex  flex-col overflow-hidden grow justify-center items-start px-7 py-6 w-full text-xs font-bold rounded-3xl bg-neutral-900 max-md:px-3 max-md:py-3 max-md:mt-2 max-md:max-w-full">
+              <div className="">
+                <div className="flex  flex-col overflow-hidden grow justify-center items-start px-7 py-6 w-full text-xs font-bold rounded-3xl max-md:px-3 max-md:py-3 max-md:mt-2 max-md:max-w-full">
                   <div className="flex  justify-center items-center gap-2 text-xl md:text-3xl leading-7 text-white whitespace-nowrap">
                     <div className="grow self-start mt-1.5">{data.title}</div>
                     <img
@@ -94,10 +87,10 @@ const Terminal = () => {
                     {data.buttonText}
                   </button>
                 </div>
-              </motion.div>
-            </BackgroundGradient>
+              </div>
+            </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </motion.div>
   );

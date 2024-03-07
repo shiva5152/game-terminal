@@ -81,9 +81,7 @@ const Ecosystem = () => {
         <div className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
           <div className="grow pt-2 md:pl-5 pl-0 w-full rounded-3xl bg-neutral-900 max-md:mt-10 max-md:max-w-full">
             {ecosystemData.map((data) => (
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                transition={{ type: "spring", stiffness: 200 }}
+              <div
                 key={data.id}
                 className="md:py-3 md:pt-5 py-3 md:pl-5 ml-0 mt-4 px-4 md:mx-0 text-justify rounded-3xl bg-[#161616] neomorphic-card max-md:max-w-full"
               >
@@ -109,7 +107,7 @@ const Ecosystem = () => {
                     />
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

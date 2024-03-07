@@ -67,7 +67,7 @@ const Achievement = () => {
               // transition={{ type: "spring", stiffness: 200 }}
               className="flex flex-col w-[31%] justify-between max-md:ml-0 max-md:w-full"
             >
-              <div className="flex neomorphic-eco rounded-2xl overflow-hidden border border-lime-400 border-opacity-70 border-solid border-t-0 border-b-0  relative flex-col grow justify-center items-center px-0 py-2 md:py-11 whitespace-nowrap fill-neutral-900 h-auto md:min-h-[143px] stroke-[1px] stroke-lime-400 max-md:px-5 max-md:mt-0 max-md:max-w-full">
+              <div className="flex neomorphic-eco rounded-2xl overflow-hidden border border-lime-400 border-opacity-70 border-solid border-t-0 border-b-0  relative flex-col grow justify-center items-center px-0 py-4 md:py-11 whitespace-nowrap fill-neutral-900 h-auto md:min-h-[143px] stroke-[1px] stroke-lime-400 max-md:px-5 max-md:mt-0 max-md:max-w-full">
                 {/* <EvervaultCard
                   text={card.text}
                   description={card.description}
