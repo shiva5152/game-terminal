@@ -104,7 +104,7 @@ const Integration = () => {
                   <div className="flex gap-5 max-md:flex-row max-md:gap-3 max-md:">
                     <div className="flex flex-col w-[18%] max-md:ml-0 max-md:w-fit">
                       {/* integration-border */}
-                      <div className="flex neomorphic-eco rounded-2xl integration-border   justify-center w-[50px] h-[50px] items-center px-7 mx-auto  md:h-[102px] md:w-[95px] max-md:px-3 max-md:mt-5">
+                      <div className="flex neomorphic-eco rounded-[10px] md:rounded-2xl integration-border   justify-center w-[50px] h-[50px] items-center px-7 mx-auto  md:h-[102px] md:w-[95px] max-md:px-3 max-md:mt-5">
                         <img
                           loading="lazy"
                           className="w-full aspect-square"

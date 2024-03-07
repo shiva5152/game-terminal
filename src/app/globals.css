@@ -305,3 +305,12 @@ body::-webkit-scrollbar-thumb:hover {
 .animated-button:hover::before {
   transform: translateY(10px);
 }
+
+@media not all and (min-width: 768px) {
+  .terminal-bg::after {
+    background-image: url("/images/mobile-terminal-bg.png");
+  }
+  .roadmap-bg::after {
+    background-image: url("/images/mobile-roadmap-bg.png");
+  }
+}
