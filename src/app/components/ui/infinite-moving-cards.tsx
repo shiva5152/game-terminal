@@ -71,7 +71,7 @@ export const InfiniteMovingCards = ({
     <div
       ref={containerRef}
       className={cn(
-        "scroller relative z-20  max-w-[350px] md:max-w-[100vw] overflow-hidden  [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
+        "scroller relative z-20  max-w-[350px] md:max-w-7xl overflow-hidden  [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
         className
       )}
     >
@@ -113,11 +113,11 @@ export const InfiniteMovingCards = ({
                 key={item.id}
                 className="flex gap-4 h-full justify-between self-stretch px-px mt-10 max-md:flex-wrap max-md:max-w-full"
               >
-                <div className="flex flex-1 justify-center neomorphic-card   items-center px-12 py-6  rl-green-border stroke-[1px] stroke-lime-400 bg-[#161616] max-md:px-5">
+                <div className="flex flex-1 rounded-xl justify-center neomorphic-eco   items-center px-12 py-6  achievement-mar-border stroke-[1px] stroke-lime-400 bg-[#161616] max-md:px-5">
                   <img
                     loading="lazy"
                     srcSet={item.srcSet}
-                    className="aspect-[5.88] w-[115px]"
+                    className=" aspect-[5.8]"
                   />
                 </div>
               </div>

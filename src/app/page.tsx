@@ -19,15 +19,14 @@ export default function Home() {
           <Hero />
           <Gaming />
           <Platform />
-        </Wrapper>
-        <Achievement />
-        <Wrapper>
+          <Achievement />
           <Integration />
           <Ecosystem />
           <Roadmap />
           <Terminal />
           <Footer />
         </Wrapper>
+        {/* <Wrapper></Wrapper> */}
       </main>
     </>
   );

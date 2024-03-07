@@ -226,6 +226,26 @@ body::-webkit-scrollbar-thumb:hover {
   background-repeat: no-repeat;
   z-index: -1;
 }
+
+.achievement-mar-border {
+  position: relative;
+  background-size: 100%;
+  z-index: 1;
+}
+.achievement-mar-border::after {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: "";
+  background-image: url("/images/rl-green.png");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
 .line-bg {
   background-image: url("/images/green-line.png");
   background-size: 100%;
