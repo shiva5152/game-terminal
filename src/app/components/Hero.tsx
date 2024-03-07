@@ -16,8 +16,8 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className=" min-h-[80vh]  md:h-auto flex flex-col items-center justify-center mb-24 relative">
-      <div className=" relative z-10 bg-transparent text-7xl  font-bold text-center text-white max-md:mt-10 max-lg:mt-40 max-md:max-w-full max-md:text-5xl">
+    <div className=" min-h-[80vh]  md:h-auto flex flex-col items-center justify-center mb-16 md:mb-24 relative">
+      <div className=" relative z-10 bg-transparent text-5xl  font-bold text-center text-white max-md:mt-10 max-lg:mt-40 max-md:max-w-full max-md:text-5xl">
         <h2>
           Multitude of trending <span className="text-lime-400">Web3 </span>
         </h2>
@@ -77,7 +77,7 @@ const Hero = () => {
         />
       </motion.div>
       <motion.div
-        className="absolute -bottom-[10%] -right-[20%] md:-bottom-[5%] md:-right-[2%]"
+        className="absolute bottom-[30%] -right-[20%] md:-bottom-[5%] md:-right-[2%]"
         animate={{ y: ["0%", "-7%", "0%"] }}
         transition={{ duration: 3, repeat: Infinity }}
       >

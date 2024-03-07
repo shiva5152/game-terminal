@@ -1,12 +1,18 @@
 "use client";
 import React from "react";
 import UserDropDown from "./UserDropDown";
+import { motion } from "framer-motion";
 
 const Header = () => {
   const [open, setOpen] = React.useState(false);
   const toggle = () => setOpen(!open);
   return (
-    <div className="relative w-full">
+    <motion.div
+      initial={{ y: -400 }}
+      animate={{ y: 0 }}
+      transition={{ type: "spring", stiffness: 60 }}
+      className="relative w-full"
+    >
       <div className="hidden  md:block w-full">
         <div className="overflow-hidden header-bg self-stretch px-20 flex items-center w-full  stroke-[1px] stroke-lime-400 max-md:px-5 ">
           {/* <div className="flex gap-5 flex-row  max-md:gap-0 max-md:">
@@ -108,7 +114,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

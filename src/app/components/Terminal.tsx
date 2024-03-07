@@ -68,35 +68,33 @@ const Terminal = () => {
             <motion.div
               key={data.id}
               variants={item}
-              className="flex neomorphic-terminal terminal-bg rounded-3xl flex-col w-[99.9%]  max-md:ml-0 max-md:w-full"
+              className="flex neomorphic-card terminal-bg rounded-3xl flex-col w-[99.9%]  max-md:ml-0 max-md:w-full"
             >
-              <div className="">
-                <div className="flex  flex-col overflow-hidden grow justify-center items-start px-7 py-6 w-full text-xs font-bold rounded-3xl max-md:px-3 max-md:py-3 max-md:mt-2 max-md:max-w-full">
-                  <div className="flex  justify-center items-center gap-2 text-xl md:text-3xl leading-7 text-white whitespace-nowrap">
-                    <div className="grow self-start mt-1.5">{data.title}</div>
-                    <img
-                      loading="lazy"
-                      srcSet={data.titleIcon}
-                      className="aspect-square w-[35px]"
-                    />
-                  </div>
-                  <div className="self-stretch mt-4 text-xs font-light leading-5 tracking-wider text-zinc-600 max-md:max-w-full">
-                    {data.description}
-                  </div>
-                  <motion.button
-                    whileHover={{
-                      y: -10,
-                      transition: {
-                        duration: 0.3,
-                        type: "spring",
-                        stiffness: 300,
-                      },
-                    }}
-                    className="overflow-hidden text-[0.65rem] md:text-xs max-w-[118px] md:max-w-[159px] relative button-bg flex-col justify-center font-bold items-center px-8 py-8 mt-4 text-center text-black whitespace-nowrap aspect-[3.12] fill-lime-400 leading-[233%] max-md:px-5"
-                  >
-                    {data.buttonText}
-                  </motion.button>
+              <div className="flex  flex-col overflow-hidden grow justify-center items-start px-7 py-6 w-full text-xs font-bold rounded-3xl max-md:px-3 max-md:py-3 max-md:mt-2 max-md:max-w-full">
+                <div className="flex  justify-center items-center gap-2 text-xl md:text-3xl leading-7 text-white whitespace-nowrap">
+                  <div className="grow self-start mt-1.5">{data.title}</div>
+                  <img
+                    loading="lazy"
+                    srcSet={data.titleIcon}
+                    className="aspect-square w-[35px]"
+                  />
                 </div>
+                <div className="self-stretch mt-4 text-xs font-light leading-5 tracking-wider text-zinc-600 max-md:max-w-full">
+                  {data.description}
+                </div>
+                <motion.button
+                  whileHover={{
+                    y: -10,
+                    transition: {
+                      duration: 0.3,
+                      type: "spring",
+                      stiffness: 300,
+                    },
+                  }}
+                  className="overflow-hidden text-[0.65rem] md:text-xs max-w-[118px] md:max-w-[159px] relative button-bg flex-col justify-center font-bold items-center px-8 py-8 mt-4 text-center text-black whitespace-nowrap aspect-[3.12] fill-lime-400 leading-[233%] max-md:px-5"
+                >
+                  {data.buttonText}
+                </motion.button>
               </div>
             </motion.div>
           ))}
