@@ -312,4 +312,14 @@ body::-webkit-scrollbar-thumb:hover {
   .roadmap-bg::after {
     background-image: url("/images/mobile-roadmap-bg.png");
   }
+  .neomorphic-eco {
+    background: linear-gradient(145deg, #16181a, #131416);
+    /* box-shadow: 2px 2px 38px #000000, -2px -2px 32px #343940, inset -6px -6px 68px rgba(41, 45, 50, 0.5); */
+    box-shadow: 5px 5px 10px #0b0c0d, -5px -5px 10px #1f2023;
+  }
+  .neomorphic-eco:hover {
+    background: linear-gradient(145deg, #131416, #16181a);
+    box-shadow: 5px 5px 10px #0b0c0d, -5px -5px 10px #1f2023;
+    transition: 0.4s;
+  }
 }
