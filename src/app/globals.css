@@ -321,4 +321,8 @@ body::-webkit-scrollbar-thumb:hover {
     box-shadow: 5px 5px 5px #0d0d0d, -5px -5px 5px #1f1f1f;
     transition: 0.4s;
   }
+  .header-bg {
+    background-image: url("/images/mobile-header-bg.svg");
+    height: 59px;
+  }
 }

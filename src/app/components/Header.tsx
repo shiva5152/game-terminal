@@ -79,13 +79,13 @@ const Header = () => {
           <UserDropDown />
         </div>
       ) : null}
-      <div className="md:hidden w-full">
-        <div className="flex overflow-hidden  relative flex-row gap-5 justify-between px-6 py-5  fill-neutral-900 w-full stroke-[1px] stroke-lime-400">
-          <img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/951e956bdfee0945cf56c2cadd28bc1b091def606f87b6bebd0f542daa9b034a?apiKey=caf73ded90744adfa0fe2d98abed61c0&"
-            className="object-cover absolute inset-0 w-full"
-          />
+      <motion.div
+        initial={{ y: -400 }}
+        animate={{ y: 0 }}
+        transition={{ type: "spring", stiffness: 60 }}
+        className="md:hidden w-full"
+      >
+        <div className="flex overflow-hidden header-bg  relative flex-row gap-5 justify-between items-center px-6 py-5  fill-neutral-900 w-full stroke-[1px] stroke-lime-400">
           <div className="flex relative gap-3 ">
             <img
               loading="lazy"
@@ -113,7 +113,7 @@ const Header = () => {
             />
           </div>
         </div>
-      </div>
+      </motion.div>
     </motion.div>
   );
 };

@@ -87,7 +87,7 @@ const Roadmap = () => {
       variants={container}
       initial="hidden"
       animate={isInView ? "show" : ""}
-      className="w-full pb-[20px] overflow-y-hidden flex flex-col items-center  overflow-x-hidden"
+      className="w-full pb-[20px] flex flex-col items-center"
     >
       <div className="mt-44 text-5xl  font-bold text-center text-lime-400 whitespace-nowrap max-md:mt-10 max-md:text-xl">
         Our <span className="text-lime-400">Roadmap</span>
@@ -95,13 +95,10 @@ const Roadmap = () => {
       <div className="mt-11 w-full max-w-[1247px] max-md:mt-10 max-md:max-w-full">
         <div className="flex flex-col md:flex-row   justify-between gap-4">
           {roadMapData.map((data, index) => (
-            // <BackgroundGradient key={data.id}>
-
-            // </BackgroundGradient>
             <motion.div
               variants={item}
               key={data.id}
-              className="flex roadmap-bg  neomorphic-eco flex-col py-5 pb-7 pr-9 pl-4 h-fit text-sm leading-6 text-white rounded-xl "
+              className="flex roadmap-bg neomorphic-eco flex-col py-5 pb-7 pr-9 pl-4 h-fit text-sm leading-6 text-white rounded-xl "
             >
               <div className="text-3xl font-bold text-start text-lime-400">
                 {data.title}
