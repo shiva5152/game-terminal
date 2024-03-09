@@ -4,7 +4,7 @@ import React from "react";
 import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
 import { motion } from "framer-motion";
 
-const achievementData = [
+export const achievementData = [
   {
     id: 1,
     srcSet:
@@ -41,16 +41,16 @@ const cardData = [
   {
     id: 1,
     text: "50+",
-    description: "games listed",
+    description: "games partnered",
   },
   {
     id: 2,
-    text: "100+",
+    text: "10+",
     description: "guilds across the games",
   },
   {
     id: 3,
-    text: "10M+",
+    text: "1M+",
     description: "monthly active gamers across these games",
   },
 ];
@@ -85,13 +85,13 @@ const Achievement = () => {
           ))}
         </div>
       </div>
-      <div className="md:mt-6  mt-auto">
+      {/* <div className="md:mt-6  mt-auto">
         <InfiniteMovingCards
           direction="right"
           speed="fast"
           items={achievementData}
         />
-      </div>
+      </div> */}
     </>
   );
 };

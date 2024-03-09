@@ -68,7 +68,7 @@ const Gaming = () => {
               }}
               className="overflow-hidden button-bg mx-auto md:mx-0 relative flex-col justify-center items-center self-start px-11 py-8 mt-4 md:mt-8 text-xs md:text-sm leading-7 text-black whitespace-nowrap aspect-[3.15] fill-lime-400 max-md:px-5 "
             >
-              Launch App
+              Create Profile Now
             </motion.button>
             {/* <button className="overflow-hidden button-bg relative  flex-col justify-center items-center px-16 py-7 mt-48  max-w-full text-[0.5rem] md:text-sm leading-7 text-black whitespace-nowrap aspect-[3.15] fill-lime-400 max-md:px-5 max-md:mt-4  w-full">
               Create Your Profile Now

@@ -1,36 +1,47 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import { SparklesCore } from "./ui/sparkles";
 import { cn } from "@/utils/cn";
-import Accordion from "./ui/accordion";
+import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
+import Accordion from "./ui/accordion";
+import Link from "next/link";
 
 const footerData = [
   {
     id: 1,
     title: "PRODUCT",
-    description: ["GAMES", "NFT MARKETPLACE", "LEADERBOARD", "UGC MARKETPLACE"],
+    description: [
+      { tag: "GAMES", link: "/games" },
+      { tag: "NFT MARKETPLACE", link: "/nft-marketplace" },
+      { tag: "LEADERBOARD", link: "/leaderboard" },
+      { tag: "UGC MARKETPLACE", link: "/ugc-marketplace" },
+    ],
   },
   {
     id: 2,
     title: "COMPANY",
-    description: ["ABOUT US", "TEAM", "ADVISORS", "PARTNERS", "BACKERS"],
+    description: [
+      { tag: "ABOUT US", link: "/about-us" },
+      { tag: "PRESS KIT", link: "/press-kit" },
+    ],
   },
   {
     id: 3,
     title: "LEGAL",
-    description: ["PRIVACY POLICY", "TERMS OF SERVICE", "FAQs", "LEARN MORE"],
+    description: [
+      { tag: "PRIVACY POLICY", link: "/privacy-policy" },
+      { tag: "TERMS OF SERVICE", link: "/terms-of-service" },
+    ],
   },
   {
     id: 4,
     title: "COMMUNITY",
     description: [
-      "TWITTER",
-      "TELEGRAM",
-      "DISCORD",
-      "YOUTUBE",
-      "MEDIUM",
-      "LINKEDIN",
+      { tag: "TWITTER", link: "https://twitter.com" },
+      { tag: "TELEGRAM", link: "https://telegram.org" },
+      { tag: "DISCORD", link: "https://discord.com" },
+      { tag: "YOUTUBE", link: "https://youtube.com" },
+      { tag: "MEDIUM", link: "https://medium.com" },
+      { tag: "LINKEDIN", link: "https://linkedin.com" },
     ],
   },
 ];
@@ -59,9 +70,16 @@ const Footer = () => {
           >
             <div className="text-2xl font-bold text-white">{data.title}</div>
             {data.description.map((desc, index) => (
-              <div key={desc} className={cn("mt-2", index === 0 && "mt-5")}>
-                {desc}
-              </div>
+              <Link
+                href={desc.link}
+                key={desc.tag}
+                className={cn(
+                  "hover:text-lime-400 transition-colors duration-200 mt-2",
+                  index === 0 && "mt-5"
+                )}
+              >
+                {desc.tag}
+              </Link>
             ))}
           </div>
         ))}
@@ -80,19 +98,6 @@ const Footer = () => {
       <div className="mt-9 text-xs md:text-[1rem] text-white font-thin tracking-wide whitespace-nowrap">
         © 2024 GameTerminal.com. All Rights Reserved.
       </div>
-      {isMounted && isDesktopOrLaptop ? (
-        <div className="w-full absolute inset-0 h-full">
-          <SparklesCore
-            id="tsparticlesfullpage"
-            background="transparent"
-            minSize={0.6}
-            maxSize={1.4}
-            particleDensity={100}
-            className="w-full h-full"
-            particleColor="#FFFFFF"
-          />
-        </div>
-      ) : null}
     </div>
   );
 };

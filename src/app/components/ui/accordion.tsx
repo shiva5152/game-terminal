@@ -2,11 +2,15 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/utils/cn";
+import Link from "next/link";
 
 interface IAccordionItem {
   id: number;
   title: string;
-  description: string[];
+  description: {
+    tag: string;
+    link: string;
+  }[];
 }
 
 const Accordion = ({ data }: { data: IAccordionItem }) => {
@@ -40,15 +44,16 @@ const Accordion = ({ data }: { data: IAccordionItem }) => {
               className="flex-col flex gap-1"
             >
               {data.description.map((desc, index) => (
-                <div
-                  key={desc}
+                <Link
+                  href={desc.link}
+                  key={desc.tag}
                   className={cn(
                     "mt-1 ml-4 text-[0.85rem] text-zinc-600",
                     index === 0 && "mt-3"
                   )}
                 >
-                  {desc}
-                </div>
+                  {desc.tag}
+                </Link>
               ))}
             </motion.div>
           )}

@@ -1,33 +1,36 @@
-import Hero from "./components/Hero";
-import Header from "./components/Header";
-import Gaming from "./components/Gaming";
-import Platform from "./components/Platform";
 import Achievement from "./components/Achievement";
-import Integration from "./components/Integration";
 import Ecosystem from "./components/Ecosystem";
-import Terminal from "./components/Terminal";
-import Footer from "./components/Footer";
+import Gaming from "./components/Gaming";
+import Hero from "./components/Hero";
+import Integration from "./components/Integration";
+import Platform from "./components/Platform";
 import Roadmap from "./components/Roadmap";
-import Wrapper from "./components/ui/wrapper";
+import Terminal from "./components/Terminal";
+import { InfiniteMovingCards } from "./components/ui/infinite-moving-cards";
+import { achievementData } from "./components/Achievement";
+import About from "./components/About";
+import Products from "./components/Products";
 
 export default function Home() {
   return (
     <>
-      <main className="flex flex-col overflow-x-hidden items-center w-full py-4 md:py-11 bg-neutral-900 mx-auto ">
-        <Wrapper>
-          <Header />
-          <Hero />
-          <Gaming />
-          <Platform />
-          <Achievement />
-          <Integration />
-          <Ecosystem />
-          <Roadmap />
-          <Terminal />
-          <Footer />
-        </Wrapper>
-        {/* <Wrapper></Wrapper> */}
-      </main>
+      <Hero />
+      <div className="md:mt-6  mt-auto">
+        <InfiniteMovingCards
+          direction="right"
+          speed="fast"
+          items={achievementData}
+        />
+      </div>
+      <About />
+      <Products />
+      <Gaming />
+      <Platform />
+      <Achievement />
+      <Integration />
+      <Ecosystem />
+      <Roadmap />
+      <Terminal />
     </>
   );
 }

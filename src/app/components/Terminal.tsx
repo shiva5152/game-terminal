@@ -4,6 +4,7 @@ import { sectionHeading, sectionSubHeading } from "@/utils/styles";
 import { BackgroundGradient } from "./ui/background-gradient";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { useRef } from "react";
+import Link from "next/link";
 
 const terminalData = [
   {
@@ -82,7 +83,7 @@ const Terminal = () => {
                 <div className="self-stretch mt-4 text-xs font-light leading-5 tracking-wider text-zinc-600 max-md:max-w-full">
                   {data.description}
                 </div>
-                <motion.button
+                <motion.div
                   whileHover={{
                     y: -10,
                     transition: {
@@ -91,10 +92,15 @@ const Terminal = () => {
                       stiffness: 300,
                     },
                   }}
-                  className="overflow-hidden text-[0.65rem] md:text-xs max-w-[118px] md:max-w-[159px] relative button-bg flex-col justify-center font-bold items-center px-8 py-8 mt-4 text-center text-black whitespace-nowrap aspect-[3.12] fill-lime-400 leading-[233%] max-md:px-5"
+                  className="overflow-hidden cursor-pointer text-[0.65rem] md:text-xs max-w-[118px] md:max-w-[159px] relative button-bg flex-col justify-center font-bold items-center px-8 py-8 mt-4 text-center text-black whitespace-nowrap aspect-[3.12] fill-lime-400 leading-[233%] max-md:px-5"
                 >
-                  {data.buttonText}
-                </motion.button>
+                  <Link
+                    className="h-full w-full flex justify-center items-center"
+                    href={"/contact-us"}
+                  >
+                    {data.buttonText}
+                  </Link>
+                </motion.div>
               </div>
             </motion.div>
           ))}
