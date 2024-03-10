@@ -4,6 +4,8 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Wrapper from "./components/ui/wrapper";
 import "./globals.css";
+import { headers } from "next/headers";
+import NewHero from "./components/NewHero";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,12 +19,18 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const heads = headers();
+
+  const pathname = heads.get("next-url");
+  // console.log(pathname);
+  // flex flex-col relative overflow-x-hidden items-center w-full py-4 md:py-11 bg-neutral-900 mx-auto
   return (
     <html lang="en">
       <body>
-        <main className="flex flex-col overflow-x-hidden items-center w-full py-4 md:py-11 bg-neutral-900 mx-auto ">
+        <main className="flex flex-col relative overflow-x-hidden items-center w-full bg-neutral-900 mx-auto ">
+          <NewHero />
           <Wrapper>
-            <Header />
+            {/* <Header /> */}
             {children}
             <Footer />
           </Wrapper>

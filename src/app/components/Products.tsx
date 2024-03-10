@@ -7,72 +7,32 @@ import { useEffect, useRef, useState } from "react";
 
 const products = [
   {
-    slug: "APIs and SDKs",
-    slugIcon:
-      "https://assets-global.website-files.com/648053f108a7fb99895764d6/65c0e793b9e4683ed4453f48_Players.svg",
-    title: "Game Integration APIs and SDKs",
-    icon: "",
+    title: "Unified Gamer Identity",
+    icon: "/images/user-coin.png",
     description:
-      "Empower developers with our avant-garde APIs and SDKs, enabling seamless game embedding for unparalleled immersion.",
+      "Seamlessly transition between games across our ecosystem, with a single gamer profile. Our unified identity system eliminates barriers, allowing you to move effortlessly between different titles without interruption.",
   },
   {
-    slug: "Esports Management",
-    slugIcon:
-      "https://assets-global.website-files.com/648053f108a7fb99895764d6/65c0e793b9e4683ed4453f48_Players.svg",
-
-    title: "Esports and Tournaments Management",
-    icon: "",
-    description:
-      "Spearhead competitive gaming evolution with our state-of-the-art platform, facilitating seamless organization and management of diverse tournaments across myriad genres.",
-  },
-  {
-    slug: "UGC Marketplace",
-    slugIcon:
-      "https://assets-global.website-files.com/648053f108a7fb99895764d6/65c0e793b9e4683ed4453f48_Players.svg",
-
-    title: "UGC Marketplace and Modular Framework",
-
-    icon: "",
-    description:
-      "Unleash limitless creativity through our groundbreaking UGC marketplace and modular framework, empowering users to tailor gaming experiences to unprecedented levels of customization.",
-  },
-  {
-    slug: "Nodes",
-    slugIcon:
-      "https://assets-global.website-files.com/648053f108a7fb99895764d6/65c0e793b9e4683ed4453f48_Players.svg",
-
-    title: "Game Terminal Nodes",
-    icon: "",
-    description:
-      "Ensure unparalleled network stability, security, and scalability with our decentralized infrastructure nodes, guaranteeing secure gameplay and fostering vibrant community engagement.",
-  },
-  {
-    slug: "KOLs Marketplace",
-    slugIcon:
-      "https://assets-global.website-files.com/648053f108a7fb99895764d6/65c0e793b9e4683ed4453f48_Players.svg",
-
     title: "KOLs Marketplace",
-    icon: "",
+    icon: "/images/doller.png",
     description:
-      "Access our exclusive network of over 100 Key Opinion Leaders (KOLs) and influencers via the Gamer's Pit, facilitating strategic partnerships and maximizing exposure within our dynamic ecosystem.",
+      " Gain access to over 100 influential KOLs who can amplify your game's reach and exposure. Collaborate with these influencers to maximize your game's visibility.",
   },
   {
-    slug: "Gaming Guilds",
-    slugIcon:
-      "https://assets-global.website-files.com/648053f108a7fb99895764d6/65c0e793b9e4683ed4453f48_Players.svg",
-
     title: "Gaming Guilds",
-    icon: "",
+    icon: "/images/bit-coin.png",
     description:
-      "Forge formidable alliances within our guilds, where solo players converge to form unstoppable squads, competing and triumphing together in exhilarating games and tournaments.",
+      "Join forces with fellow players within our gaming guilds to create unstoppable teams. Whether you're a solo player or seeking companionship, our guilds provide a platform for camaraderie, strategy, and victory.",
+  },
+  {
+    title: "Leaderboard",
+    icon: "/images/msg.png",
+    description:
+      "Ascend the ranks of our single, universal leaderboard spanning all games in our ecosystem. Compete against friends and rivals alike, striving for the top spot to earn prestigious rewards and recognition",
   },
 ];
 
 const Products = () => {
-  const [currProduct, setCurrProduct] = useState(products[0]);
-  const handleSelectProduct = (slug: string) => {
-    setCurrProduct(products.find((data) => data.slug === slug) ?? products[0]);
-  };
   const ref = useRef<HTMLDivElement | null>(null);
   const isInView = useInView(ref, { once: true });
 
@@ -106,56 +66,44 @@ const Products = () => {
         )}
         // className="mt-48 text-5xl font-bold text-center text-white max-md:mt-10 max-md:max-w-full max-md:text-4xl"
       >
-        What We <span className="text-lime-400">Offer!</span>
+        Our <span className="text-lime-400">Products!</span>
       </motion.div>
-
-      <motion.div variants={item} className="_nav my-16 w-full">
-        <ul className="flex justify-between">
-          {products.map((p) => (
-            <li
-              onClick={() => handleSelectProduct(p.slug)}
-              className={cn(
-                "cursor-pointer gap-2 rounded-2xl flex justify-center items-center text-wrap bg-black py-[14px] px-[25px]",
-                p.slug === currProduct.slug &&
-                  "bg-[#8EFE49] font-semibold text-black"
-              )}
-              key={p.slug}
+      <div className="mt-14 w-full max-w-[1247px] max-md:mt-6 max-md:max-w-full">
+        <div className="flex gap-10 justify-between flex-wrap max-md:flex-col max-md:gap-4 ">
+          {products.map((data) => (
+            <motion.div
+              key={data.title}
+              variants={item}
+              className="flex neomorphic-card w-[45%] terminal-bg rounded-3xl flex-col  max-md:ml-0 max-md:w-full"
             >
-              <span className="">
-                <Image height={25} width={25} alt={p.slug} src={p.slugIcon} />
-              </span>
-              <span className=" max-w-[50%]">{p.slug}</span>
-            </li>
+              <div className="flex  flex-col overflow-hidden grow justify-center items-start px-7 py-6 w-full text-xs font-bold rounded-3xl max-md:px-3 max-md:py-3 max-md:mt-2 max-md:max-w-full">
+                <div className="flex  justify-center items-center gap-2 text-xl md:text-3xl leading-7 text-white whitespace-nowrap">
+                  <div className="grow self-start mt-1.5">{data.title}</div>
+                  <img
+                    loading="lazy"
+                    src={data.icon}
+                    className="aspect-square w-[50px]"
+                  />
+                </div>
+                <div className="self-stretch mt-4 text-xs font-light leading-5 tracking-wider text-zinc-600 max-md:max-w-full">
+                  {data.description}
+                </div>
+                {/* <motion.div
+                  whileHover={{
+                    y: -10,
+                    transition: {
+                      duration: 0.3,
+                      type: "spring",
+                      stiffness: 300,
+                    },
+                  }}
+                  className="overflow-hidden cursor-pointer text-[0.65rem] md:text-xs max-w-[118px] md:max-w-[159px] relative button-bg flex-col justify-center font-bold items-center px-8 py-8 mt-4 text-center text-black whitespace-nowrap aspect-[3.12] fill-lime-400 leading-[233%] max-md:px-5"
+                ></motion.div> */}
+              </div>
+            </motion.div>
           ))}
-        </ul>
-      </motion.div>
-
-      <motion.div
-        key={currProduct.slug}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.5 }}
-        className="flex justify-between items-center"
-      >
-        <div className=" flex justify-center w-1/2">
-          <Image
-            height={361}
-            width={365}
-            alt="ecosystem"
-            loading="lazy"
-            src={"/images/ecosystem.svg"}
-          />
         </div>
-        <div className=" flex justify-center flex-col  w-1/2">
-          <h3 className={cn(sectionHeading, " md:text-3xl text-start")}>
-            {currProduct.title}
-          </h3>
-          <p className={cn(sectionSubHeading, "text-start max-w-[80%]")}>
-            {currProduct.description}
-          </p>
-        </div>
-      </motion.div>
+      </div>
     </motion.div>
   );
 };

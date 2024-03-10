@@ -49,10 +49,32 @@ const About = () => {
         >
           <img
             loading="lazy"
-            src="/images/ecosystem.svg"
-            className="grow w-full aspect-[1.92] object-cover object-top md:object-center rounded-2xl md:aspect-square max-md:max-w-full"
+            src="/images/group-coin.png"
+            className="grow w-[75%] object-top mt-14 md:object-center rounded-2xl max-md:max-w-full"
           />
         </motion.div>
+        {/* <div className="relative z-0">
+          <img
+            loading="lazy"
+            className=" absolute top-[0%]"
+            src="/images/layer1.webp"
+          />
+          <img
+            loading="lazy"
+            className="absolute top-[5%]"
+            src="/images/layer2.webp"
+          />
+          <img
+            loading="lazy"
+            className="absolute top-[10%]"
+            src="/images/layer3.webp"
+          />
+          <img
+            loading="lazy"
+            className="absolute top-[15%]"
+            src="/images/base.webp"
+          />
+        </div> */}
         <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
           <div className="flex flex-col mt-24 font-bold max-md:mt-6 max-md:max-w-full">
             <motion.div
@@ -65,18 +87,16 @@ const About = () => {
               variants={item}
               className={cn(sectionSubHeading, "text-justify")}
             >
-              At Game Terminal, we're fueled by our collective gaming zeal and a
-              deep understanding of web3 dynamics. Recognizing the need for a
-              game-changing approach, we've assembled a powerhouse team from
-              diverse backgrounds.
+              Game Terminal, the visionary gaming studio at the forefront of
+              integrating trending games into a unified platform.
             </motion.div>
             <motion.div
               variants={item}
               className={cn(sectionSubHeading, "text-justify")}
             >
-              Armed with expertise and passion, we're forging groundbreaking
-              solutions to simplify gaming complexities and amplify the fun
-              factor. Join us in reshaping the gaming frontier!
+              Game Terminal represents convergence of blockchain technology with
+              the dynamic world of gaming, offering a paradigm shift in user
+              experience and engagement with a competitive environment.
             </motion.div>
           </div>
         </div>

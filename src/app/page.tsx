@@ -10,11 +10,16 @@ import { InfiniteMovingCards } from "./components/ui/infinite-moving-cards";
 import { achievementData } from "./components/Achievement";
 import About from "./components/About";
 import Products from "./components/Products";
+import NewHero from "./components/NewHero";
+import NewHero2 from "./components/NewHero2";
+import WhatWeOffer from "./components/WhatWeOffer";
 
 export default function Home() {
   return (
     <>
-      <Hero />
+      {/* <Hero /> */}
+      {/* <NewHero /> */}
+      {/* <NewHero2 /> */}
       <div className="md:mt-6  mt-auto">
         <InfiniteMovingCards
           direction="right"
@@ -24,8 +29,9 @@ export default function Home() {
       </div>
       <About />
       <Products />
+      <WhatWeOffer />
       <Gaming />
-      <Platform />
+      {/* <Platform /> */}
       <Achievement />
       <Integration />
       <Ecosystem />
