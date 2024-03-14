@@ -21,33 +21,30 @@ export const BentoGrid = ({
 
 export const BentoGridItem = ({
   className,
-  title,
-  description,
-  header,
-  icon,
+  item,
 }: {
   className?: string;
-  title?: string | React.ReactNode;
-  description?: string | React.ReactNode;
-  header?: React.ReactNode;
-  icon?: React.ReactNode;
+  item: {
+    title: string;
+    button: string;
+    bg: string;
+  };
 }) => {
   return (
     <div
+      style={{ backgroundImage: `url(${item.bg})` }}
       className={cn(
-        "row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none bg-black dark:border-white/[0.2] border border-transparent justify-between flex flex-col space-y-4",
+        "row-span-1 bento-bg min-w-[18rem] rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none  dark:border-white/[0.2] border border-transparent justify-end p-6 flex flex-col items-baseline space-y-4",
         className
       )}
     >
-      {header}
-      <div className="group-hover/bento:translate-x-2 transition duration-200">
-        {icon}
-        <div className="font-sans font-bold text-neutral-600 dark:text-neutral-200 mb-2 mt-2">
-          {title}
+      <div className="group-hover/bento:translate-x-2  transition duration-200 ">
+        <div className="font-sans text-2xl font-bold text-neutral-600 dark:text-neutral-200 mb-2 mt-2">
+          {item.title}
         </div>
-        <div className="font-sans font-normal text-neutral-600 text-xs dark:text-neutral-300">
-          {description}
-        </div>
+        <button className="justify-center px-10 py-1 text-[10px] font-bold leading-7 text-lime-400 whitespace-nowrap border border-lime-400 border-solid rounded-[110px]">
+          {item.button}
+        </button>
       </div>
       {/* <div className="flex bento-grid-border flex-col justify-center font-bold whitespace-nowrap rounded-3xl border border-solid bg-neutral-900 border-lime-400 border-opacity-0 max-w-full">
         <div className="flex  p-1 overflow-hidden relative flex-col items-start pt-20 pr-20 pb-8 pl-7 w-full h-auto">

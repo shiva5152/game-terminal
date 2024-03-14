@@ -25,12 +25,11 @@ export default function Home() {
       <Sponsorship />
       {/* <Products /> */}
       {/* <WhatWeOffer /> */}
-      <Gaming />
       <About />
-
       <BentoGridDemo />
       {/* <Platform /> */}
       <Achievement />
+      <Gaming />
       <Integration />
       <Ecosystem />
       <Roadmap />

@@ -40,7 +40,7 @@ const About = () => {
       id="gaming"
       className="self-stretch mt-20 max-md:mt-10 max-md:max-w-full"
     >
-      <div className="flex gap-5 max-md:flex-col-reverse items-center max-md:gap-0 max-md:">
+      <div className="flex gap-5 max-md:flex-col-reverse items-center justify-center max-md:gap-0 max-md:">
         <motion.div
           initial={{ scale: 0.9, z: -15 }}
           animate={isInView ? { scale: 1, z: 0 } : { scale: 0.9, z: -10 }}
@@ -49,7 +49,8 @@ const About = () => {
         >
           <img
             loading="lazy"
-            src="/images/coin-group.png"
+            // src="/images/coin-group.png"
+            src="/images/console.svg"
             className="grow w-[75%] object-top mt-14 md:object-center rounded-2xl max-md:max-w-full"
           />
         </motion.div>
@@ -76,28 +77,42 @@ const About = () => {
           />
         </div> */}
         <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
-          <div className="flex flex-col mt-24 font-bold max-md:mt-6 max-md:max-w-full">
+          <div className="flex flex-col font-bold max-md:mt-6 max-md:max-w-full">
             <motion.div
               variants={item}
               className={cn(sectionHeading, "md:text-start md:text-5xl")}
             >
-              Who We <span className="text-lime-400">Are</span>
+              We Are <span className="text-lime-400">Game Terminal</span>
             </motion.div>
             <motion.div
               variants={item}
               className={cn(sectionSubHeading, "text-justify")}
             >
-              Game Terminal, the visionary gaming studio at the forefront of
-              integrating trending games into a unified platform.
+              Game Terminal is a Web3 aggregator between gaming creators and
+              gamers on a solitary gaming platform bridging the gap between Web2
+              and Web3.
             </motion.div>
             <motion.div
               variants={item}
               className={cn(sectionSubHeading, "text-justify")}
             >
-              Game Terminal represents convergence of blockchain technology with
-              the dynamic world of gaming, offering a paradigm shift in user
-              experience and engagement with a competitive environment.
+              Our platform boasts a diverse selection of blockchain games,
+              catering to both hardcore and casual gamers. By fostering an
+              inclusive ecosystem for gamers, creators, indie developers, node
+              operators and KOLs, we offer not just entertainment but also
+              sustainable income opportunities for everyone throughout the
+              platform.
             </motion.div>
+            <motion.button
+              variants={item}
+              whileHover={{
+                y: -10,
+                transition: { duration: 0.3, type: "spring", stiffness: 300 },
+              }}
+              className="overflow-hidden button-bg md:mx-0 relative flex-col justify-center items-center self-start px-11 py-8 mt-4 md:mt-8 text-xs md:text-sm leading-7 text-black whitespace-nowrap aspect-[3.15] fill-lime-400 max-md:px-5 "
+            >
+              Launch App
+            </motion.button>
           </div>
         </div>
       </div>

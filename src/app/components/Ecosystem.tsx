@@ -103,6 +103,7 @@ const Ecosystem = () => {
                 alt="ecosystem"
                 loading="lazy"
                 src={"/images/ecosystem.svg"}
+                // src={"/images/computer.svg"}
                 className="my-auto mx-auto md:mx-0 max-w-[60%] aspect-[1.01]"
               />
             </motion.div>
