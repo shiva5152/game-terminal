@@ -54,10 +54,10 @@ const Terminal = () => {
       animate={isInView ? "show" : ""}
       className="flex items-center mx-auto flex-col my-12 md:mt-32 mb-2 md:mb-32"
     >
-      <motion.div variants={item} className={cn(sectionHeading, "font-bold")}>
+      <motion.div variants={item} className={cn(sectionHeading, "font-bold ")}>
         {/* mt-32 text-5xl font-bold text-center leading-tight text-white  max-md:mt-10 max-md:max-w-full max-md:text-4xl */}
-        Start your journey with <span className="text-lime-400">Game</span>{" "}
-        <span className="text-lime-400">Terminal</span>
+        Start your journey with
+        <span className="text-lime-400 block mt-2">Game Terminal</span>
       </motion.div>
 
       <motion.div variants={item} className={cn(sectionSubHeading)}>

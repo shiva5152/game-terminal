@@ -41,14 +41,17 @@ const Gaming = () => {
       className="self-stretch mt-20 max-md:mt-10 max-md:max-w-full"
     >
       <div className="flex gap-5 max-md:flex-col-reverse max-md:gap-0 max-md:">
-        <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
-          <div className="flex flex-col mt-24 font-bold max-md:mt-6 max-md:max-w-full">
+        <div className="flex flex-col items-center justify-center w-6/12 max-md:ml-0 max-md:w-full">
+          <div className="flex flex-col   font-bold max-md:mt-6 max-md:max-w-full">
             <motion.div
               variants={item}
-              className={cn(sectionHeading, "md:text-start md:text-5xl")}
+              className={cn(
+                sectionHeading,
+                "md:text-start normal-case md:text-5xl"
+              )}
             >
-              PLAY, WIN AND MAKE YOUR OWN{" "}
-              <span className="text-lime-400">GAMING IDENTITY</span>
+              Play, win and make your own{" "}
+              <span className="text-lime-400">Gaming Identity</span>
             </motion.div>
             <motion.div
               variants={item}
@@ -83,8 +86,8 @@ const Gaming = () => {
         >
           <img
             loading="lazy"
-            srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/899539ab3b4c3c86a9870e601f66046034d3d780e29ebb0031d3f9f489a1d868?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/899539ab3b4c3c86a9870e601f66046034d3d780e29ebb0031d3f9f489a1d868?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/899539ab3b4c3c86a9870e601f66046034d3d780e29ebb0031d3f9f489a1d868?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/899539ab3b4c3c86a9870e601f66046034d3d780e29ebb0031d3f9f489a1d868?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/899539ab3b4c3c86a9870e601f66046034d3d780e29ebb0031d3f9f489a1d868?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/899539ab3b4c3c86a9870e601f66046034d3d780e29ebb0031d3f9f489a1d868?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/899539ab3b4c3c86a9870e601f66046034d3d780e29ebb0031d3f9f489a1d868?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/899539ab3b4c3c86a9870e601f66046034d3d780e29ebb0031d3f9f489a1d868?apiKey=caf73ded90744adfa0fe2d98abed61c0&"
-            className="grow w-full aspect-[1.92] object-cover object-top md:object-center rounded-2xl md:aspect-square max-md:max-w-full"
+            src="/images/gaming.svg"
+            className="grow w-[100%] aspect-[1.92] object-cover object-top md:object-center rounded-2xl md:aspect-square max-md:max-w-full"
           />
         </motion.div>
       </div>

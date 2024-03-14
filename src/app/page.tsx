@@ -13,6 +13,8 @@ import Products from "./components/Products";
 import NewHero from "./components/NewHero";
 import NewHero2 from "./components/NewHero2";
 import WhatWeOffer from "./components/WhatWeOffer";
+import Sponsorship from "./components/Sponcership";
+import BentoGridDemo from "./components/Infra";
 
 export default function Home() {
   return (
@@ -20,17 +22,13 @@ export default function Home() {
       {/* <Hero /> */}
       {/* <NewHero /> */}
       {/* <NewHero2 /> */}
-      <div className="md:mt-6  mt-auto">
-        <InfiniteMovingCards
-          direction="right"
-          speed="fast"
-          items={achievementData}
-        />
-      </div>
-      <About />
-      <Products />
-      <WhatWeOffer />
+      <Sponsorship />
+      {/* <Products /> */}
+      {/* <WhatWeOffer /> */}
       <Gaming />
+      <About />
+
+      <BentoGridDemo />
       {/* <Platform /> */}
       <Achievement />
       <Integration />

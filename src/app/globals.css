@@ -251,6 +251,12 @@ body::-webkit-scrollbar-thumb:hover {
   background-position: center;
   background-repeat: no-repeat;
 }
+.bento-grid-border {
+  background-image: url("/images/bento-grid-border.png");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 /* .terminal-bg {
   background-size: 100% 100%;
   background-position: center;
@@ -330,7 +336,10 @@ body::-webkit-scrollbar-thumb:hover {
 .video-container {
   height: 100vh;
   width: 100vw;
-  background-image: url("/images/dragon-img.jpg");
+  /* background: #000000; */
+  background: linear-gradient(to top, rgba(24, 24, 24, 1), rgba(0, 0, 0, 0)),
+    url("/images/dragon-img.svg");
+  /* background-image: ; */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

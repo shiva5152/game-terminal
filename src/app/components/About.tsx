@@ -49,7 +49,7 @@ const About = () => {
         >
           <img
             loading="lazy"
-            src="/images/group-coin.png"
+            src="/images/coin-group.png"
             className="grow w-[75%] object-top mt-14 md:object-center rounded-2xl max-md:max-w-full"
           />
         </motion.div>
@@ -81,7 +81,7 @@ const About = () => {
               variants={item}
               className={cn(sectionHeading, "md:text-start md:text-5xl")}
             >
-              WHO WE <span className="text-lime-400">ARE</span>
+              Who We <span className="text-lime-400">Are</span>
             </motion.div>
             <motion.div
               variants={item}

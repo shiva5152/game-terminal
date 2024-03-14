@@ -90,12 +90,12 @@ const Footer = () => {
         className="hidden md:block self-stretch mt-14 w-full stroke-[2px] stroke-white max-md:mt-10 max-md:max-w-full"
       />
 
-      <div className=" flex md:hidden flex-col justify-center px-5 pt-5 pb-10 text-base font-bold leading-9 text-white whitespace-nowrap rounded-2xl bg-neutral-900 w-full">
+      <div className=" flex md:hidden flex-col justify-center px-5 pt-5 pb-10 max-md:pb-5 text-base font-bold leading-9 text-white whitespace-nowrap rounded-2xl bg-neutral-900 w-full">
         {footerData.map((data, index) => (
           <Accordion key={data.id} data={data} />
         ))}
       </div>
-      <div className="mt-9 text-xs md:text-[1rem] text-white font-thin tracking-wide whitespace-nowrap">
+      <div className="my-9 text-xs md:text-[1rem]  text-white font-thin tracking-wide whitespace-nowrap">
         © 2024 GameTerminal.com. All Rights Reserved.
       </div>
     </div>

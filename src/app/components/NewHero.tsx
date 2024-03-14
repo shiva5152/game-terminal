@@ -6,17 +6,17 @@ const NewHero = () => {
   return (
     <>
       <div className="video-container">
-        <video autoPlay muted loop>
+        {/* <video autoPlay muted loop>
           <source
-            // src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+           
             src="/v2.mp4"
             type="video/mp4"
           />
-        </video>
+        </video> */}
         <div className="mt-4">
           <Header />
         </div>
-        <div className=" relative z-10 bg-transparent max-w-[60%] text-7xl mt-28  font-bold text-start ms-10 text-white max-md:mt-10 max-lg:mt-40 max-md:max-w-full max-md:text-4xl">
+        <div className=" relative z-10 bg-transparent max-w-[100%] text-7xl mt-28  font-bold text-center ms-10 text-white max-md:mt-10 max-lg:mt-40 max-md:max-w-full max-md:text-4xl">
           <h2>
             Multitude of trending <span className="text-lime-400">Web3 </span>
             games
@@ -24,12 +24,12 @@ const NewHero = () => {
           <h2>
             on one <span className=" text-lime-400">platform</span>
           </h2>
-          {/* <p className="p-6 md:p-[2.5rem] text-xl font-light leading-5 tracking-wide text-center text-zinc-100 max-md:max-w-full  max-md:text-[1rem]">
+          <p className="p-6 md:p-[2.5rem] text-xl font-light leading-5 tracking-wide text-center text-zinc-100 max-md:max-w-full  max-md:text-[1rem]">
             Game Terminal is a Web3 aggregator between gaming creators and
             gamers on
             <br className="hidden md:block" />a solitary gaming platform
             bridging the gap between Web2 and Web3.
-          </p> */}
+          </p>
           <button className="overflow-hidden button-bg md:mx-0 relative flex-col justify-center items-center self-start px-11 py-8 mt-4 md:mt-8 text-xs md:text-sm leading-7 text-black whitespace-nowrap aspect-[3.15] fill-lime-400 max-md:px-5 ">
             Explore Games
           </button>

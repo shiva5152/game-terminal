@@ -85,13 +85,13 @@ const Achievement = () => {
           ))}
         </div>
       </div>
-      {/* <div className="md:mt-6  mt-auto">
+      <div className="md:mt-6  mt-auto">
         <InfiniteMovingCards
           direction="right"
           speed="fast"
           items={achievementData}
         />
-      </div> */}
+      </div>
     </>
   );
 };
