@@ -11,9 +11,9 @@ const Header = () => {
       initial={{ y: -400 }}
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 60 }}
-      className="relative w-full"
+      className="relative md:container mx-auto w-full"
     >
-      <div className="hidden px-20 md:block w-full">
+      <div className="hidden md:block w-full">
         {/* header-bg */}
         <div className="overflow-hidden  header-bg hea self-stretch px-20 flex items-center w-full  stroke-[1px] stroke-lime-400 max-md:px-5 ">
           {/* <div className="flex gap-5 flex-row  max-md:gap-0 max-md:">

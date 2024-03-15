@@ -70,7 +70,7 @@ const Integration = () => {
       variants={container}
       initial="hidden"
       animate={isInView ? "show" : ""}
-      className="flex flex-col items-center"
+      className="flex md:container mx-auto flex-col items-center"
     >
       <motion.div
         variants={item}
@@ -92,7 +92,7 @@ const Integration = () => {
         reputation and streamlining competitive reward participation.
       </motion.div>
       <div className="flex justify-between flex-col items-center">
-        <div className="self-stretch mx-0 md:mx-10 mt-16 max-md:mt-0 max-md:mr-0 max-md:max-w-full">
+        <div className="self-stretch  mt-16 max-md:mt-0 max-md:mr-0 max-md:max-w-full">
           <div className="flex gap-10 justify-between flex-wrap max-md:gap-0 ">
             {integrationData.map((data) => (
               <motion.div

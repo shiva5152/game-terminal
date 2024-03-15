@@ -264,11 +264,9 @@ body::-webkit-scrollbar-thumb:hover {
 } */
 .terminal-bg {
   position: relative;
-  background-size: 100%;
   background-position: top;
   background-repeat: no-repeat;
   z-index: 1;
-  border-radius: 12px;
 }
 .terminal-bg::after {
   position: absolute;
@@ -279,7 +277,7 @@ body::-webkit-scrollbar-thumb:hover {
   left: 0;
   right: 0;
   content: "";
-  background-image: url("/images/terminal-bg.svg");
+  background-image: url("/images/terminal-bg.png");
   background-size: 100%;
   background-position: top;
   background-repeat: no-repeat;

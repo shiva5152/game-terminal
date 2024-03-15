@@ -7,7 +7,7 @@ const Wrapper = ({
 }>) => {
   console.log("waraper");
   return (
-    <div className="px-5 md:px-9 flex flex-col overflow-hidden items-center w-full max-w-[90rem]">
+    <div className="  flex flex-col overflow-hidden items-center w-full ">
       {children}
     </div>
   );

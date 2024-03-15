@@ -4,11 +4,11 @@ import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
 
 export default function BentoGridDemo() {
   return (
-    <section className="mt-10">
+    <section className="mt-10 md:container mx-auto">
       <div className="my-10 text-5xl  font-bold text-center text-lime-400 whitespace-nowrap max-md:mt-10 max-md:text-xl">
         Our <span className="text-lime-400">Infrastructure</span>
       </div>
-      <BentoGrid className="max-w-4xl mx-auto">
+      <BentoGrid className=" mx-auto">
         {items.map((item, i) => (
           <BentoGridItem
             key={i}

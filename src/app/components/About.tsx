@@ -38,7 +38,7 @@ const About = () => {
       animate={isInView ? "show" : ""}
       // style={{ opacity, scale }}
       id="gaming"
-      className="self-stretch mt-20 max-md:mt-10 max-md:max-w-full"
+      className="self-stretch md:container mx-auto mt-20 max-md:mt-10 max-md:max-w-full"
     >
       <div className="flex gap-5 max-md:flex-col-reverse items-center justify-center max-md:gap-0 max-md:">
         <motion.div

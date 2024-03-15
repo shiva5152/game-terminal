@@ -59,13 +59,13 @@ const Achievement = () => {
   return (
     <>
       <div className="px-5 md:px-9  w-full max-w-[90rem] mx-auto self-stretch mt-10 md:mt-40 max-md:mt-10 max-md:max-w-full">
-        <div className="flex gap-8 justify-between max-md:flex-col ">
+        <div className="flex gap-8 md:container mx-auto justify-between max-md:flex-col ">
           {cardData.map((card) => (
             <div
               key={card.id}
               // whileHover={{ scale: 1.04 }}
               // transition={{ type: "spring", stiffness: 200 }}
-              className="flex flex-col w-[31%] justify-between max-md:ml-0 max-md:w-full"
+              className="flex  flex-col w-[31%] justify-between max-md:ml-0 max-md:w-full"
             >
               <div className="flex neomorphic-eco achievement-border rounded-xl overflow-hidden  relative flex-col grow justify-center items-center px-0 py-4 md:py-11 whitespace-nowrap h-auto md:min-h-[143px] stroke-[1px] stroke-lime-400 max-md:px-5 max-md:mt-0 max-md:max-w-full">
                 {/* <EvervaultCard
@@ -85,13 +85,11 @@ const Achievement = () => {
           ))}
         </div>
       </div>
-      <div className="md:mt-6  mt-auto">
-        <InfiniteMovingCards
-          direction="right"
-          speed="fast"
-          items={achievementData}
-        />
-      </div>
+      <InfiniteMovingCards
+        direction="right"
+        speed="fast"
+        items={achievementData}
+      />
     </>
   );
 };

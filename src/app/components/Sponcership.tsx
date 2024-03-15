@@ -2,7 +2,7 @@ import React from "react";
 
 const Sponsorship = () => {
   return (
-    <div className="flex flex-col w-full  max-md:flex-wrap">
+    <div className="flex flex-col w-full px-2 max-md:flex-wrap">
       <div className=" ms-[3rem] ">
         <img src="/images/backers.svg" alt="" />
       </div>

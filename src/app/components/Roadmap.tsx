@@ -87,7 +87,7 @@ const Roadmap = () => {
       variants={container}
       initial="hidden"
       animate={isInView ? "show" : ""}
-      className="w-full pb-[20px] flex flex-col items-center"
+      className=" md:container mx-auto pb-[20px] flex flex-col items-center"
     >
       <div className="mt-44 text-5xl  font-bold text-center text-lime-400 whitespace-nowrap max-md:mt-10 max-md:text-xl">
         Our <span className="text-lime-400">Roadmap</span>

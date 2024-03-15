@@ -56,8 +56,8 @@ const Footer = () => {
     setIsMounted(true);
   }, []);
   return (
-    <div className="flex relative flex-col items-center self-stretch px-14  py-0 mt-10  text-base leading-6 bg-[#161616] rounded-[30px] max-md:px-0 max-md:mt-14 max-md:max-w-full">
-      <div className="hidden  md:grid grid-cols-5 grid-rows-1 gap-4 w-full  text-zinc-600 max-md:flex-wrap max-md:max-w-full">
+    <div className="flex w-full relative neomorphic-card flex-col items-center self-stretch py-0 mt-10  text-base leading-6 bg-[#161616] rounded-[30px] max-md:px-0 max-md:mt-14 ">
+      <div className="hidden md:container pt-14 mx-auto  md:grid grid-cols-5 grid-rows-1 gap-4 w-full  text-zinc-600 max-md:flex-wrap max-md:max-w-full">
         <img
           loading="lazy"
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/652ef0bd8b29068a9dd31b8d437c7d8d5d11e13b8637e42b96d1226f4bc908c4?apiKey=caf73ded90744adfa0fe2d98abed61c0&"

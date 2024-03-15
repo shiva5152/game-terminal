@@ -9,8 +9,8 @@ const NewHero = () => {
         <div className="mt-4">
           <Header />
         </div>
-        <div className="flex mx-20">
-          <div className=" relative z-10 bg-transparent max-w-[60%%] w-full text-7xl mt-28  font-bold text-start ms-10 text-white max-md:mt-10 max-lg:mt-40 max-md:max-w-full max-md:text-4xl">
+        <div className="flex md:container mx-auto">
+          <div className=" relative z-10 bg-transparent max-w-[70%%] mt-10 flex justify-center items-center flex-col w-full text-7xl  font-bold text-start  text-white">
             <h2>
               Multitude of trending <span className="text-lime-400">Web3 </span>
               games on one <span className=" text-lime-400">platform</span>
@@ -28,7 +28,7 @@ const NewHero = () => {
               Explore Games
             </button>
           </div>
-          <div className=" max-w-[40%] w-full ">
+          <div className=" max-w-[30%] flex justify-center items-center w-full ">
             <img src="/images/GT-Coin.png" className=" aspect-square" />
           </div>
         </div>
