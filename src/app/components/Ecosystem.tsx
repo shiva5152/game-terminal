@@ -109,9 +109,9 @@ const Ecosystem = () => {
                 width={365}
                 alt="ecosystem"
                 loading="lazy"
-                src={"/images/Icons-b/dashboard.png"}
+                src={"/images/Icons-b/dashboard11.png"}
                 // src={"/images/computer.svg"}
-                className="my-auto mx-auto md:mx-0 max-w-[60%] aspect-[1.01]"
+                className="my-auto mt-4 mx-auto md:mx-0 max-w-[60%] "
               />
             </motion.div>
           </div>
