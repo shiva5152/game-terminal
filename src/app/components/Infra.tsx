@@ -30,7 +30,7 @@ export default function BentoGridDemo() {
       variants={container}
       initial="hidden"
       animate={isInView ? "show" : ""}
-      className="mt-10 md:container mx-auto max-md:w-full max-md:px-3 "
+      className="mt-0 md:container mx-auto max-md:w-full max-md:px-3 "
     >
       <motion.div
         variants={variant}
@@ -42,6 +42,7 @@ export default function BentoGridDemo() {
         <BentoGrid className=" mx-auto">
           {items.map((item, i) => (
             <BentoGridItem
+              key={i}
               item={item}
               className={cn(
                 "bento-bg",

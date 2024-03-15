@@ -109,7 +109,7 @@ const Ecosystem = () => {
                 width={365}
                 alt="ecosystem"
                 loading="lazy"
-                src={"/images/ecosystem.png"}
+                src={"/images/Icons-b/dashboard.png"}
                 // src={"/images/computer.svg"}
                 className="my-auto mx-auto md:mx-0 max-w-[60%] aspect-[1.01]"
               />

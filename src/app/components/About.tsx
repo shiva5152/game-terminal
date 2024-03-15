@@ -44,7 +44,7 @@ const About = () => {
           <img
             loading="lazy"
             // src="/images/coin-group.png"
-            src="/images/console.png"
+            src="/images/Icons-b/terminal1.png"
             className="grow w-[75%] object-top  max-md:ms-[-30px] md:mt-14 md:object-center rounded-2xl max-md:max-w-full"
           />
         </motion.div>
