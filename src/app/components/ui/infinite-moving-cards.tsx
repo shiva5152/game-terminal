@@ -12,6 +12,7 @@ export const InfiniteMovingCards = ({
   items: {
     id: number;
     srcSet: string;
+    className?: string;
   }[];
   direction?: "left" | "right";
   speed?: "fast" | "normal" | "slow";
@@ -113,11 +114,16 @@ export const InfiniteMovingCards = ({
                 key={item.id}
                 className="flex gap-4 h-full justify-between self-stretch px-px mt-10 max-md:flex-wrap max-md:max-w-full"
               >
-                <div className="flex flex-1 rounded-xl justify-center neomorphic-eco   items-center px-12 py-6  achievement-mar-border stroke-[1px] stroke-lime-400 bg-[#161616] max-md:px-5">
+                <div
+                  className={cn(
+                    item.className,
+                    "flex self-stretch flex-1  rounded-xl justify-center neomorphic-eco   items-center px-12 max-md:py-6 py-10  achievement-mar-border stroke-[1px] stroke-lime-400 bg-[#161616] max-md:px-2"
+                  )}
+                >
                   <img
                     loading="lazy"
                     srcSet={item.srcSet}
-                    className=" aspect-[5.8]"
+                    className=" object-contain"
                   />
                 </div>
               </div>
