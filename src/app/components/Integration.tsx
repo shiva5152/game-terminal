@@ -76,7 +76,7 @@ const Integration = () => {
         variants={item}
         className={cn(
           sectionHeading,
-          "mt-48 font-bold max-md:mt-10 max-md:max-w-full"
+          "mt-20 font-bold max-md:mt-10 max-md:max-w-full"
         )}
         // className="mt-48 text-5xl font-bold text-center text-white max-md:mt-10 max-md:max-w-full max-md:text-4xl"
       >

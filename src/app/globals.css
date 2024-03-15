@@ -127,10 +127,6 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .neomorphic-roadmap {
-  /* background: linear-gradient(145deg, #16181a, #131416);
-  box-shadow: 2px 2px 38px #000000, -2px -2px 32px #343940,
-    inset -6px -6px 68px rgba(41, 45, 50, 0.5); */
-
   background: linear-gradient(225deg, #141414, #181818);
   box-shadow: -26px 26px 72px #0e0e0e, 26px -26px 72px #1e1e1e;
   transition: all 0.3s ease, box-shadow 0.3s ease;
@@ -181,12 +177,7 @@ body::-webkit-scrollbar-thumb:hover {
   background-position: center;
   background-repeat: no-repeat;
 }
-/* .integration-border {
-  background-image: url("/images/inigration-green-border.png");
-  background-size: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-} */
+
 .integration-border {
   position: relative;
   background-size: 100%;
@@ -257,11 +248,7 @@ body::-webkit-scrollbar-thumb:hover {
   background-position: center;
   background-repeat: no-repeat;
 }
-/* .terminal-bg {
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-} */
+
 .terminal-bg {
   position: relative;
   background-position: top;
@@ -307,37 +294,6 @@ body::-webkit-scrollbar-thumb:hover {
 
 .animated-button:hover::before {
   transform: translateY(10px);
-}
-
-.video-container {
-  height: 100vh;
-  width: 100vw;
-  background: rgba(24, 24, 24, 1);
-  /* background: linear-gradient(to top, rgba(24, 24, 24, 1), rgba(0, 0, 0, 0)), */
-  /* url("/images/dragon-img.svg"); */
-  /* background-image: ; */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-}
-
-.video-container video {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  object-fit: cover;
-  z-index: 0;
-}
-
-/* Just styling the content of the div, the *magic* in the previous rules */
-.video-container .caption {
-  z-index: 1;
-  position: relative;
-  text-align: center;
-  color: #dc0000;
-  padding: 10px;
 }
 
 .bento-bg {

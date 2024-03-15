@@ -5,9 +5,8 @@ const Wrapper = ({
 }: Readonly<{
   children: React.ReactNode;
 }>) => {
-  console.log("waraper");
   return (
-    <div className="  flex flex-col overflow-hidden items-center w-full ">
+    <div className="flex flex-col overflow-hidden items-center w-full ">
       {children}
     </div>
   );

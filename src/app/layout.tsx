@@ -29,11 +29,8 @@ export default function RootLayout({
       <body>
         <main className="flex flex-col relative overflow-x-hidden items-center w-full bg-neutral-900 mx-auto ">
           <NewHero />
-          <Wrapper>
-            {/* <Header /> */}
-            {children}
-            <Footer />
-          </Wrapper>
+          {children}
+          <Footer />
         </main>
       </body>
     </html>

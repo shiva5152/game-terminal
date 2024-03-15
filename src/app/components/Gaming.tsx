@@ -38,7 +38,7 @@ const Gaming = () => {
       animate={isInView ? "show" : ""}
       // style={{ opacity, scale }}
       id="gaming"
-      className="self-stretch md:container max-md:mx-3 mx-auto mt-20 max-md:mt-10 "
+      className="self-stretch md:container max-md:mx-3 mx-auto max-md:mb-4 mt-10 max-md:mt-6 "
     >
       <div className="flex gap-5 max-md:flex-col-reverse max-md:gap-0 max-md:">
         <div className="flex flex-col items-center justify-center w-6/12 max-md:ml-0 max-md:w-full">
