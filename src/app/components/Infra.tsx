@@ -1,27 +1,58 @@
+"use client";
 import { cn } from "@/utils/cn";
 import React from "react";
 import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
+import { useRef } from "react";
+import { motion, useInView, useScroll } from "framer-motion";
 
 export default function BentoGridDemo() {
+  const gameRef = useRef<HTMLDivElement | null>(null);
+  const isInView = useInView(gameRef, { once: true, margin: "-200px" });
+
+  const container = {
+    hidden: { opacity: 1 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.5,
+      },
+    },
+  };
+
+  const variant = {
+    hidden: { y: 200, opacity: 0 },
+    show: { y: 0, opacity: 1, transition: { duration: 0.5 } },
+  };
+
   return (
-    <section className="mt-10 md:container mx-auto max-md:w-full max-md:px-3 ">
-      <div className="my-10 text-5xl  font-bold text-center text-lime-400 whitespace-nowrap max-md:mt-0 max-md:mb-10 max-md:text-xl">
+    <motion.section
+      ref={gameRef}
+      variants={container}
+      initial="hidden"
+      animate={isInView ? "show" : ""}
+      className="mt-10 md:container mx-auto max-md:w-full max-md:px-3 "
+    >
+      <motion.div
+        variants={variant}
+        className="my-10 text-5xl  font-bold text-center text-lime-400 whitespace-nowrap max-md:mt-0 max-md:mb-10 max-md:text-xl"
+      >
         Our <span className="text-lime-400">Infrastructure</span>
-      </div>
-      <BentoGrid className=" mx-auto">
-        {items.map((item, i) => (
-          <BentoGridItem
-            key={i}
-            item={item}
-            className={cn(
-              "bento-bg",
-              i === 0 && "md:row-span-2 row-span-2 bento-bg-long",
-              i === 5 && "md:col-span-2 bento-bg-wide"
-            )}
-          />
-        ))}
-      </BentoGrid>
-    </section>
+      </motion.div>
+      <motion.div variants={variant}>
+        <BentoGrid className=" mx-auto">
+          {items.map((item, i) => (
+            <BentoGridItem
+              item={item}
+              className={cn(
+                "bento-bg",
+                i === 0 && "md:row-span-2 row-span-2 bento-bg-long",
+                i === 5 && "md:col-span-2 bento-bg-wide"
+              )}
+            />
+          ))}
+        </BentoGrid>
+      </motion.div>
+    </motion.section>
   );
 }
 const Skeleton = () => (
@@ -29,7 +60,7 @@ const Skeleton = () => (
 );
 const items = [
   {
-    title: "Sentile Strike",
+    title: "Sentinel Strike",
     button: "PLAY NOW",
     bg: "images/strike.png",
   },

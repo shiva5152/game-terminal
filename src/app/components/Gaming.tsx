@@ -79,9 +79,10 @@ const Gaming = () => {
           </div>
         </div>
         <motion.div
-          initial={{ scale: 0.9, z: -15 }}
-          animate={isInView ? { scale: 1, z: 0 } : { scale: 0.9, z: -10 }}
-          transition={{ type: "spring", stiffness: 200 }}
+          // initial={{ scale: 0.9, z: -15 }}
+          // animate={isInView ? { scale: 1, z: 0 } : { scale: 0.9, z: -10 }}
+          // transition={{ type: "spring", stiffness: 200 }}
+          variants={item}
           className="flex flex-col ml-5 w-6/12 rounded-2xl max-md:ml-0 max-md:w-full"
         >
           <img

@@ -34,11 +34,11 @@ const Achievement = () => {
           ))}
         </div>
       </div>
-      <InfiniteMovingCards
+      {/* <InfiniteMovingCards
         direction="right"
         speed="fast"
         items={achievementData}
-      />
+      /> */}
     </>
   );
 };

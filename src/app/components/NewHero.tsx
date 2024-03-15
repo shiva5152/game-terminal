@@ -6,11 +6,13 @@ import { motion } from "framer-motion";
 
 const NewHero = () => {
   return (
-    <div className=" md:container max-h-screen max-auto max-md:mx-3 mt-3 md:mt-2 ">
-      <Header />
-      <div className="flex flex-col justify-between">
+    <div className=" max-h-screen mx-auto max-md:mx-3 mt-3 md:mt-2 ">
+      <div className=" md:container  mx-auto">
+        <Header />
+      </div>
+      <div className="flex flex-col w-full md:mx-20 justify-between">
         <div className="flex justify-between items-center max-md:flex-col-reverse">
-          <div className=" relative z-10 bg-transparent max-w-[70%%] mt-10 flex justify-center max-md:mt-0   items-center flex-col w-full  font-bold text-start  text-white">
+          <div className=" relative z-10 bg-transparent max-w-[60%%] mt-10 flex justify-center max-md:mt-0   items-center flex-col w-full  font-bold text-start  text-white">
             <h2 className="md:text-7xl text-3xl text-center md:text-start">
               Multitude of trending <span className="text-lime-400">Web3 </span>
               games on one <span className=" text-lime-400">platform</span>
@@ -28,8 +30,8 @@ const NewHero = () => {
               Explore Games
             </button>
           </div>
-          <div className=" max-w-[30%] max-md:max-w-[60%] flex justify-center items-center w-full ">
-            <img src="/images/GT-Coin.png" className=" aspect-square" />
+          <div className=" max-w-[40%] max-md:max-w-[60%] flex justify-center items-center w-full ">
+            <img src="/images/GT-Coin.png" className=" w-[75%] aspect-square" />
           </div>
         </div>
         <Link

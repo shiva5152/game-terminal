@@ -84,25 +84,32 @@ const Ecosystem = () => {
       <div className="flex gap-5 max-md:flex-col max-md:gap-0 max-md:">
         <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
           <div className="flex flex-col grow mt-2.5 max-md:mt-10 max-md:max-w-full">
-            <div className={cn(sectionHeading, "md:text-start font-bold")}>
+            <motion.div
+              variants={item}
+              className={cn(sectionHeading, "md:text-start font-bold")}
+            >
               {/* text-5xl font-bold text-white max-md:max-w-full max-md:text-4xl */}
               Ecosystem
-            </div>
-            <div className={cn(sectionSubHeading, "md:text-start")}>
+            </motion.div>
+            <motion.div
+              variants={item}
+              className={cn(sectionSubHeading, "md:text-start")}
+            >
               {/* mt-4 text-xl font-light leading-7 tracking-wide text-zinc-600 max-md:max-w-full */}
               Game Terminal focuses on rewarding all types of contributors in
               the ecosystem who are shaping the future of Web3 together.
-            </div>
+            </motion.div>
             <motion.div
-              animate={{ y: ["0%", "5%", "0%"] }}
-              transition={{ duration: 4.1, repeat: Infinity }}
+              variants={item}
+              // animate={{ y: ["0%", "5%", "0%"] }}
+              // transition={{ duration: 4.1, repeat: Infinity }}
             >
               <Image
                 height={361}
                 width={365}
                 alt="ecosystem"
                 loading="lazy"
-                src={"/images/ecosystem.svg"}
+                src={"/images/ecosystem.png"}
                 // src={"/images/computer.svg"}
                 className="my-auto mx-auto md:mx-0 max-w-[60%] aspect-[1.01]"
               />
