@@ -38,7 +38,7 @@ const Gaming = () => {
       animate={isInView ? "show" : ""}
       // style={{ opacity, scale }}
       id="gaming"
-      className="self-stretch md:container mx-auto mt-20 max-md:mt-10 "
+      className="self-stretch md:container max-md:mx-3 mx-auto mt-20 max-md:mt-10 "
     >
       <div className="flex gap-5 max-md:flex-col-reverse max-md:gap-0 max-md:">
         <div className="flex flex-col items-center justify-center w-6/12 max-md:ml-0 max-md:w-full">
@@ -69,7 +69,7 @@ const Gaming = () => {
                 y: -10,
                 transition: { duration: 0.3, type: "spring", stiffness: 300 },
               }}
-              className="overflow-hidden button-bg mx-auto md:mx-0 relative flex-col justify-center items-center self-start px-11 py-8 mt-4 md:mt-8 text-xs md:text-sm leading-7 text-black whitespace-nowrap aspect-[3.15] fill-lime-400 max-md:px-5 "
+              className="overflow-hidden max-md:max-w-[118px] max-md:text-[10px] button-bg mx-auto md:mx-0 relative flex-col justify-center items-center self-start px-11 py-8 mt-4 md:mt-8 text-xs md:text-sm leading-7 text-black whitespace-nowrap aspect-[3.15] fill-lime-400 max-md:px-5 "
             >
               Create Profile Now
             </motion.button>

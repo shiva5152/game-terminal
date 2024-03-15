@@ -10,7 +10,7 @@ export const BentoGrid = ({
   return (
     <div
       className={cn(
-        "grid md:auto-rows-[14rem] grid-cols-1 md:grid-cols-3 gap-4 mx-auto ",
+        "grid md:auto-rows-[14rem] max-md:auto-rows-[200px] grid-cols-1 md:grid-cols-3 gap-4 mx-auto ",
         className
       )}
     >
@@ -39,10 +39,10 @@ export const BentoGridItem = ({
       )}
     >
       <div className="group-hover/bento:translate-x-2  transition duration-200 ">
-        <div className="font-sans text-2xl font-bold text-neutral-600 dark:text-neutral-200 mb-2 mt-2">
+        <div className="font-sans text-2xl max-md:text-xl font-bold text-neutral-600 dark:text-neutral-200 mb-2 mt-2">
           {item.title}
         </div>
-        <button className="justify-center px-10 py-1 text-[10px] font-bold leading-7 text-lime-400 whitespace-nowrap border border-lime-400 border-solid rounded-[110px]">
+        <button className="justify-center max-md:text-[8px] max-md:px-6 px-10 py-1 text-[10px] font-bold leading-7 text-lime-400 whitespace-nowrap border border-lime-400 border-solid rounded-[110px]">
           {item.button}
         </button>
       </div>

@@ -87,7 +87,7 @@ const Roadmap = () => {
       variants={container}
       initial="hidden"
       animate={isInView ? "show" : ""}
-      className=" md:container mx-auto pb-[20px] flex flex-col items-center"
+      className=" md:container max-md:w-full max-md:px-3 mx-auto pb-[20px] flex flex-col items-center"
     >
       <div className="mt-44 text-5xl  font-bold text-center text-lime-400 whitespace-nowrap max-md:mt-10 max-md:text-xl">
         Our <span className="text-lime-400">Roadmap</span>
@@ -98,7 +98,7 @@ const Roadmap = () => {
             <motion.div
               variants={item}
               key={data.id}
-              className="flex roadmap-bg neomorphic-eco flex-col py-5 pb-7 pr-9 pl-4 h-fit text-sm leading-6 text-white rounded-xl "
+              className="flex roadmap-bg w-full neomorphic-eco flex-col py-5 pb-7 pr-9 pl-4 h-fit text-sm leading-6 text-white rounded-xl "
             >
               <div className="text-3xl font-bold text-start text-lime-400">
                 {data.title}

@@ -70,7 +70,7 @@ const Integration = () => {
       variants={container}
       initial="hidden"
       animate={isInView ? "show" : ""}
-      className="flex md:container mx-auto flex-col items-center"
+      className="flex md:container max-md:mx-3 mx-auto flex-col items-center"
     >
       <motion.div
         variants={item}

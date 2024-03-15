@@ -58,7 +58,7 @@ const cardData = [
 const Achievement = () => {
   return (
     <>
-      <div className="px-5 md:px-9  w-full max-w-[90rem] mx-auto self-stretch mt-10 md:mt-40 max-md:mt-10 max-md:max-w-full">
+      <div className="px-3 md:px-9  w-full max-w-[90rem] mx-auto self-stretch mt-10 md:mt-40 max-md:mt-10 max-md:max-w-full">
         <div className="flex gap-8 md:container mx-auto justify-between max-md:flex-col ">
           {cardData.map((card) => (
             <div

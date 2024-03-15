@@ -71,7 +71,7 @@ export const InfiniteMovingCards = ({
     <div
       ref={containerRef}
       className={cn(
-        "scroller relative z-20  w-[90vw] pb-20 overflow-hidden  [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
+        "scroller relative z-20  w-[90vw] pb-20 max-md:pb-10 overflow-hidden  [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
         className
       )}
     >
@@ -97,7 +97,7 @@ export const InfiniteMovingCards = ({
           //   </div>
           // </li>
           <li
-            className="w-[213px] max-w-full relative rounded-2xl  flex-shrink-0"
+            className="w-[213px] max-md:w-[150px] max-w-full relative rounded-2xl  flex-shrink-0"
             // style={{
             //   background:
             //     "linear-gradient(180deg, var(--slate-800), var(--slate-900)",

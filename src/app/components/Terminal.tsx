@@ -52,7 +52,7 @@ const Terminal = () => {
       variants={container}
       initial="hidden"
       animate={isInView ? "show" : ""}
-      className="flex md:container items-center mx-auto flex-col my-12 md:mt-32 mb-2 md:mb-32"
+      className="flex md:container max-md:mx-3 items-center mx-auto flex-col my-12 md:mt-32 mb-2 md:mb-32"
     >
       <motion.div variants={item} className={cn(sectionHeading, "font-bold ")}>
         {/* mt-32 text-5xl font-bold text-center leading-tight text-white  max-md:mt-10 max-md:max-w-full max-md:text-4xl */}
@@ -92,7 +92,7 @@ const Terminal = () => {
                       stiffness: 300,
                     },
                   }}
-                  className="overflow-hidden cursor-pointer text-[0.65rem] md:text-xs max-w-[118px] md:max-w-[159px] relative button-bg flex-col justify-center font-bold items-center px-8 py-8 mt-4 text-center text-black whitespace-nowrap aspect-[3.12] fill-lime-400 leading-[233%] max-md:px-5"
+                  className="overflow-hidden cursor-pointer text-[0.65rem] max-md:mt-4 md:text-xs max-w-[118px] md:max-w-[159px] relative button-bg flex-col justify-center font-bold items-center px-8 py-1 md:py-8  text-center text-black whitespace-nowrap aspect-[3.12] fill-lime-400 leading-[233%] max-md:px-5"
                 >
                   <Link
                     className="h-full w-full flex justify-center items-center"

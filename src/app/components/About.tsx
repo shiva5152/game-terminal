@@ -38,20 +38,20 @@ const About = () => {
       animate={isInView ? "show" : ""}
       // style={{ opacity, scale }}
       id="gaming"
-      className="self-stretch md:container mx-auto mt-20 max-md:mt-10 max-md:max-w-full"
+      className="self-stretch md:container mx-auto max-md:mx-3 mt-20 max-md:mt-10 max-md:max-w-full"
     >
       <div className="flex gap-5 max-md:flex-col-reverse items-center justify-center max-md:gap-0 max-md:">
         <motion.div
           initial={{ scale: 0.9, z: -15 }}
           animate={isInView ? { scale: 1, z: 0 } : { scale: 0.9, z: -10 }}
           transition={{ type: "spring", stiffness: 200 }}
-          className="flex flex-col ml-5 w-6/12 rounded-2xl max-md:ml-0 max-md:w-full"
+          className="flex flex-col ml-5 w-6/12  rounded-2xl max-md:items-center max-md:ml-0 max-md:w-full"
         >
           <img
             loading="lazy"
             // src="/images/coin-group.png"
             src="/images/console.svg"
-            className="grow w-[75%] object-top mt-14 md:object-center rounded-2xl max-md:max-w-full"
+            className="grow w-[75%] object-top  max-md:ms-[-30px] md:mt-14 md:object-center rounded-2xl max-md:max-w-full"
           />
         </motion.div>
         {/* <div className="relative z-0">
@@ -109,7 +109,7 @@ const About = () => {
                 y: -10,
                 transition: { duration: 0.3, type: "spring", stiffness: 300 },
               }}
-              className="overflow-hidden button-bg md:mx-0 relative flex-col justify-center items-center self-start px-11 py-8 mt-4 md:mt-8 text-xs md:text-sm leading-7 text-black whitespace-nowrap aspect-[3.15] fill-lime-400 max-md:px-5 "
+              className="overflow-hidden max-md:mx-auto max-md:max-w-[118px] max-md:text-[10px]  button-bg md:mx-0 relative flex-col justify-center items-center self-start px-11 py-8 mt-4 md:mt-8 text-xs md:text-sm leading-7 text-black whitespace-nowrap aspect-[3.15] fill-lime-400 max-md:px-5 "
             >
               Launch App
             </motion.button>

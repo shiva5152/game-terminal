@@ -4,7 +4,7 @@ import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
 
 export default function BentoGridDemo() {
   return (
-    <section className="mt-10 md:container mx-auto">
+    <section className="mt-10 md:container mx-auto max-md:w-full max-md:px-3 ">
       <div className="my-10 text-5xl  font-bold text-center text-lime-400 whitespace-nowrap max-md:mt-10 max-md:text-xl">
         Our <span className="text-lime-400">Infrastructure</span>
       </div>
@@ -13,7 +13,10 @@ export default function BentoGridDemo() {
           <BentoGridItem
             key={i}
             item={item}
-            className={cn(i === 0 && "row-span-2", i === 5 && "col-span-2")}
+            className={cn(
+              i === 0 && "md:row-span-2 row-span-2",
+              i === 5 && "md:col-span-2"
+            )}
           />
         ))}
       </BentoGrid>
