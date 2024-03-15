@@ -80,7 +80,7 @@ const Terminal = () => {
                     className="aspect-square w-[35px]"
                   />
                 </div>
-                <div className="self-stretch mt-4 text-xs font-light leading-5 tracking-wider text-zinc-600 max-md:max-w-full">
+                <div className="self-stretch text-justify mt-4 text-xs font-light leading-5 tracking-wider text-zinc-600 max-md:max-w-full">
                   {data.description}
                 </div>
                 <motion.div

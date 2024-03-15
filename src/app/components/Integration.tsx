@@ -84,7 +84,7 @@ const Integration = () => {
       </motion.div>
       <motion.div
         variants={item}
-        className={cn(sectionSubHeading, "max-w-[70%]")}
+        className={cn(sectionSubHeading, "max-w-[70%] max-md:text-justify")}
       >
         {/* mt-6 text-xl font-light leading-7 max-w-[70%] text-center text-zinc-600 tracking-wide max-md:max-w-full */}
         Effortlessly synchronize your gaming journey through our unified profile
@@ -117,7 +117,7 @@ const Integration = () => {
                         <div className="text-xs md:text-xl font-semibold leading-7 text-white max-md:max-w-full">
                           {data.title}
                         </div>
-                        <div className="md:mt-5 mt-1 text-xs font-light leading-4 md:leading-5 tracking-wider text-zinc-600 max-md:max-w-full">
+                        <div className="md:mt-5 mt-1 text-justify text-xs font-light leading-4 md:leading-5 tracking-wider text-zinc-600 max-md:max-w-full">
                           {data.description}
                         </div>
                       </div>
