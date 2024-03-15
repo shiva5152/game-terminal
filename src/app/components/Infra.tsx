@@ -5,7 +5,7 @@ import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
 export default function BentoGridDemo() {
   return (
     <section className="mt-10 md:container mx-auto max-md:w-full max-md:px-3 ">
-      <div className="my-10 text-5xl  font-bold text-center text-lime-400 whitespace-nowrap max-md:my-0 max-md:text-xl">
+      <div className="my-10 text-5xl  font-bold text-center text-lime-400 whitespace-nowrap max-md:mt-0 max-md:mb-10 max-md:text-xl">
         Our <span className="text-lime-400">Infrastructure</span>
       </div>
       <BentoGrid className=" mx-auto">
