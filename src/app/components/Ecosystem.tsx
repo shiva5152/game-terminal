@@ -115,7 +115,7 @@ const Ecosystem = () => {
               <motion.div
                 variants={item}
                 key={data.id}
-                className="md:py-3 md:pt-5 py-3 md:pl-5 ml-0 mt-4 px-4 md:mx-0 text-justify rounded-3xl bg-[#161616] neomorphic-eco max-md:max-w-full"
+                className="md:py-3 md:pt-5 py-3 md:pl-5 ml-0 mt-4 px-4 md:px-0 text-justify rounded-3xl bg-[#161616] neomorphic-eco max-md:max-w-full"
               >
                 <div className="flex gap-5 max-md:flex-col max-md:gap-0">
                   <div className="flex flex-col w-4/5 max-md:ml-0 max-md:w-full">

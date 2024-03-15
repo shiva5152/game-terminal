@@ -14,8 +14,9 @@ export default function BentoGridDemo() {
             key={i}
             item={item}
             className={cn(
-              i === 0 && "md:row-span-2 row-span-2",
-              i === 5 && "md:col-span-2"
+              "bento-bg",
+              i === 0 && "md:row-span-2 row-span-2 bento-bg-long",
+              i === 5 && "md:col-span-2 bento-bg-wide"
             )}
           />
         ))}

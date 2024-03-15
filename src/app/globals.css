@@ -309,28 +309,6 @@ body::-webkit-scrollbar-thumb:hover {
   transform: translateY(10px);
 }
 
-@media not all and (min-width: 768px) {
-  .terminal-bg::after {
-    background-image: url("/images/mobile-terminal-bg.png");
-  }
-  .roadmap-bg::after {
-    background-image: url("/images/mobile-roadmap-bg.png");
-  }
-  .neomorphic-eco {
-    background: linear-gradient(145deg, #141414, #181818);
-    box-shadow: 5px 5px 5px #0d0d0d, -5px -5px 5px #1f1f1f;
-  }
-  .neomorphic-eco:hover {
-    background: linear-gradient(145deg, #181818, #141414);
-    box-shadow: 5px 5px 5px #0d0d0d, -5px -5px 5px #1f1f1f;
-    transition: 0.4s;
-  }
-  .header-bg {
-    background-image: url("/images/mobile-header-bg.svg");
-    height: 59px;
-  }
-}
-
 .video-container {
   height: 100vh;
   width: 100vw;
@@ -368,20 +346,93 @@ body::-webkit-scrollbar-thumb:hover {
   position: relative;
   background-position: center;
   background-repeat: no-repeat;
-  z-index: 1;
+  z-index: 10;
 }
 .bento-bg::after {
   position: absolute;
   height: 100%;
+  padding: 1px;
   top: 0;
   border-radius: 12px;
   bottom: 0;
   left: 0;
   right: 0;
   content: "";
-  background-image: url("/images/bento-grid-border.svg");
-  background-size: 100%;
+  background-image: url("/images/bento-grid-border.png");
+  background-size: 100% 100%;
   background-position: top;
   background-repeat: no-repeat;
-  z-index: 2;
+  z-index: 1;
+}
+.bento-bg-long {
+  content: "";
+  background-size: cover;
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 10;
+}
+.bento-bg-long::after {
+  position: absolute;
+  height: 100%;
+  padding: 1px;
+  top: 0;
+  border-radius: 12px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: "";
+  background-image: url("/images/bento-border-long.png");
+  background-size: 100% 100%;
+  background-position: top;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+.bento-bg-wide {
+  content: "";
+  background-size: cover;
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 10;
+}
+.bento-bg-wide::after {
+  position: absolute;
+  height: 100%;
+  padding: 1px;
+  top: 0;
+  border-radius: 12px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: "";
+  background-image: url("/images/bento-border-wide.png");
+  background-size: 100% 100%;
+  background-position: top;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+@media not all and (min-width: 768px) {
+  .terminal-bg::after {
+    background-image: url("/images/mobile-terminal-bg.png");
+  }
+  .roadmap-bg::after {
+    background-image: url("/images/mobile-roadmap-bg.png");
+  }
+  .neomorphic-eco {
+    background: linear-gradient(145deg, #141414, #181818);
+    box-shadow: 5px 5px 5px #0d0d0d, -5px -5px 5px #1f1f1f;
+  }
+  .neomorphic-eco:hover {
+    background: linear-gradient(145deg, #181818, #141414);
+    box-shadow: 5px 5px 5px #0d0d0d, -5px -5px 5px #1f1f1f;
+    transition: 0.4s;
+  }
+  .header-bg {
+    background-image: url("/images/mobile-header-bg.svg");
+    height: 59px;
+  }
+  .bento-bg-wide::after {
+    background-image: url("/images/bento-grid-border.png");
+  }
 }

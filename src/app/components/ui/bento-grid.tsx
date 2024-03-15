@@ -34,7 +34,7 @@ export const BentoGridItem = ({
     <div
       style={{ backgroundImage: `url(${item.bg})` }}
       className={cn(
-        "row-span-1 bento-bg min-w-[33%] rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none  dark:border-white/[0.2] border border-transparent justify-end p-6 flex flex-col items-baseline space-y-4",
+        "row-span-1 min-w-[33%] rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none  justify-end p-6 flex flex-col items-baseline space-y-4",
         className
       )}
     >
