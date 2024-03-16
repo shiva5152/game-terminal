@@ -88,7 +88,7 @@ const Gaming = () => {
           <img
             loading="lazy"
             src="/images/stack.png"
-            className="grow w-[100%] aspect-[1.92] object-cover object-top md:object-center rounded-2xl md:aspect-square max-md:max-w-full"
+            className="grow w-[80%] aspect-square object-contain mx-auto  object-top md:object-center rounded-2xl md:aspect-square max-md:max-w-[90%]"
           />
         </motion.div>
       </div>

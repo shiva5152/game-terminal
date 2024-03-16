@@ -6,11 +6,11 @@ import { motion } from "framer-motion";
 
 const NewHero = () => {
   return (
-    <div className=" max-h-screen mx-auto max-md:mx-3 mt-3 md:mt-2 ">
+    <div className="max-h-screen mx-auto max-md:mx-3 mt-3 md:mt-2 ">
       <div className=" md:container  mx-auto">
         <Header />
       </div>
-      <div className="flex flex-col w-full md:mx-20 justify-between">
+      <div className="flex  auto flex-col w-full md:mx-20 justify-between">
         <div className="flex justify-between items-center max-md:flex-col-reverse">
           <div className=" relative z-10 bg-transparent max-w-[60%%] mt-10 flex justify-center max-md:mt-0   items-center flex-col w-full  font-bold text-start  text-white">
             <h2 className="md:text-7xl text-3xl text-center md:text-start">
@@ -31,7 +31,10 @@ const NewHero = () => {
             </button>
           </div>
           <div className=" max-w-[40%] max-md:max-w-[60%] flex justify-center items-center w-full ">
-            <img src="/images/GT-Coin.png" className=" w-[75%] aspect-square" />
+            <img
+              src="/images/GT-Coin.png"
+              className=" w-[75%] max-md:w-[96%] aspect-square"
+            />
           </div>
         </div>
         <Link
