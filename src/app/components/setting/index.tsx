@@ -1,6 +1,9 @@
+'use client'
 import React from "react";
 import Header from "../Header";
 import Footer from "../Footer";
+
+
 
 const ThirdPartyLogins = [
   {
@@ -24,6 +27,9 @@ const ThirdPartyLogins = [
 ];
 
 const Setting = () => {
+  const handleTwitterAuth = () => {
+    window.location.href = 'http://localhost:8000/auth/twitter';
+  };
   return (
     <div className="flex flex-col px-9 py-10 bg-neutral-900 max-md:px-5">
       <Header />
@@ -104,11 +110,13 @@ const Setting = () => {
               <div className="grow my-auto">Twitter</div>
             </div>
           </div>
-          <img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/f186ae5cc68847722426869f74ab75ba4cd7517ae58c825126b2f6a72402062e?apiKey=caf73ded90744adfa0fe2d98abed61c0&"
-            className="self-end mt-16 max-w-full aspect-[2.86] w-[110px] max-md:mt-10"
-          />
+          <button onClick={handleTwitterAuth}>
+            <img
+              loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/f186ae5cc68847722426869f74ab75ba4cd7517ae58c825126b2f6a72402062e?apiKey=caf73ded90744adfa0fe2d98abed61c0&"
+              className="self-end mt-16 max-w-full aspect-[2.86] w-[110px] max-md:mt-10"
+            />
+          </button>
         </div>
         <div className="flex gap-5 justify-between mt-8 w-full text-xl max-md:flex-wrap max-md:max-w-full">
           <div className="flex gap-4 justify-between">

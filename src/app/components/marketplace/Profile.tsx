@@ -1,5 +1,7 @@
 import React from 'react'
 import Photogrid from './PhotoGrid'
+import Profilecard from './ProfileCard'
+import PhotoGrid from './PhotoGrid'
 
 const Profile = () => {
   return (
@@ -187,15 +189,15 @@ const Profile = () => {
       </div>
 
       <div className="flex gap-5 mt-9 max-w-full text-xl font-light leading-7 text-white whitespace-nowrap w-[586px] max-md:flex-wrap">
-        <div className="hover-wrapper">
+        <div className="cursor-pointer hover:text-lime-400">
           <div className="justify-center items-center px-16 py-7 rounded-xl bg-neutral-900 max-md:px-5">
             All
           </div>
-          <div className="hover-content">
+          <div className="cursor-pointer hover:text-lime-400">
             <div className="green-btn">All</div>
           </div>
         </div>
-        <div className="hover-wrapper">
+        <div className="cursor-pointer hover:text-lime-400">
           <div className="justify-center items-center px-16 py-7 rounded-xl bg-neutral-900 max-md:px-5">
             Games
           </div>
@@ -203,7 +205,7 @@ const Profile = () => {
             <div className="green-btn">Games</div>
           </div>
         </div>
-        <div className="hover-wrapper">
+        <div className="cursor-pointer hover:text-lime-400">
           <div className="justify-center items-center px-16 py-7 rounded-xl bg-neutral-900 max-md:px-5">
             Web3
           </div>
@@ -217,7 +219,7 @@ const Profile = () => {
       <div className="mt-9 max-md:max-w-full">
         <div className="flex gap-5 max-md:flex-col max-md:gap-0">
           <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
-            <div className="flex flex-col grow px-8 py-11 w-full font-bold rounded-3xl border border-lime-400 border-solid bg-neutral-900 max-md:px-5 max-md:mt-5 max-md:max-w-full">
+            <div className="flex flex-col grow px-8 py-11 w-full font-bold rounded-3xl cursor-pointer border hover:border-lime-400 border-solid bg-neutral-900 max-md:px-5 max-md:mt-5 max-md:max-w-full">
               <div className="text-3xl leading-7 text-white max-md:max-w-full">
                 Game Collaboration
               </div>
@@ -231,14 +233,14 @@ const Profile = () => {
                   src="https://cdn.builder.io/api/v1/image/assets/TEMP/b04fe46149e346cda5fe6fe85179956b90011e0ae8332714fd78d6d621a2b880?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
                   className="object-cover absolute inset-0 size-full"
                 />
-                    <button className='text-black absolute mb-10'>Continue</button>
+                    <button className='text-black absolute justify-center mb-2'>Continue</button>
                   </div>
                 <div className="my-auto text-3xl leading-7 text-white">$4000</div>
               </div>
             </div>
           </div>
           <div className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
-            <div className="flex flex-col grow px-8 py-11 w-full font-bold rounded-3xl bg-neutral-900 max-md:px-5 max-md:mt-5 max-md:max-w-full">
+            <div className="flex flex-col grow px-8 py-11 w-full font-bold rounded-3xl border cursor-pointer hover:border-lime-400 bg-neutral-900 max-md:px-5 max-md:mt-5 max-md:max-w-full">
               <div className="text-3xl leading-7 text-white max-md:max-w-full">
                 Game Collaboration
               </div>
@@ -266,9 +268,11 @@ const Profile = () => {
       </div>
 
       <div>
-        <Photogrid />
-        <Photogrid />
-        <Photogrid />
+        {/* <Profilecard /> */}
+        <PhotoGrid />
+        <PhotoGrid />
+        <PhotoGrid />
+        <PhotoGrid />
       </div>
     </div>
   )
