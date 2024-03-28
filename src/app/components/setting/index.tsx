@@ -2,34 +2,73 @@
 import React from "react";
 import Header from "../Header";
 import Footer from "../Footer";
+import { useEffect,useState } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
-
-
-const ThirdPartyLogins = [
-  {
-    id: 1,
-    provider: "Apple",
-    image:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/51a6b5e07fd685311aa6ac7636dbce81a9d7ca105b54963a6a3080811f618768?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/51a6b5e07fd685311aa6ac7636dbce81a9d7ca105b54963a6a3080811f618768?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/51a6b5e07fd685311aa6ac7636dbce81a9d7ca105b54963a6a3080811f618768?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/51a6b5e07fd685311aa6ac7636dbce81a9d7ca105b54963a6a3080811f618768?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/51a6b5e07fd685311aa6ac7636dbce81a9d7ca105b54963a6a3080811f618768?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/51a6b5e07fd685311aa6ac7636dbce81a9d7ca105b54963a6a3080811f618768?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/51a6b5e07fd685311aa6ac7636dbce81a9d7ca105b54963a6a3080811f618768?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/51a6b5e07fd685311aa6ac7636dbce81a9d7ca105b54963a6a3080811f618768?apiKey=caf73ded90744adfa0fe2d98abed61c0&",
-  },
-  {
-    id: 2,
-    provider: "Google",
-    image:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/0b9fb03c3d0cfb98f08afe097b7fb507de265accf1ce6234ff9a1040b0375fa3?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=100",
-  },
-  {
-    id: 3,
-    provider: "Facebook",
-    image:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/430c9d0003d66194270b8bb8dc9f71381a2ca5e163c4f53b1a326e0ecb860ff8?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=100",
-  },
-];
 
 const Setting = () => {
-  const handleTwitterAuth = () => {
+
+  const params = useParams();
+  console.log("params:", params); 
+  const { email } = params;
+  console.log("email:", email); 
+  const [userEmail, setUserEmail] = useState('');
+
+  useEffect(() => {
+    if (typeof email === 'string') {
+      setUserEmail(email);
+      localStorage.setItem('email', email);
+    } else {
+      const storedEmail = localStorage.getItem('email');
+      if (storedEmail) {
+        setUserEmail(storedEmail);
+      }
+    }
+  }, [email]);
+
+  const saveDataToBackend = async () => {
+    try {
+      console.log('Attempting to save data to the backend...'); // Add this line
+      const storedEmail = localStorage.getItem('email');
+      if (storedEmail) {
+        await axios.post('http://localhost:8000/save-user-data', {
+          email: storedEmail
+        });
+        console.log('Data saved to the backend successfully.');
+      } else {
+        console.log('Email is missing.');
+      }
+    } catch (error) {
+      console.error('Error occurred while saving data:', error);
+    }
+  };
+
+  useEffect(() => {
+    saveDataToBackend();
+  }, []);
+
+
+  const handleTwitterAuth = async() => {
     window.location.href = 'http://localhost:8000/auth/twitter';
   };
+
+
+  const handleDiscordAuth = () => {
+    window.location.href = 'https://discord.com/oauth2/authorize?client_id=1222398580518686791&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A8000%2Fauth%2Fdiscord%2Fcallback&scope=identify';
+  };
+
+  const handleDisconnectTwitter = () => {
+    // Code to handle disconnecting Twitter
+    console.log("Disconnecting Twitter...");
+  };
+
+  const handleDisconnectDiscord = () => {
+    // Code to handle disconnecting Discord
+    console.log("Disconnecting Discord...");
+  };
+
+  
   return (
     <div className="flex flex-col px-9 py-10 bg-neutral-900 max-md:px-5">
       <Header />
@@ -70,33 +109,7 @@ const Setting = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col px-8 py-9 mt-5 text-xl font-semibold text-white rounded-3xl bg-neutral-900 max-md:px-5 max-md:max-w-full">
-        <div className="text-3xl max-md:max-w-full">Third-party logins</div>
-        <div className="mt-5 text-sm text-zinc-600 max-md:max-w-full">
-          When linked, you may use these third-party accounts to log in to Yeeha
-          Games
-        </div>
-
-        {ThirdPartyLogins.map((login) => (
-          <div className="flex gap-5 justify-between mt-8 w-full whitespace-nowrap max-md:flex-wrap max-md:max-w-full">
-            <div className="flex gap-4 justify-between">
-              <img
-                loading="lazy"
-                srcSet={login.image}
-                className="aspect-square w-[60px]"
-              />
-              <div className="grow my-auto">{login.provider}</div>
-            </div>
-            <button>
-              <img
-                loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/b61844d0294591bb8900a74b5d61cc831365eb574a8e4bee0be8e6f3d197653c?apiKey=caf73ded90744adfa0fe2d98abed61c0&"
-                className="my-auto max-w-full aspect-[2.86] w-[110px]"
-              />
-            </button>
-          </div>
-        ))}
-      </div>
+      
       <div className="flex flex-col px-8 py-9 mt-5 font-semibold text-white whitespace-nowrap rounded-3xl bg-neutral-900 max-md:px-5 max-md:max-w-full">
         <div className="flex gap-5 justify-between max-md:flex-wrap max-md:max-w-full">
           <div className="flex flex-col">
@@ -117,6 +130,10 @@ const Setting = () => {
               className="self-end mt-16 max-w-full aspect-[2.86] w-[110px] max-md:mt-10"
             />
           </button>
+          
+
+
+
         </div>
         <div className="flex gap-5 justify-between mt-8 w-full text-xl max-md:flex-wrap max-md:max-w-full">
           <div className="flex gap-4 justify-between">
@@ -127,11 +144,14 @@ const Setting = () => {
             />
             <div className="my-auto">Discord</div>
           </div>
+          <a ><button onClick={handleDiscordAuth}>
           <img
             loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/770cf850f9996e165b5b7acc49b8cf8a2474dfc8b91455902744a0b231c600e7?apiKey=caf73ded90744adfa0fe2d98abed61c0&"
             className="my-auto max-w-full aspect-[2.86] w-[110px]"
           />
+          </button></a>
+          
         </div>
       </div>
       <div className="flex flex-col px-8 py-9 mt-5 font-semibold text-white rounded-3xl bg-neutral-900 max-md:px-5 max-md:max-w-full">

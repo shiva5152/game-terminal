@@ -252,10 +252,11 @@ const Profile = () => {
                   <img
                     loading="lazy"
                     src="https://cdn.builder.io/api/v1/image/assets/TEMP/b04fe46149e346cda5fe6fe85179956b90011e0ae8332714fd78d6d621a2b880?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
-                    className="object-cover absolute inset-0 size-full"
+                    className="object-cover absolute inset-0 size-full "
                   />
-                  <button className='text-black absolute mb-10'>Continue</button>
+                  <div className='text-black absolute mr-4'>Continue</div>
                 </div>
+                
                 <div className="my-auto text-3xl leading-7 text-white">$4000</div>
               </div>
             </div>
