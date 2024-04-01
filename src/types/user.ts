@@ -13,3 +13,20 @@ export type TUser = {
     createdAt?: Date;
     updatedAt?: Date;
 }
+
+export type GameDetailsForm = {
+    title: string;
+    uuid: string;
+    developer: string;
+    publisher: string;
+    recommendedAge: string;
+    platform: string[];
+    releaseDate: Date;
+    overView: string;
+    socialMedia: {
+        platform: string;
+        link: string;
+    }[];
+    banner: File;
+    previewImages: File[];
+}

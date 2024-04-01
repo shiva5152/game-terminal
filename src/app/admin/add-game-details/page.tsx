@@ -12,7 +12,7 @@ import {
 import { format, set } from "date-fns";
 import { Calendar as CalendarIcon } from "lucide-react";
 import { Editor } from "@tinymce/tinymce-react";
-
+import { Accept, useDropzone } from "react-dropzone";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
@@ -21,6 +21,11 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import instance from "@/config/axios";
+import axios from "axios";
+import { addGameDetails } from "@/redux/features/game/api";
+import type { GameDetailsForm } from "@/types/user";
+import shortUUID from "short-uuid";
 
 const AddGameDetailsPage: React.FC = () => {
   const [gameDetails, setGameDetails] = useState<GameDetails>({
@@ -33,6 +38,9 @@ const AddGameDetailsPage: React.FC = () => {
   const [platform, setPlatform] = useState<string[]>([]);
   const [overView, setOverView] = useState<string>("");
   const [socialMedia, setSocialMedia] = useState([{ platform: "", link: "" }]);
+  const [banner, setBanner] = useState<File | null>(null);
+  const [previewImages, setPreviewImages] = useState<File[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -64,7 +72,7 @@ const AddGameDetailsPage: React.FC = () => {
     setPlatformSelected("");
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log({
       gameDetails,
@@ -72,8 +80,74 @@ const AddGameDetailsPage: React.FC = () => {
       releaseDate,
       overView,
       socialMedia,
+      banner,
+      previewImages,
     });
+    setLoading(true);
+    const { title, developer, publisher, recommendedAge } = gameDetails;
+    if (
+      !title ||
+      !developer ||
+      !publisher ||
+      !recommendedAge ||
+      !releaseDate ||
+      !overView ||
+      !socialMedia.length ||
+      !banner ||
+      !previewImages.length
+    ) {
+      alert("Please fill all the fields all fields are required");
+      return;
+    }
+
+    await addGameDetails({
+      title,
+      developer,
+      publisher,
+      recommendedAge,
+      platform,
+      releaseDate,
+      overView,
+      socialMedia,
+      banner,
+      previewImages,
+      uuid: shortUUID.generate(),
+    });
+    setLoading(false);
+    setGameDetails({
+      title: "",
+      developer: "",
+      publisher: "",
+      recommendedAge: "",
+    });
+    setPlatform([]);
+    setReleaseDate(undefined);
+    setOverView("");
+    setSocialMedia([{ platform: "", link: "" }]);
+    setBanner(null);
+    setPreviewImages([]);
   };
+
+  const {
+    getRootProps: getBannerRootProps,
+    getInputProps: getBannerInputProps,
+  } = useDropzone({
+    accept: "image/*" as any,
+    onDrop: (acceptedFiles) => {
+      if (acceptedFiles.length) setBanner(acceptedFiles[0]);
+    },
+  });
+
+  const {
+    getRootProps: getPreviewRootProps,
+    getInputProps: getPreviewInputProps,
+  } = useDropzone({
+    accept: "image/*" as any,
+    onDrop: (acceptedFiles) => {
+      if (acceptedFiles.length) setPreviewImages(acceptedFiles);
+    },
+  });
+
   return (
     <div className="bg-gray-900 w-[80%] my-10 flex justify-center items-center flex-col text-white p-4">
       <h1 className="text-2xl font-bold mb-4">Add Game Details</h1>
@@ -211,7 +285,7 @@ const AddGameDetailsPage: React.FC = () => {
               toolbar:
                 "undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat",
             }}
-            initialValue="Welcome to TinyMCE!"
+            initialValue="Type here..."
           />
         </div>
 
@@ -247,13 +321,63 @@ const AddGameDetailsPage: React.FC = () => {
             </button>
           </div>
         </div>
+        <div className="mb-4">
+          <label htmlFor="title" className="block mb-2">
+            Banner Image:
+          </label>
+          <div
+            {...getBannerRootProps()}
+            className="mb-4 border-2 px-3 py-2 rounded border-dotted"
+          >
+            <input {...getBannerInputProps()} />
+            <p>Drag 'n' drop banner image here, or click to select image</p>
+          </div>
+          {banner && (
+            <div className=" flex gap-2 flex-wrap mt-3">
+              <div
+                onClick={() => setBanner(null)}
+                title="Click to remove"
+                className="text-gray-800 text-center flex  cursor-pointer bg-white rounded-[2rem] p-2 px-3"
+              >
+                <span className="">{banner.name}</span>
+              </div>
+            </div>
+          )}
+        </div>
+        <div className="mb-4">
+          <label htmlFor="title" className="block mb-2">
+            Preview Images:
+          </label>
+          <div
+            {...getPreviewRootProps()}
+            className="mb-4 border-2 rounded px-3 py-2 border-dotted"
+          >
+            <input {...getPreviewInputProps()} />
+            <p>Drag 'n' drop preview images here, or click to select images</p>
+          </div>
+          <div className=" flex gap-2 flex-wrap mt-3">
+            {previewImages.map((p, index) => (
+              <div
+                onClick={() =>
+                  setPreviewImages(previewImages.filter((item) => item !== p))
+                }
+                title="Click to remove"
+                className="text-gray-800 text-center flex  cursor-pointer bg-white rounded-[2rem] p-2 px-3"
+              >
+                <span key={index} className="">
+                  {p.name}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
 
         <button
           onClick={handleSubmit}
           type="submit"
-          className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
+          className="bg-blue-500 mt-4 hover:bg-blue-600 text-white px-4 py-2 rounded"
         >
-          Submit
+          {loading ? "Loading..." : "Submit"}
         </button>
       </form>
     </div>
