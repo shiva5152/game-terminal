@@ -126,7 +126,7 @@ const AddGameDetailsPage: React.FC = () => {
           </div>
         </div>
         <div className="mb-4">
-          <label htmlFor="title" className="block mb-2">
+          <label htmlFor="title" className="block h mb-2">
             Recommended Age:
           </label>
           <input
