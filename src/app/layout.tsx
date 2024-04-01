@@ -1,12 +1,9 @@
+import { AppProvider } from "@/redux/provider";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Wrapper from "./components/ui/wrapper";
-import "./globals.css";
 import { headers } from "next/headers";
-import NewHero from "./components/NewHero";
-
+import InitialLoad from "./components/ui/InitialLoad";
+import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -27,11 +24,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <main className="flex flex-col relative overflow-x-hidden items-center w-full bg-neutral-900 mx-auto ">
-          <NewHero />
-          {children}
-          <Footer />
-        </main>
+        <AppProvider>
+          <InitialLoad>
+            <main className="flex flex-col relative overflow-x-hidden items-center w-full bg-neutral-900 mx-auto ">
+              {children}
+            </main>
+          </InitialLoad>
+        </AppProvider>
       </body>
     </html>
   );

@@ -2,8 +2,12 @@
 import React from "react";
 import UserDropDown from "./UserDropDown";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 
 const Header = () => {
+  const dispatch = useAppDispatch();
+  const { user, isAuthenticatedUser } = useAppSelector((state) => state.user);
   const [open, setOpen] = React.useState(false);
   const toggle = () => setOpen(!open);
   return (
@@ -21,12 +25,14 @@ const Header = () => {
           </div> */}
           <div className="hidden md:flex flex-col w-[60%] md:ml-0 md:w-full">
             <div className="flex gap-12 justify-between self-stretch my-auto text-xs text-white whitespace-nowrap max-md:flex-wrap max-md:mt-10 max-md:max-w-full">
-              <img
-                loading="lazy"
-                alt="Game Terminal Logo"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/d8f243d9febcc8e464a8fd9568eaa354f8d4ea179818b187adb86ab1c136e82d?apiKey=caf73ded90744adfa0fe2d98abed61c0&"
-                className="max-w-full aspect-[4.55] w-[102px] sm:w-[188px]"
-              />
+              <Link href={"/"}>
+                <img
+                  loading="lazy"
+                  alt="Game Terminal Logo"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/d8f243d9febcc8e464a8fd9568eaa354f8d4ea179818b187adb86ab1c136e82d?apiKey=caf73ded90744adfa0fe2d98abed61c0&"
+                  className="max-w-full aspect-[4.55] w-[102px] sm:w-[188px]"
+                />
+              </Link>
               <div className=" hidden md:flex flex-col flex-1 self-start mt-3.5 font-thin text-gray-200">
                 <div className="flex gap-10  justify-start">
                   <div className="cursor-pointer  leading-wide hover:text-lime-400">
@@ -65,20 +71,34 @@ const Header = () => {
                   src="https://cdn.builder.io/api/v1/image/assets/TEMP/82790d8804b70cb598af07bdb0eed5f2979f1ec2fd09aac5c56bbc08e53ad1a8?apiKey=caf73ded90744adfa0fe2d98abed61c0&"
                   className="aspect-square w-[32px] sm:w-[50px]"
                 /> */}
-              <img
-                onClick={toggle}
-                loading="lazy"
-                srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/1df3c39f279a286a6983bfb37e3bed373aab7e9c67136a9f5ead3404d3792b64?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/1df3c39f279a286a6983bfb37e3bed373aab7e9c67136a9f5ead3404d3792b64?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/1df3c39f279a286a6983bfb37e3bed373aab7e9c67136a9f5ead3404d3792b64?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/1df3c39f279a286a6983bfb37e3bed373aab7e9c67136a9f5ead3404d3792b64?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/1df3c39f279a286a6983bfb37e3bed373aab7e9c67136a9f5ead3404d3792b64?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/1df3c39f279a286a6983bfb37e3bed373aab7e9c67136a9f5ead3404d3792b64?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/1df3c39f279a286a6983bfb37e3bed373aab7e9c67136a9f5ead3404d3792b64?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/1df3c39f279a286a6983bfb37e3bed373aab7e9c67136a9f5ead3404d3792b64?apiKey=caf73ded90744adfa0fe2d98abed61c0&"
-                className="rounded-full cursor-pointer aspect-square w-[32px] sm:w-[50px] hover:border-lime-400 hover:border-2"
-              />
-              <button>Login /Sign Up</button>
+              {isAuthenticatedUser ? (
+                <img
+                  onClick={toggle}
+                  loading="lazy"
+                  src={
+                    user
+                      ? user?.avatar
+                      : "https://cdn.builder.io/api/v1/image/assets/TEMP/82790d8804b70cb598af07bdb0eed5f2979f1ec2fd09aac5c56bbc08e53ad1a8?apiKey=caf73ded90744adfa0fe2d98abed61c0&"
+                  }
+                  className="rounded-full cursor-pointer aspect-square w-[32px] sm:w-[50px] hover:border-lime-400 hover:border-2"
+                />
+              ) : null}
+
+              {!isAuthenticatedUser ? (
+                <Link
+                  className="flex justify-center items-center"
+                  href={"/login"}
+                >
+                  Login /Sign Up
+                </Link>
+              ) : null}
             </div>
           </div>
         </div>
       </div>
-      {open ? (
+      {open && user ? (
         <div className=" absolute z-10 right-[10%] min-w-[255px]">
-          <UserDropDown />
+          <UserDropDown user={user} />
         </div>
       ) : null}
       <motion.div

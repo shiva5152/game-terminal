@@ -1,19 +1,33 @@
+import { TUser } from "@/types/user";
+import Link from "next/link";
 import React from "react";
 
-const UserDropDown = () => {
+const UserDropDown = ({ user }: { user: TUser }) => {
   return (
     <div className="flex flex-col px-3 pt-3 pb-6 text-white rounded-2xl bg-neutral-900 w-full md:max-w-[255px]">
       <div className="flex gap-2 justify-between py-3 font-bold border-solid border-b-[0.5px] border-b-[color:var(--Dark-Dark-Gray,#292929)]">
         <img
           loading="lazy"
-          srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/d04673a8f381b54916444e116243712cec31214467fcaa59d35b57d7a8551c37?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/d04673a8f381b54916444e116243712cec31214467fcaa59d35b57d7a8551c37?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/d04673a8f381b54916444e116243712cec31214467fcaa59d35b57d7a8551c37?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/d04673a8f381b54916444e116243712cec31214467fcaa59d35b57d7a8551c37?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/d04673a8f381b54916444e116243712cec31214467fcaa59d35b57d7a8551c37?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/d04673a8f381b54916444e116243712cec31214467fcaa59d35b57d7a8551c37?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/d04673a8f381b54916444e116243712cec31214467fcaa59d35b57d7a8551c37?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/d04673a8f381b54916444e116243712cec31214467fcaa59d35b57d7a8551c37?apiKey=caf73ded90744adfa0fe2d98abed61c0&"
+          src={user.avatar}
           className="rounded-full aspect-square w-[38px]"
         />
         <div className="flex flex-col flex-1 my-auto">
-          <div className="text-xs">Arshya Moghimi</div>
+          <div className="text-xs">
+            {" "}
+            {user.firstName} {user.lastName}{" "}
+          </div>
           <div className="mt-1.5 text-xs">
-            <span className="font-medium text-white">ID :</span>{" "}
-            <span className="">1234567890</span>
+            {user.domainName ? (
+              <>
+                {/* <span className="font-medium text-white">Domain Name :</span>{" "} */}
+                <span className="">{user.domainName}</span>
+              </>
+            ) : (
+              <>
+                {/* <span className="font-medium text-white">Email :</span>{" "} */}
+                <span className="">{user.email}</span>
+              </>
+            )}
           </div>
         </div>
       </div>
@@ -69,7 +83,9 @@ const UserDropDown = () => {
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/ec746e389cfc5cb640132af57b04e96a4181e43f5ccfd86aece371832c4afb6b?apiKey=caf73ded90744adfa0fe2d98abed61c0&"
             className="aspect-square w-[18px]"
           />
-          <div className="my-auto">Settings</div>
+          <Link href={"/setting"} className="my-auto">
+            Settings
+          </Link>
         </div>
         <img
           loading="lazy"
