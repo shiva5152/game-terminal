@@ -13,7 +13,7 @@ const Profile = () => {
               <img
                 loading="lazy"
                 srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/5dfa52d2ebb7e5ac51743e238313bd054dd6c8f4f1b56c671c25aec2d1573e9b?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/5dfa52d2ebb7e5ac51743e238313bd054dd6c8f4f1b56c671c25aec2d1573e9b?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/5dfa52d2ebb7e5ac51743e238313bd054dd6c8f4f1b56c671c25aec2d1573e9b?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/5dfa52d2ebb7e5ac51743e238313bd054dd6c8f4f1b56c671c25aec2d1573e9b?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/5dfa52d2ebb7e5ac51743e238313bd054dd6c8f4f1b56c671c25aec2d1573e9b?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/5dfa52d2ebb7e5ac51743e238313bd054dd6c8f4f1b56c671c25aec2d1573e9b?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/5dfa52d2ebb7e5ac51743e238313bd054dd6c8f4f1b56c671c25aec2d1573e9b?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/5dfa52d2ebb7e5ac51743e238313bd054dd6c8f4f1b56c671c25aec2d1573e9b?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
-                className="w-full aspect-[1.49] max-md:max-w-full"
+                className="w-full aspect-[1.49] max-md:max-w-full rounded-2xl"
               />
             </div>
           </div>
@@ -26,7 +26,7 @@ const Profile = () => {
                       <img
                         loading="lazy"
                         srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/034b3f692c667bb941b1e7d6fc255e1900554498dd7b8d54f3cc89c761e1299b?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/034b3f692c667bb941b1e7d6fc255e1900554498dd7b8d54f3cc89c761e1299b?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/034b3f692c667bb941b1e7d6fc255e1900554498dd7b8d54f3cc89c761e1299b?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/034b3f692c667bb941b1e7d6fc255e1900554498dd7b8d54f3cc89c761e1299b?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/034b3f692c667bb941b1e7d6fc255e1900554498dd7b8d54f3cc89c761e1299b?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/034b3f692c667bb941b1e7d6fc255e1900554498dd7b8d54f3cc89c761e1299b?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/034b3f692c667bb941b1e7d6fc255e1900554498dd7b8d54f3cc89c761e1299b?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/034b3f692c667bb941b1e7d6fc255e1900554498dd7b8d54f3cc89c761e1299b?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
-                        className="w-full aspect-[1.54]"
+                        className="w-full aspect-[1.54] rounded-2xl"
                       />
                     </div>
                   </div>
@@ -35,7 +35,7 @@ const Profile = () => {
                       <img
                         loading="lazy"
                         srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/9263dd34ce15d38500f91172702240f84bc21f47b27d49c31420c8e8969e5025?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/9263dd34ce15d38500f91172702240f84bc21f47b27d49c31420c8e8969e5025?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/9263dd34ce15d38500f91172702240f84bc21f47b27d49c31420c8e8969e5025?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/9263dd34ce15d38500f91172702240f84bc21f47b27d49c31420c8e8969e5025?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/9263dd34ce15d38500f91172702240f84bc21f47b27d49c31420c8e8969e5025?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/9263dd34ce15d38500f91172702240f84bc21f47b27d49c31420c8e8969e5025?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/9263dd34ce15d38500f91172702240f84bc21f47b27d49c31420c8e8969e5025?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/9263dd34ce15d38500f91172702240f84bc21f47b27d49c31420c8e8969e5025?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
-                        className="aspect-square w-[211px]"
+                        className="aspect-square w-[211px] rounded-2xl"
                       />
                     </div>
                   </div>
@@ -45,7 +45,7 @@ const Profile = () => {
                 <img
                   loading="lazy"
                   srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/ffbee43bd5a0147eb5ee0ea9e5ec37086251c5cb32eef53e28db45497731ce3d?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/ffbee43bd5a0147eb5ee0ea9e5ec37086251c5cb32eef53e28db45497731ce3d?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/ffbee43bd5a0147eb5ee0ea9e5ec37086251c5cb32eef53e28db45497731ce3d?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/ffbee43bd5a0147eb5ee0ea9e5ec37086251c5cb32eef53e28db45497731ce3d?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/ffbee43bd5a0147eb5ee0ea9e5ec37086251c5cb32eef53e28db45497731ce3d?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/ffbee43bd5a0147eb5ee0ea9e5ec37086251c5cb32eef53e28db45497731ce3d?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/ffbee43bd5a0147eb5ee0ea9e5ec37086251c5cb32eef53e28db45497731ce3d?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/ffbee43bd5a0147eb5ee0ea9e5ec37086251c5cb32eef53e28db45497731ce3d?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
-                  className="w-full aspect-[1.85] max-md:max-w-full"
+                  className="w-full aspect-[1.8] max-md:max-w-full rounded-2xl"
                 />
               </div>
             </div>
@@ -141,45 +141,52 @@ const Profile = () => {
             </div>
           </div>
         </div>
-        <div className="flex gap-3.5 text-sm font-semibold leading-5 text-white whitespace-nowrap max-md:flex-wrap mr-56">
-          <div className="flex overflow-hidden relative flex-col gap-2 px-9 py-4 aspect-[2.48] fill-zinc-800 max-md:px-5">
+        <div className="flex gap-3.5 text-sm font-semibold ml-24 leading-5 text-white whitespace-nowrap max-md:flex-wrap mr-32">
+          <div className="flex overflow-hidden relative flex-col gap-2 px-9 py-4   max-md:px-5">
             <img
               loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/adc45e23bfc24c936f211c189b29e3b251e91f62fe8d4ce498228e02769715f8?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
-              className="object-cover absolute inset-0 size-full"
+              src="/Rectangle.png"
+              className=" absolute inset-0 size-full"
             />
-            <img
-              loading="lazy"
-              srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/123b6f3579492a82f87b082eff21a68f0126c042439a63f29e4b1261583b096f?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/123b6f3579492a82f87b082eff21a68f0126c042439a63f29e4b1261583b096f?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/123b6f3579492a82f87b082eff21a68f0126c042439a63f29e4b1261583b096f?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/123b6f3579492a82f87b082eff21a68f0126c042439a63f29e4b1261583b096f?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/123b6f3579492a82f87b082eff21a68f0126c042439a63f29e4b1261583b096f?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/123b6f3579492a82f87b082eff21a68f0126c042439a63f29e4b1261583b096f?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/123b6f3579492a82f87b082eff21a68f0126c042439a63f29e4b1261583b096f?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/123b6f3579492a82f87b082eff21a68f0126c042439a63f29e4b1261583b096f?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
-              className="shrink-0 aspect-[1.04] w-[23px] absolute"
-            />
-            <div className="absolute ml-6 ">1.5K</div>
+            <div className='flex gap-2'>
+              <img
+                loading="lazy"
+                srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/123b6f3579492a82f87b082eff21a68f0126c042439a63f29e4b1261583b096f?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/123b6f3579492a82f87b082eff21a68f0126c042439a63f29e4b1261583b096f?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/123b6f3579492a82f87b082eff21a68f0126c042439a63f29e4b1261583b096f?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/123b6f3579492a82f87b082eff21a68f0126c042439a63f29e4b1261583b096f?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/123b6f3579492a82f87b082eff21a68f0126c042439a63f29e4b1261583b096f?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/123b6f3579492a82f87b082eff21a68f0126c042439a63f29e4b1261583b096f?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/123b6f3579492a82f87b082eff21a68f0126c042439a63f29e4b1261583b096f?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/123b6f3579492a82f87b082eff21a68f0126c042439a63f29e4b1261583b096f?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
+                className="shrink-0 aspect-[1.04] w-[23px] relative justify-center flex"
+              />
+              <a href="" className='justify-center flex relative'>1.5K</a>
+            </div>
           </div>
           <div className="flex overflow-hidden relative flex-col gap-2 px-9 py-4 aspect-[2.54] fill-zinc-800 max-md:px-5">
             <img
               loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/adc45e23bfc24c936f211c189b29e3b251e91f62fe8d4ce498228e02769715f8?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
-              className="object-cover absolute inset-0 size-full"
+              src="/Rectangle.png"
+              className=" absolute inset-0 size-full"
             />
-            <img
-              loading="lazy"
-              srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/853cc4bb721235e561f3b45b82572741fc66bbe98cab92a714902fc6ea3bb9a8?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/853cc4bb721235e561f3b45b82572741fc66bbe98cab92a714902fc6ea3bb9a8?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/853cc4bb721235e561f3b45b82572741fc66bbe98cab92a714902fc6ea3bb9a8?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/853cc4bb721235e561f3b45b82572741fc66bbe98cab92a714902fc6ea3bb9a8?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/853cc4bb721235e561f3b45b82572741fc66bbe98cab92a714902fc6ea3bb9a8?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/853cc4bb721235e561f3b45b82572741fc66bbe98cab92a714902fc6ea3bb9a8?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/853cc4bb721235e561f3b45b82572741fc66bbe98cab92a714902fc6ea3bb9a8?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/853cc4bb721235e561f3b45b82572741fc66bbe98cab92a714902fc6ea3bb9a8?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
-              className="shrink-0 aspect-[1.04] w-[23px] absolute"
-            />
-            <div className="relative my-auto">1.5K</div>
+            <div className='flex gap-2'>
+              <img
+                loading="lazy"
+                srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/853cc4bb721235e561f3b45b82572741fc66bbe98cab92a714902fc6ea3bb9a8?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/853cc4bb721235e561f3b45b82572741fc66bbe98cab92a714902fc6ea3bb9a8?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/853cc4bb721235e561f3b45b82572741fc66bbe98cab92a714902fc6ea3bb9a8?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/853cc4bb721235e561f3b45b82572741fc66bbe98cab92a714902fc6ea3bb9a8?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/853cc4bb721235e561f3b45b82572741fc66bbe98cab92a714902fc6ea3bb9a8?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/853cc4bb721235e561f3b45b82572741fc66bbe98cab92a714902fc6ea3bb9a8?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/853cc4bb721235e561f3b45b82572741fc66bbe98cab92a714902fc6ea3bb9a8?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/853cc4bb721235e561f3b45b82572741fc66bbe98cab92a714902fc6ea3bb9a8?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
+                className="shrink-0 aspect-[1.04] w-[23px] relative justify-center flex"
+              />
+              
+              <a href="" className='justify-center flex relative'>1.5K</a>
+            </div>
           </div>
           <div className="flex overflow-hidden relative flex-col gap-2 px-8 py-5 aspect-[2.48] fill-zinc-800 max-md:px-5">
             <img
               loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/3bdabe59326793e706e5a0e7ae637f3c06c12916230ebaeb4a5b77d1001c245a?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
-              className="object-cover absolute inset-0 size-full"
+              src="/Rectangle.png"
+              className=" absolute inset-0 size-full"
             />
-            <img
-              loading="lazy"
-              srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/34b6ad0d5f280aacf83ed3712d05327fc756ae53355263caf3c2649aaf50a050?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/34b6ad0d5f280aacf83ed3712d05327fc756ae53355263caf3c2649aaf50a050?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/34b6ad0d5f280aacf83ed3712d05327fc756ae53355263caf3c2649aaf50a050?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/34b6ad0d5f280aacf83ed3712d05327fc756ae53355263caf3c2649aaf50a050?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/34b6ad0d5f280aacf83ed3712d05327fc756ae53355263caf3c2649aaf50a050?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/34b6ad0d5f280aacf83ed3712d05327fc756ae53355263caf3c2649aaf50a050?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/34b6ad0d5f280aacf83ed3712d05327fc756ae53355263caf3c2649aaf50a050?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/34b6ad0d5f280aacf83ed3712d05327fc756ae53355263caf3c2649aaf50a050?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
-              className="shrink-0 w-7 aspect-[1.75] absolute"
-            />
-            <div className="relative my-auto">1.5K</div>
+            <div className='flex gap-2'>
+              <img
+                loading="lazy"
+                srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/34b6ad0d5f280aacf83ed3712d05327fc756ae53355263caf3c2649aaf50a050?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/34b6ad0d5f280aacf83ed3712d05327fc756ae53355263caf3c2649aaf50a050?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/34b6ad0d5f280aacf83ed3712d05327fc756ae53355263caf3c2649aaf50a050?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/34b6ad0d5f280aacf83ed3712d05327fc756ae53355263caf3c2649aaf50a050?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/34b6ad0d5f280aacf83ed3712d05327fc756ae53355263caf3c2649aaf50a050?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/34b6ad0d5f280aacf83ed3712d05327fc756ae53355263caf3c2649aaf50a050?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/34b6ad0d5f280aacf83ed3712d05327fc756ae53355263caf3c2649aaf50a050?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/34b6ad0d5f280aacf83ed3712d05327fc756ae53355263caf3c2649aaf50a050?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
+                className="shrink-0 w-7 aspect-[1.75] relative justify-center flex"
+              />
+              <a href="" className='justify-center flex relative'>1.5K</a>
+            </div>
           </div>
         </div>
       </div>
@@ -190,28 +197,22 @@ const Profile = () => {
 
       <div className="flex gap-5 mt-9 max-w-full text-xl font-light leading-7 text-white whitespace-nowrap w-[586px] max-md:flex-wrap">
         <div className="cursor-pointer hover:text-lime-400">
-          <div className="justify-center items-center px-16 py-7 rounded-xl bg-neutral-900 max-md:px-5">
-            All
-          </div>
-          <div className="cursor-pointer hover:text-lime-400">
-            <div className="green-btn">All</div>
-          </div>
+        <div className="justify-center px-12 py-7 text-xl hover:font-bold leading-7 text-white hover:text-black whitespace-nowrap bg-neutral-900 hover:bg-lime-400 rounded-xl">
+         <a href="">All</a> 
+        </div>
+          
         </div>
         <div className="cursor-pointer hover:text-lime-400">
-          <div className="justify-center items-center px-16 py-7 rounded-xl bg-neutral-900 max-md:px-5">
-            Games
+          <div className="justify-center px-12 py-7 text-xl hover:font-bold leading-7 text-white hover:text-black whitespace-nowrap bg-neutral-900 hover:bg-lime-400 rounded-xl">
+           <a href="">Games</a> 
           </div>
-          <div className="hover-content">
-            <div className="green-btn">Games</div>
-          </div>
+          
         </div>
         <div className="cursor-pointer hover:text-lime-400">
-          <div className="justify-center items-center px-16 py-7 rounded-xl bg-neutral-900 max-md:px-5">
-            Web3
+          <div className="justify-center px-12 py-7 text-xl hover:font-bold leading-7 text-white hover:text-black whitespace-nowrap bg-neutral-900 hover:bg-lime-400 rounded-xl">
+           <a href="">Web3</a> 
           </div>
-          <div className="hover-content">
-            <div className="green-btn">Web3</div>
-          </div>
+          
         </div>
       </div>
 
@@ -227,14 +228,14 @@ const Profile = () => {
                 High quality games
               </div>
               <div className="flex gap-5 justify-between mt-12 whitespace-nowrap max-md:flex-wrap max-md:mt-10 max-md:max-w-full">
-              <div className="overflow-hidden relative flex-col justify-center px-11 py-6 text-base leading-7 aspect-[2.72] fill-lime-400 text-neutral-900 max-md:px-5">
-                <img
-                  loading="lazy"
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/b04fe46149e346cda5fe6fe85179956b90011e0ae8332714fd78d6d621a2b880?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
-                  className="object-cover absolute inset-0 size-full"
-                />
-                    <button className='text-black absolute justify-center mb-2'>Continue</button>
-                  </div>
+                <div className="overflow-hidden relative flex-col justify-center px-11 py-6 text-base leading-7 aspect-[2.72] fill-lime-400 text-neutral-900 max-md:px-5">
+                  <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/b04fe46149e346cda5fe6fe85179956b90011e0ae8332714fd78d6d621a2b880?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
+                    className="object-cover absolute inset-0 size-full"
+                  />
+                  <a href="" className='relative flex justify-center px-4'>Continue</a>
+                </div>
                 <div className="my-auto text-3xl leading-7 text-white">$4000</div>
               </div>
             </div>
@@ -248,14 +249,14 @@ const Profile = () => {
                 High quality games
               </div>
               <div className="flex gap-5 justify-between mt-12 whitespace-nowrap max-md:flex-wrap max-md:mt-10 max-md:max-w-full">
-                <div className="overflow-hidden relative flex-col justify-center px-11 py-6 text-base leading-7 aspect-[2.72] fill-lime-400 text-neutral-900 max-md:px-5">
-                  <img
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/b04fe46149e346cda5fe6fe85179956b90011e0ae8332714fd78d6d621a2b880?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
-                    className="object-cover absolute inset-0 size-full "
-                  />
-                  <div className='text-black absolute mr-4'>Continue</div>
-                </div>
+              <div className="overflow-hidden relative flex-col justify-center px-11 py-6 text-base leading-7 aspect-[2.72] fill-lime-400 text-neutral-900 max-md:px-5">
+                <img
+                  loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/b04fe46149e346cda5fe6fe85179956b90011e0ae8332714fd78d6d621a2b880?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
+                  className="object-cover absolute inset-0 size-full"
+                />
+                <a href="" className='relative flex justify-center px-4'>Continue</a>
+              </div>
                 
                 <div className="my-auto text-3xl leading-7 text-white">$4000</div>
               </div>

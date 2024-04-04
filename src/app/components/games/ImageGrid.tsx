@@ -30,7 +30,7 @@ const ImageGrid = () => {
               <img
                 loading="lazy"
                 src={item.imageUrl}
-                className="object-cover absolute inset-0 size-full"
+                className="object-cover absolute rounded-2xl inset-0 size-full"
               />
               <div className='absolute'>{item.name}</div>
             </div>

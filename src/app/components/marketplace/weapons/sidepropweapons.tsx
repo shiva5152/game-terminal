@@ -33,7 +33,7 @@ const SidepropWeapons: React.FC = () => {
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/313bd314415eea8be7858f2188020d417d8f107c6287b3916b8addf563aaf34f?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
           className="shrink-0 aspect-square w-[34px]"
         />
-        <div className="flex-auto my-auto">Search...</div>
+        <div className="flex-auto text-white my-auto">Search...</div>
       </div>
       {sidepropData.map((option, index) => (
         <div key={index} className="flex gap-2 mt-8 cursor-pointer" onClick={() => handleOptionSelect(option.title)}>
@@ -42,9 +42,33 @@ const SidepropWeapons: React.FC = () => {
             src={option.imageSrc}
             className="shrink-0 w-6 aspect-square"
           />
-          <div className="flex-auto my-auto">{option.title}</div>
+          <div className="flex-auto text-white my-auto">{option.title}</div>
         </div>
       ))}
+      <div className="flex gap-5 mt-12 justify-center px-6 py-7 text-xl font-medium text-white whitespace-nowrap rounded-3xl bg-neutral-900 max-w-[50%]]">
+        <div className="mr-40">Rarity</div>
+        <img
+          loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/bfe9613a0986fb082c4ab5f821ca32759c9e1f5376c555b4ff6158cccf4b3185?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
+          className="shrink-0 w-6  aspect-square"
+        />
+      </div>
+      <div className="flex gap-5 justify-center px-6 py-7 text-xl font-medium text-white whitespace-nowrap rounded-3xl bg-neutral-900 max-w-[327px]">
+      <div className="mr-28">Availability</div>
+      <img
+        loading="lazy"
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/bfe9613a0986fb082c4ab5f821ca32759c9e1f5376c555b4ff6158cccf4b3185?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
+        className="shrink-0 w-6 aspect-square"
+      />
+    </div>
+    <div className="flex gap-5 justify-center px-6 py-7 text-xl font-medium text-white whitespace-nowrap rounded-3xl bg-neutral-900 max-w-[327px]">
+      <div className="mr-40">Type</div>
+      <img
+        loading="lazy"
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/bfe9613a0986fb082c4ab5f821ca32759c9e1f5376c555b4ff6158cccf4b3185?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
+        className="shrink-0 w-6 aspect-square"
+      />
+    </div>
     </div>
   );
 }

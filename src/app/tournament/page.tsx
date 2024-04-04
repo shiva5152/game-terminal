@@ -1,6 +1,7 @@
 import React from 'react'
 import Headermain from '../components/tournament/headermain'
 import Cardholder from '../components/games/Cardholder'
+import Holder from '../components/tournament/holder'
 
 const page = () => {
   return (
@@ -8,8 +9,8 @@ const page = () => {
       <div>
         <Headermain />
       </div>
-      <div>
-        <Cardholder />
+      <div className='mt-6'>
+        <Holder />
       </div>
       <div>
         <div className="flex gap-5 mt-20 max-md:flex-wrap max-md:mt-10 max-md:max-w-full">
@@ -27,8 +28,8 @@ const page = () => {
         </div>
       </div>
 
-      <div>
-        <Cardholder />
+      <div className='mt-6'>
+      <Holder />
       </div>
 
       <div>
@@ -47,8 +48,8 @@ const page = () => {
         </div>
       </div>
 
-      <div>
-        <Cardholder />
+      <div className='mt-6'>
+      <Holder />
       </div>
     </div>
   )

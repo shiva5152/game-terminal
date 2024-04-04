@@ -15,9 +15,9 @@ const Number = () => {
             <img
               loading="lazy"
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/9c5ce83b2ce73c04a2284c81a12585cdad29aadda86916a580e181156cb9a02c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
-              className="shrink-0 aspect-[0.94] fill-[linear-gradient(180deg,rgba(142,254,73,0.09)_0%,rgba(142,254,73,0.00)_100%)] stroke-[1px] stroke-lime-400 w-[62px]"
+              className="shrink-0 aspect-[0.94] fill-[linear-gradient(180deg,rgba(142,254,73,0.09)_0%,rgba(142,254,73,0.00)_100%)] stroke-[1px] stroke-lime-400 w-[62px] h-[200px]"
             />
-            <div className="absolute flex-auto my-auto ml-16">
+            <div className="absolute flex-auto my-auto mt-2 ml-16">
               Purchase Node License
             </div>
           </div>
@@ -32,9 +32,9 @@ const Number = () => {
             <img
               loading="lazy"
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/65f17394d6b990d36a8d92025b3552ef9be2de4e5ef02112586d595fd458fa25?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
-              className="shrink-0 aspect-square fill-[linear-gradient(180deg,rgba(142,254,73,0.09)_0%,rgba(142,254,73,0.00)_100%)] stroke-[1px] stroke-lime-400 w-[66px]"
+              className="shrink-0 aspect-square fill-[linear-gradient(180deg,rgba(142,254,73,0.09)_0%,rgba(142,254,73,0.00)_100%)] stroke-[1px] stroke-lime-400 w-[66px] h-[200px]"
             />
-            <div className="absolute flex-auto my-auto ml-16">Setup Node</div>
+            <div className="absolute flex-auto my-auto mt-2 ml-16">Setup Node</div>
           </div>
         </div>
         <div className="flex flex-col ml-5 w-3/12 max-md:ml-0 max-md:w-full">
@@ -47,9 +47,9 @@ const Number = () => {
             <img
               loading="lazy"
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/65f17394d6b990d36a8d92025b3552ef9be2de4e5ef02112586d595fd458fa25?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
-              className="shrink-0 aspect-square fill-[linear-gradient(180deg,rgba(142,254,73,0.09)_0%,rgba(142,254,73,0.00)_100%)] stroke-[1px] stroke-lime-400 w-[66px]"
+              className="shrink-0 aspect-square fill-[linear-gradient(180deg,rgba(142,254,73,0.09)_0%,rgba(142,254,73,0.00)_100%)] stroke-[1px] stroke-lime-400 w-[66px] h-[200px]"
             />
-            <div className="absolute flex-auto my-auto ml-16">Earn Points</div>
+            <div className="absolute flex-auto my-auto mt-2 ml-16">Earn Points</div>
           </div>
         </div>
         <div className="flex flex-col ml-5 w-3/12 max-md:ml-0 max-md:w-full">
@@ -62,9 +62,9 @@ const Number = () => {
             <img
               loading="lazy"
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/65f17394d6b990d36a8d92025b3552ef9be2de4e5ef02112586d595fd458fa25?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
-              className="shrink-0 aspect-square fill-[linear-gradient(180deg,rgba(142,254,73,0.09)_0%,rgba(142,254,73,0.00)_100%)] stroke-[1px] stroke-lime-400 w-[66px]"
+              className="shrink-0    aspect-square fill-[linear-gradient(180deg,rgba(142,254,73,0.09)_0%,rgba(142,254,73,0.00)_100%)] stroke-[1px] stroke-lime-400 w-[66px] h-[200px]"
             />
-            <div className="absolute flex-auto my-auto ml-16">Automated Reward Distribution</div>
+            <div className="flex absolute mt-2 ml-16">Automated Reward Distribution</div>
           </div>
         </div>
       </div>

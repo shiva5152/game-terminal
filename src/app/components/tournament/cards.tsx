@@ -132,7 +132,7 @@ function Card({ name, description, imageUrl }: CardProps) {
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/615da6e70d6c520451360430821ab8819bcb398bbd4b9193d9e62d7e98673ee3?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
             className="object-cover absolute inset-0 size-full"
           />
-          <a href="" className="relative flex justify-center text-black text-sm">Learn More</a>
+          <a href="" className="relative flex justify-center text-black text-sm">Go</a>
         </div>
       </div>
     </div>

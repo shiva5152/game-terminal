@@ -5,7 +5,7 @@ import Options from '@/app/components/profile/options'
 
 const page = () => {
   return (
-    <div>
+    <div className='p-8'>
       <div>
         <img
           loading="lazy"

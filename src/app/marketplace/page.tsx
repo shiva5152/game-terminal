@@ -3,6 +3,7 @@ import Header from '../components/Header'
 import Sideprop from '../components/marketplace/Sideprops'
 import ProfileCard from '../components/marketplace/ProfileCard'
 import Cardholder from '../components/games/Cardholder'
+import Kolscard from '../components/marketplace/Kolscard'
 
 const page = () => {
   return (
@@ -22,11 +23,11 @@ const page = () => {
       </div>
       
       <div className="flex gap-3 mt-16 w-full max-md:flex-wrap max-md:mt-10 max-md:max-w-full">
-        <div className="flex-auto">
+        <div className="flex-auto w-[140%]">
           <Sideprop />
         </div>
         <div className="flex-auto">
-         <ProfileCard />
+         <Kolscard />
 
         </div>
       </div>

@@ -60,13 +60,13 @@ const page = () => {
                     />
                   </div>
                   <div className="flex gap-5 justify-between mt-7">
-                    <div className="overflow-hidden relative flex-col justify-center items-center px-16 py-3.5 text-xs font-bold leading-5 text-center aspect-[6.03] fill-lime-400 text-neutral-900 w-[211px] max-md:px-5">
-                      <img
+                    <div className="overflow-hidden relative flex flex-col justify-center items-center px-16 py-3.5 text-xs font-bold leading-5 text-center aspect-[6.03] fill-lime-400 text-neutral-900 w-[211px] max-md:px-5" style={{ backgroundImage: `url('/greenrect.png')`, backgroundRepeat:'no-repeat', backgroundPosition:'center', backgroundSize:'100%'}}>
+                      {/* <img
                         loading="lazy"
                         src="https://cdn.builder.io/api/v1/image/assets/TEMP/27991d31c04142a075d6ee5db61ede3f901ae36248d1e832f5faa3f148de7be2?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
                         className="object-cover absolute inset-0 size-full"
-                      />
-                      <button className='absolute text-black'>Buy Now</button>Buy Now
+                      /> */}
+                      <button className='relative justify-center flex text-black'>Buy Now</button>
                     </div>
                     <div className="flex gap-1 my-auto text-2xl font-semibold leading-5 text-white whitespace-nowrap">
                       <img
@@ -79,8 +79,8 @@ const page = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col ml-5 w-[68%] max-md:ml-0 max-md:w-full">
-                <div className="flex flex-col grow max-md:mt-1.5 max-md:max-w-full">
+              <div className="flex flex-col  w-[68%] max-md:ml-0 max-md:w-full">
+                <div className="flex flex-col grow max-md:mt-1.5 max-md:max-w-full mr-6">
                   <div className="flex gap-3 self-end">
                     <div className="flex justify-center items-center px-2 w-9 h-9 bg-zinc-800 rounded-[30px]">
                       <img
@@ -104,19 +104,19 @@ const page = () => {
                       />
                     </div>
                   </div>
-                  <div className="flex gap-5 justify-between mt-12 w-full max-md:flex-wrap max-md:mt-10 max-md:max-w-full">
-                    <div className="flex gap-3 self-end mt-24 text-xs leading-5 text-right text-white max-md:mt-10">
-                      <img
+                  <div className="flex gap-5 justify-between w-full max-md:flex-wrap max-md:mt-10 max-md:max-w-full">
+                    <div className="flex gap-3 self-end mt-10 text-xs leading-5 text-right text-white max-md:mt-10">
+                      {/* <img
                         loading="lazy"
                         src="https://cdn.builder.io/api/v1/image/assets/TEMP/de58c35aa9fa922266262bbff607c1e194b9264ab79a1243f82069c18e13c710?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
-                        className="shrink-0 self-start w-px border border-solid aspect-[0.14] border-zinc-800 stroke-[1px] stroke-zinc-800"
-                      />
-                      <div>
+                        className="shrink-0 self-start w-px border border-solid mt-10 aspect-[0.14] border-zinc-800 stroke-[1px] stroke-zinc-800"
+                      /> */}
+                      <div className='mb-4'>
                         <span className="font-medium text-white">$</span>
-                        <span className="font-medium">400.000</span>
+                        <span className="font-medium  ">400.000</span>
                       </div>
                     </div>
-                    <div className="flex gap-5 justify-between px-4 py-6 text-xs rounded-xl bg-zinc-800">
+                    <div className="flex gap-5 justify-between mt-10 px-4 py-6 text-xs rounded-xl bg-zinc-800">
                       <div className="flex flex-col text-zinc-600">
                         <div>Blockchain</div>
                         <div className="mt-4">Token Standard</div>

@@ -4,7 +4,79 @@ import Openreview from '@/app/components/games/openreview'
 const page = () => {
   return (
     <div className='p-6'>
-      <div className="mt-11 max-md:mt-10 max-md:max-w-full">
+      <div className="mt-6 max-md:max-w-full">
+      <div className="flex gap-5 max-md:flex-col max-md:gap-0">
+        <div className="flex flex-col w-[84%] max-md:ml-0 max-md:w-full">
+          <div className="flex flex-col grow justify-center w-full  rounded-3xl max-md:mt-5 max-md:max-w-full">
+            <div className="flex overflow-hidden relative flex-col pt-20 w-full min-h-[620px] rounded-2xl max-md:max-w-full">
+              <img
+                loading="lazy"
+                srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/2f851553e1d5174b3aa512ce8470d97a7224cb479d7f81a5d5b19b7525d17d3a?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/2f851553e1d5174b3aa512ce8470d97a7224cb479d7f81a5d5b19b7525d17d3a?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/2f851553e1d5174b3aa512ce8470d97a7224cb479d7f81a5d5b19b7525d17d3a?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/2f851553e1d5174b3aa512ce8470d97a7224cb479d7f81a5d5b19b7525d17d3a?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/2f851553e1d5174b3aa512ce8470d97a7224cb479d7f81a5d5b19b7525d17d3a?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/2f851553e1d5174b3aa512ce8470d97a7224cb479d7f81a5d5b19b7525d17d3a?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/2f851553e1d5174b3aa512ce8470d97a7224cb479d7f81a5d5b19b7525d17d3a?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/2f851553e1d5174b3aa512ce8470d97a7224cb479d7f81a5d5b19b7525d17d3a?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
+                className="object-cover absolute inset-0 size-full"
+              />
+              <div className="flex relative gap-2 justify-center items-center px-4 py-2 mt-96 bg-black rounded-xl max-md:flex-wrap max-md:mt-10">
+                <img
+                  loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/1c263873037da2259e3c17e87e01e8b778a6faae8fd8c1278e6834b553cee377?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
+                  className="shrink-0 self-stretch my-auto w-6 aspect-square"
+                />
+                <div className="flex justify-center items-center self-stretch p-2 w-8 h-8 rounded-lg shadow-sm">
+                  <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/157b1e9fb6e861bdeb537e50272b22ba14844047b9c801ae5a37e438f28e1a16?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
+                    className="w-4 aspect-square"
+                  />
+                </div>
+                <img
+                  loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/6ae2cf4082c6c243472ce1c7f1fa1e76de6cfda9c9b651dd74b728f89ab4df4b?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
+                  className="shrink-0 self-stretch my-auto w-6 aspect-square"
+                />
+                <div className="flex flex-1 gap-2 self-stretch my-auto max-md:flex-wrap max-md:max-w-full">
+                  <div className="text-xs text-center text-white">
+                    0:00 / 2:10
+                  </div>
+                  <div className="flex flex-col flex-1 justify-center items-start my-auto rounded-lg  bg-opacity-20 max-md:max-w-full">
+                    <div className="shrink-0 w-0.5 h-2 rounded-lg" />
+                  </div>
+                </div>
+                <img
+                  loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/33cea345fbabdcf569430abf3fd340567ab7552ab901f4df3b4f42fa99aac1f6?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
+                  className="shrink-0 self-stretch my-auto w-6 aspect-square"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col ml-5 w-[16%] max-md:ml-0 max-md:w-full">
+          <div className="flex flex-col grow max-md:mt-5">
+            <div className="flex justify-center items-center rounded-3xl">
+              <img
+                loading="lazy"
+                srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/448e7f2ad866b0d8a78a3bf7c77e80d9ff49b1ad8739fd6a3636461e7c51c4a8?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/448e7f2ad866b0d8a78a3bf7c77e80d9ff49b1ad8739fd6a3636461e7c51c4a8?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/448e7f2ad866b0d8a78a3bf7c77e80d9ff49b1ad8739fd6a3636461e7c51c4a8?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/448e7f2ad866b0d8a78a3bf7c77e80d9ff49b1ad8739fd6a3636461e7c51c4a8?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/448e7f2ad866b0d8a78a3bf7c77e80d9ff49b1ad8739fd6a3636461e7c51c4a8?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/448e7f2ad866b0d8a78a3bf7c77e80d9ff49b1ad8739fd6a3636461e7c51c4a8?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/448e7f2ad866b0d8a78a3bf7c77e80d9ff49b1ad8739fd6a3636461e7c51c4a8?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/448e7f2ad866b0d8a78a3bf7c77e80d9ff49b1ad8739fd6a3636461e7c51c4a8?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
+                className="aspect-[1.14] w-[225px] rounded-2xl"
+              />
+            </div>
+            <div className="flex justify-center items-center mt-4 rounded-3xl">
+              <img
+                loading="lazy"
+                srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/579794535925773c8048e3d08860b5570dcff8114efb98901fa0af57303a645e?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/579794535925773c8048e3d08860b5570dcff8114efb98901fa0af57303a645e?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/579794535925773c8048e3d08860b5570dcff8114efb98901fa0af57303a645e?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/579794535925773c8048e3d08860b5570dcff8114efb98901fa0af57303a645e?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/579794535925773c8048e3d08860b5570dcff8114efb98901fa0af57303a645e?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/579794535925773c8048e3d08860b5570dcff8114efb98901fa0af57303a645e?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/579794535925773c8048e3d08860b5570dcff8114efb98901fa0af57303a645e?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/579794535925773c8048e3d08860b5570dcff8114efb98901fa0af57303a645e?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
+                className="aspect-[1.14] w-[225px] rounded-2xl"
+              />
+            </div>
+            <div className="flex justify-center items-center mt-4 rounded-3xl">
+              <img
+                loading="lazy"
+                srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/07d1db07ecad61b0c75744acad0ee82027efca8926173e2098a22000f3922369?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/07d1db07ecad61b0c75744acad0ee82027efca8926173e2098a22000f3922369?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/07d1db07ecad61b0c75744acad0ee82027efca8926173e2098a22000f3922369?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/07d1db07ecad61b0c75744acad0ee82027efca8926173e2098a22000f3922369?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/07d1db07ecad61b0c75744acad0ee82027efca8926173e2098a22000f3922369?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/07d1db07ecad61b0c75744acad0ee82027efca8926173e2098a22000f3922369?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/07d1db07ecad61b0c75744acad0ee82027efca8926173e2098a22000f3922369?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/07d1db07ecad61b0c75744acad0ee82027efca8926173e2098a22000f3922369?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
+                className="aspect-[1.14] w-[225px] rounded-2xl"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      {/* <div className="mt-11 max-md:mt-10 max-md:max-w-full">
         <div className="flex gap-5 max-md:flex-col max-md:gap-0">
           <div className="flex flex-col w-[59%] max-md:ml-0 max-md:w-full">
             <div className="flex flex-col grow justify-center py-0.5 w-full rounded-3xl bg-neutral-900 max-md:mt-5 max-md:max-w-full">
@@ -51,13 +123,13 @@ const page = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
 
       <div className="flex gap-3 p-4">
       {/* First section */}
       <div className="flex flex-1 gap-3 items-start my-auto text-5xl text-white max-md:flex-wrap">
-        <div className="grow self-stretch">Off The Grid</div>
+        <div className="grow self-stretch font-bold">Off The Grid</div>
         <img
           loading="lazy"
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/16fab3c34b1be024f7abeccea9e213438426a2b39ad5dca6c491c4991fb59fe0?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
@@ -70,22 +142,22 @@ const page = () => {
         />
       </div>
       {/* Second section */}
-      <div className="flex flex-1 gap-3 text-sm ml-60 leading-7 text-neutral-900">
-        <div className="overflow-hidden relative flex-col justify-center px-12 py-5 aspect-[4.19] fill-lime-400 max-md:px-5">
+      <div className="flex flex-1 gap-3 text-sm ml-72 leading-7 text-neutral-900">
+        <div className="overflow-hidden relative flex ml-36 flex-col justify-center px-12 py-5 aspect-[4.19] fill-lime-400 max-md:px-5">
           <img
             loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/29faf22b9780ae5b4d15958e5ccaaa6e9dd54068fe8bed1244531a4c210b828a?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
             className="object-cover absolute inset-0 size-full"
           />
-          <button className='absolute text-black text-sm'>Download Game</button>
+          <a href='' className='flex relative justify-center font-bold text-black text-sm'>Download Game</a>
         </div>
-        <div className="overflow-hidden relative flex-col justify-center px-14 py-5 aspect-[4.19] fill-lime-400 max-md:px-5">
+        <div className="overflow-hidden relative flex-col flex justify-center px-14 py-5 aspect-[4.19] fill-lime-400 max-md:px-5">
           <img
             loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/29faf22b9780ae5b4d15958e5ccaaa6e9dd54068fe8bed1244531a4c210b828a?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
             className="object-cover absolute inset-0 size-full"
           />
-          <button className='absolute text-black text-sm'>Watch Trailer</button>
+          <button className='flex relative justify-center font-bold text-black  text-sm'>Watch Trailer</button>
         </div>
       </div>
     </div>
@@ -162,13 +234,13 @@ const page = () => {
           className="shrink-0 aspect-[1.47] w-[90px]"
         />
       </div>
-      <div className="overflow-hidden relative flex-col justify-center items-center px-16 py-5 my-auto text-sm font-bold leading-7 whitespace-nowrap aspect-[4.19] fill-lime-400 text-neutral-900 w-[197px] max-md:px-5">
+      <div className="overflow-hidden relative flex flex-col justify-center items-center px-16 py-5 my-auto text-sm font-bold leading-7 whitespace-nowrap aspect-[4.19] fill-lime-400 text-neutral-900 w-[197px] max-md:px-5">
         <img
           loading="lazy"
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/29faf22b9780ae5b4d15958e5ccaaa6e9dd54068fe8bed1244531a4c210b828a?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
           className="object-cover absolute inset-0 size-full"
         />
-        <button className='absolute text-black text-sm'>write</button>
+        <a href='' className='relative flex justify-center text-black text-sm'>write</a>
       </div>
     </div>
     </div>

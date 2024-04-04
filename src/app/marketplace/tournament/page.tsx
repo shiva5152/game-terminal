@@ -7,11 +7,17 @@ import React from 'react'
 const page = () => {
   return (
     <div>
-      <div>
-      <div className="relative p-10 mt-64 text-7xl font-bold text-center text-lime-400 max-md:mt-10 max-md:max-w-full max-md:text-4xl">
-        Run a Node and earn <span className="text-lime-400">$GTT</span> and{" "}
+      <div >
+      <div className='relative mt-20 flex flex-col items-center'>
+      <div className="relative p-10 text-7xl mt-56 font-bold text-center  text-white max-md:mt-10 max-md:max-w-full max-md:text-4xl z-10">
+        Run a Node and earn <br /> <span className="text-lime-500">$GTT</span> and{" "}
         <span className="text-lime-400">NFT</span> rewards
       </div>
+      <div className='absolute  inset-0 flex justify-center'>
+        <img src="/btc.png" alt="" className="object-contain" />
+      </div>
+    </div>
+
       <div className="flex relative gap-4 px-0.5 mt-11 text-base font-bold leading-5 text-center max-md:flex-wrap max-md:mt-10">
         
       <div className="overflow-hidden relative flex-col grow justify-center items-center px-16 py-7 text-white aspect-[4.11] fill-neutral-900 w-fit max-md:px-5">
