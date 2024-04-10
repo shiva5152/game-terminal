@@ -2,6 +2,13 @@ import axios from "axios";
 import instance from "@/config/axios";
 import type { GameDetailsForm } from "@/types/user";
 
+export const createGameTournament = async (bodyObj: any) => {
+
+
+    const { data } = await instance.post(`/tournament`, bodyObj);
+    console.log(data);
+
+}
 
 export const addGameDetails = async (gameDetailsData: GameDetailsForm) => {
 

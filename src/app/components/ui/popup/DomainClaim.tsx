@@ -30,8 +30,8 @@ const ClaimDomain = ({ ownerAddress, userId }: ConnectButtonProps) => {
       const domainName = await contract.getName();
       console.log(domainName);
     };
-    validateDomainName();
-    fetchDomainName();
+    // validateDomainName();
+    // fetchDomainName();
   }, []);
   const validateDomainName = async () => {
     const provider = new ethers.BrowserProvider(window.ethereum);
