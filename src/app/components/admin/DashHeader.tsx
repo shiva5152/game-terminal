@@ -1,5 +1,6 @@
+"use client";
 import * as React from "react";
-
+import ConnectButton from "@/app/components/setting/component/collectWallet";
 interface SocialIconProps {
   src: string;
   alt: string;
@@ -14,18 +15,35 @@ const SocialIcon: React.FC<SocialIconProps> = ({ src, alt }) => (
   />
 );
 
-const Header: React.FC = () => (
-  <div className="flex border-b-[1px] w-full border-zinc-700 gap-5 justify-between px-8 py-2 backdrop-blur-2xl bg-[#161616] max-md:flex-wrap max-md:px-5">
-    <div className="flex gap-4 my-auto">
-      {socialIcons.map((icon, index) => (
-        <SocialIcon key={index} src={icon.src} alt={icon.alt} />
-      ))}
+const Header: React.FC = () => {
+  const [ownerAddress, setOwnerAddress] = React.useState<string>("");
+
+  return (
+    <div className="flex border-b-[1px] w-full border-zinc-700 gap-5 justify-between px-8 py-2 backdrop-blur-2xl bg-[#161616] max-md:flex-wrap max-md:px-5">
+      <div className="flex gap-4 my-auto">
+        {socialIcons.map((icon, index) => (
+          <SocialIcon key={index} src={icon.src} alt={icon.alt} />
+        ))}
+      </div>
+      <div className="flex justify-center gap-4 px-4 py-0 text-sm font-bold leading-6 text-white whitespace-nowrap rounded-xl bg-[#161616]">
+        {ownerAddress ? (
+          <div className="flex gap-2 items-center">
+            <span className="text-zinc-600">Owner:</span>
+            <span title={ownerAddress}>
+              {ownerAddress.slice(0, 6)}....{ownerAddress.slice(-6)}
+            </span>
+          </div>
+        ) : null}
+        <div>
+          <ConnectButton
+            ownerAddress={ownerAddress}
+            setOwnerAddress={setOwnerAddress}
+          />
+        </div>
+      </div>
     </div>
-    <div className="flex flex-col justify-center px-4 py-3 text-sm font-bold leading-6 text-white whitespace-nowrap rounded-xl bg-[#161616]">
-      <div className=" flex justify-center items-center">Connect</div>
-    </div>
-  </div>
-);
+  );
+};
 
 export default Header;
 

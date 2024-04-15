@@ -10,12 +10,17 @@ const Sidebar: React.FC = () => {
   const navArray = navItems;
   return (
     <div className="flex gap-0 mx-auto h-full">
-      <aside className="flex flex-col  justify-between items-center px-5 pt-6 pb-20 shadow-sm bg-[#161616]">
+      {/* <aside className="flex flex-col  justify-between items-center px-5 pt-6 pb-20 shadow-sm bg-[#161616]">
+       
+      </aside> */}
+      <nav className="flex flex-col border-x-[1px] border-zinc-700 grow shrink-0 px-2 py-2 min-h-screen text-sm font-bold leading-6 shadow-sm basis-0 bg-[#161616] text-zinc-400 w-fit">
         <Link href={"/"}>
-          <img src="/logo.png" alt="Logo" className="w-10 aspect-square" />
+          <img
+            src="/logo.png"
+            alt="Logo"
+            className="w-10 aspect-square  mt-4 ml-4 text-2xl"
+          />
         </Link>
-      </aside>
-      <nav className="flex flex-col border-x-[1px] border-zinc-700 grow shrink-0 px-2 py-20 text-sm font-bold leading-6 shadow-sm basis-0 bg-[#161616] text-zinc-400 w-fit">
         <h2 className="self-start mt-14 ml-4 text-2xl leading-9 text-white">
           General
         </h2>
