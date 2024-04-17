@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "./cards"
 
-function Cardholder() {
+function Holder() {
   // Array of card data
   const cardsData = [
     { id: 1,
@@ -45,4 +45,4 @@ function Cardholder() {
   );
 }
 
-export default Cardholder;
+export default Holder;

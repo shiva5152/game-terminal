@@ -51,13 +51,13 @@ const optionsData = [
 
 const Options = () => {
   return (
-    <div className='p-4'>
+    <div className='sm:p-4'>
       <div className="mt-8 max-md:max-w-full">
-        <div className="grid grid-cols-3 gap-5 max-md:grid-flow-row">
+        <div className="sm:grid sm:grid-cols-3 gap-5 flex flex-col">
           {optionsData.map((item, index) => (
-            <div key={index} className="flex flex-col max-md:w-full">
+            <div key={index} className="flex sm:flex-col flex-row max-md:w-full">
               <div className="overflow-hidden grow px-3 py-2 fill-neutral-900 max-md:pr-5 max-md:mt-5 max-md:max-w-full">
-                <div className="flex gap-5 max-md:flex-col max-md:gap-0">
+                <div className="flex sm:gap-5 gap-3">
                   <div className="flex flex-col w-3/5 max-md:ml-0 max-md:w-full">
                     <img
                       loading="lazy"
@@ -68,8 +68,8 @@ const Options = () => {
                   <div className="flex flex-col w-2/5 max-md:ml-0 max-md:w-full">
                     <div className="flex flex-col self-stretch my-auto font-bold max-md:mt-10">
                       <div className="text-xl leading-7 text-white">{item.name}</div>
-                      <div className="mt-8 text-xs leading-6 text-zinc-600">Game :</div>
-                      <div className="mt-4 text-base leading-6 text-white">{item.game}</div>
+                      <div className="sm:mt-8 mt-4 text-xs leading-6 text-zinc-600">Game :</div>
+                      <div className="sm:mt-4 text-base leading-6 text-white">{item.game}</div>
                     </div>
                   </div>
                 </div>

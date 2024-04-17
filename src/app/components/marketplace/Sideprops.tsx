@@ -4,7 +4,7 @@ const sidedropdown = () => {
   return (
     <div>
         <div>
-          <div className="flex flex-col justify-center p-4 text-xs font-medium text-white whitespace-nowrap bg-neutral-900 max-w-[327px] rounded-[30px]">
+          <div className="flex flex-col justify-center p-4 text-xs font-medium text-white whitespace-nowrap bg-neutral-900 max-w-auto rounded-[30px]">
             <div className="flex gap-2 py-1 border border-solid border-stone-900 rounded-[50px]">
               <img
                 loading="lazy"

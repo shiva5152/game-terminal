@@ -1,7 +1,8 @@
 import React from 'react'
-import Profileline from '@/app/components/profile/profileline'
-import Slidingbar from '@/app/components/profile/slidingbar'
-import Options from '@/app/components/profile/options'
+import Profileline from '../components/profile/profileline'
+import Slidingbar from '../components/profile/slidingbar'
+import Images from '../components/profile/image'
+import Editpopup from '../components/profile/editpopup'
 
 const page = () => {
   return (
@@ -27,10 +28,16 @@ const page = () => {
         <Slidingbar />
       </div>
       <div>
-        <Options />
-        
+      <Images/>
+      <Images/>
+      <div className='sm:flex hidden'>
+      <Images/>
       </div>
+
+      {/* <Editpopup  closePopup={handleClosePopup}/> */}
     </div>
+    </div>
+    
   )
 }
 
