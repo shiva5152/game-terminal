@@ -38,9 +38,12 @@ const Setting = () => {
       console.log("Attempting to save data to the backend..."); // Add this line
       const storedEmail = localStorage.getItem("email");
       if (storedEmail) {
-        await axios.post("http://localhost:8000/save-user-data", {
-          email: storedEmail,
-        });
+        await axios.post(
+          `${process.env.NEXT_PUBLIC_SERVER_ENDPOINT}/save-user-data`,
+          {
+            email: storedEmail,
+          }
+        );
         console.log("Data saved to the backend successfully.");
       } else {
         console.log("Email is missing.");
@@ -55,7 +58,7 @@ const Setting = () => {
   }, []);
 
   const handleTwitterAuth = async () => {
-    window.location.href = "http://localhost:8000/auth/twitter";
+    window.location.href = `${process.env.NEXT_PUBLIC_SERVER_ENDPOINT}/auth/twitter`;
   };
 
   const handleDiscordAuth = () => {
