@@ -27,16 +27,18 @@ const page = () => {
   };
 
   const handleGoogle = async () => {
-    window.location.href = "http://localhost:8000/auth/google";
+    window.location.href = `${process.env.NEXT_PUBLIC_SERVER_ENDPOINT}/auth/google`;
   };
 
   const handleFacebook = async () => {
-    window.location.href = "http://localhost:8000/auth/facebook";
+    window.location.href = `${process.env.NEXT_PUBLIC_SERVER_ENDPOINT}/auth/facebook`;
   };
 
   const handleLogin = async () => {
     try {
-      await axios.post("http://localhost:8000/addemail", { text });
+      await axios.post(`${process.env.NEXT_PUBLIC_SERVER_ENDPOINT}/addemail`, {
+        text,
+      });
       alert("Email added successfully!");
     } catch (error) {
       console.error("Error adding email:", error);
