@@ -4,7 +4,7 @@ import React from 'react';
 const SlidingBar = () => {
   return (
     <div>
-      <div className="flex gap-5 items-start px-11 pt-12 pb-7 mt-8 text-xl text-white rounded-3xl bg-neutral-900 max-md:flex-wrap max-md:px-5">
+      <div className="flex gap-5 flex-row items-start sm:px-11 pt-12 sm:pb-7 w-full sm:overflow-hidden overflow overflow-x-auto mt-8 text-s sm:text-xl text-white  bg-neutral-900 px-2 ">
         <div className='hover:text-lime-400 cursor-pointer hover:text-bold relative'>
           Game Downloaded
           <img

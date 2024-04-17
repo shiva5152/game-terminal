@@ -88,7 +88,7 @@ const Setting = () => {
           className="mt-3 ml-6 aspect-[3.57] fill-lime-400 w-[25px] max-md:ml-2.5"
         /> */}
         </div>
-        <div className="flex gap-5 justify-between p-8 mt-5 whitespace-nowrap rounded-xl border border-t-0 border-b-0 border-lime-400 border-solid bg-neutral-800 max-md:flex-wrap max-md:px-5 max-md:max-w-full">
+        <div className="flex sm:gap-5 justify-between p-8 mt-5 whitespace-nowrap rounded-xl border border-t-0 border-b-0 border-lime-400 border-solid bg-neutral-800  max-md:max-w-full">
           <div className="flex flex-col my-auto text-base text-zinc-600">
             <div>Email account</div>
             <div className="mt-10">Wallet address</div>
@@ -96,7 +96,6 @@ const Setting = () => {
           </div>
           <div className="flex flex-col text-lg font-medium text-right text-white">
             <div>{user ? user.email : "example@gmail.com"} </div>
-
             <div className="flex gap-1 justify-between mt-7">
               <div className="grow my-auto">
                 {ownerAddress.slice(0, 6)}****{ownerAddress.slice(-4)}
@@ -134,8 +133,8 @@ const Setting = () => {
           </div>
         </div>
 
-        <div className="flex flex-col px-8 py-9 mt-5 font-semibold text-white whitespace-nowrap rounded-3xl bg-neutral-900 max-md:px-5 max-md:max-w-full">
-          <div className="flex gap-5 justify-between text-xl items-center max-md:flex-wrap max-md:max-w-full">
+        <div className="flex flex-col sm:px-8 py-9 mt-5 font-semibold text-white whitespace-nowrap rounded-3xl bg-neutral-900 max-md:max-w-full">
+          <div className="flex gap-5 justify-between text-xl items-center  max-md:max-w-full">
             <div className="flex flex-col">
               <div className="text-3xl">Connections</div>
               <div className="flex gap-4 justify-between mt-10 text-xl">
@@ -189,12 +188,12 @@ const Setting = () => {
             </a>
           </div>
         </div>
-        <div className="flex flex-col px-8 py-9 mt-5 font-semibold text-white rounded-3xl bg-neutral-900 max-md:px-5 max-md:max-w-full">
+        <div className="flex flex-col sm:px-8 py-9 mt-5 font-semibold text-white rounded-3xl bg-neutral-900  max-md:max-w-full">
           <div className="text-3xl max-md:max-w-full">Wallet</div>
           <div className="mt-6 text-sm text-zinc-600 max-md:max-w-full">
             Your wallet address will not be displayed on your public profile.
           </div>
-          <div className="flex gap-5 justify-between mt-8 w-full text-xl whitespace-nowrap max-md:flex-wrap max-md:max-w-full">
+          <div className="flex gap-5 justify-between mt-8 w-full text-xl whitespace-nowrap  max-md:max-w-full">
             <div className="flex gap-4 justify-between">
               <img
                 loading="lazy"

@@ -30,7 +30,7 @@ const openreview = () => {
             />
           </div>
         </div>
-        <div className="flex flex-col ml-5 w-3/12 max-md:ml-0 max-md:w-full">
+        <div className="sm:flex hidden flex-col ml-5 w-3/12 max-md:ml-0 max-md:w-full">
           <div className="flex flex-col grow justify-center p-5 mx-auto w-full rounded-3xl bg-neutral-900 max-md:mt-3">
             <div className="flex gap-5 justify-between w-full">
               <div className="flex gap-3 text-base font-medium text-white">
@@ -55,7 +55,7 @@ const openreview = () => {
             />
           </div>
         </div>
-        <div className="flex flex-col ml-5 w-3/12 max-md:ml-0 max-md:w-full">
+        <div className="sm:flex hidden flex-col ml-5 w-3/12 max-md:ml-0 max-md:w-full">
           <div className="flex flex-col grow justify-center p-5 mx-auto w-full rounded-3xl bg-neutral-900 max-md:mt-3">
             <div className="flex gap-5 justify-between w-full">
               <div className="flex gap-3 text-base font-medium text-white">
@@ -80,7 +80,7 @@ const openreview = () => {
             />
           </div>
         </div>
-        <div className="flex flex-col ml-5 w-3/12 max-md:ml-0 max-md:w-full">
+        <div className="sm:flex hidden flex-col ml-5 w-3/12 max-md:ml-0 max-md:w-full">
           <div className="flex flex-col grow justify-center p-5 mx-auto w-full rounded-3xl bg-neutral-900 max-md:mt-3">
             <div className="flex gap-5 justify-between w-full">
               <div className="flex gap-3 text-base font-medium text-white">

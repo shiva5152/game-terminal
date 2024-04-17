@@ -1,4 +1,5 @@
-import React from 'react';
+'use client'
+import React, { useState, useEffect } from 'react';
 
 interface Card {
   name: string;
@@ -11,33 +12,45 @@ interface Card {
 }
 
 const WeaponCard: React.FC<{ data: Card[] }> = ({ data }) => {
+  const [chunkedData, setChunkedData] = useState<Card[][]>([]);
+
   const chunkArray = (arr: any[], n: number) =>
     Array.from({ length: Math.ceil(arr.length / n) }, (_, i) =>
       arr.slice(i * n, i * n + n)
     );
 
-  const chunkedData = chunkArray(data, 4);
+  useEffect(() => {
+    const updateChunkedData = () => {
+      const newSize = window.innerWidth >= 768 ? 4 : 2;
+      setChunkedData(chunkArray(data, newSize));
+    };
+
+    updateChunkedData();
+    window.addEventListener('resize', updateChunkedData);
+    return () => {
+      window.removeEventListener('resize', updateChunkedData);
+    };
+  }, [data]);
 
   return (
-    <div className='p-8'>
+    <div className='sm:p-8 p-10'>
       <div className="px-px max-md:max-w-full">
         {chunkedData.map((row, rowIndex) => (
-          <div key={rowIndex} className="flex gap-8 py-4 
-          max-md:flex-col max-md:gap-0">
+          <div key={rowIndex} className="flex gap-8 py-4  sm:w-full flex-row ">
             {row.map((card: Card, index: number) => (
-              <div key={index} className="flex flex-col w-3/12 max-md:ml-0 max-md:w-full">
-                <div className="flex overflow-hidden relative flex-col grow pb-4 aspect-[0.62] fill-neutral-900 max-md:mt-5">
+              <div key={index} className="flex flex-col  sm:w-3/12 max-md:ml-0">
+                <div className="flex sm:overflow-hidden relative flex-col grow pb-4 aspect-[0.62] h-full fill-neutral-900 max-md:mt-5">
                   <img
                     loading="lazy"
                     src={card.iconSrc}
-                    className="w-full aspect-[1.08] "
+                    className="w-full aspect-[1.08]"
                   />
                   <div className="flex relative flex-col px-4 mt-6">
                     <div className="text-xs leading-5 text-white">{card.name}</div>
                     <div className="mt-3 text-sm font-semibold leading-5 text-white">
                       {card.number}
                     </div>
-                    <div className="flex gap-5 mt-8 w-full">
+                    <div className="flex gap-5 sm:mt-8 mt-4 w-full">
                       <div className="flex flex-1 gap-1 text-sm font-semibold leading-5 text-white whitespace-nowrap">
                         <img
                           loading="lazy"
@@ -51,14 +64,9 @@ const WeaponCard: React.FC<{ data: Card[] }> = ({ data }) => {
                         <span className="text-zinc-500">{card.price}</span>
                       </div>
                     </div>
-                    <div className="overflow-hidden mt-4 relative flex flex-col justify-center px-4 py-3 text-base leading-7 aspect-[6.5] fill-lime-400 text-neutral-900 max-md:px-5" style={{ backgroundImage: `url('/greenrect.png')`, backgroundRepeat:'no-repeat', backgroundPosition:'center', backgroundSize:'100%'}}>
-                    {/* <img
-                      loading="lazy"
-                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/b04fe46149e346cda5fe6fe85179956b90011e0ae8332714fd78d6d621a2b880?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
-                      className="object-cover  absolute inset-0 size-full"
-                      /> */}
-                      <a href="" className='relative flex justify-center px-4 font-bold'>Buy now</a>
-                    </div>
+                    <a href={card.buyNowIcon} className="flex flex-col text-center justify-center p-2 text-sm  text-neutral-900 max-md:px-5" style={{ backgroundImage: `url('/g8.png')`, backgroundRepeat:'no-repeat', backgroundPosition:'center', backgroundSize:'100%'}}>
+                      Buy now
+                    </a>
                   </div>
                 </div>
               </div>
@@ -68,7 +76,7 @@ const WeaponCard: React.FC<{ data: Card[] }> = ({ data }) => {
       </div>
     </div>
   );
-}
+};
 
 const WeaponCardContainer = () => {
   const cardData: Card[] = [

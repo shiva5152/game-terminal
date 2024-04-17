@@ -58,7 +58,7 @@ export default function ConnectButton({
       </button> */}
       <button
         onClick={connectWallet}
-        className="overflow-hidden max-md:mx-auto  max-md:text-[10px]  button-bg md:mx-0 relative flex-col justify-center items-center self-start px-4 py-8 text-xs md:text-sm leading-7 text-black whitespace-nowrap  aspect-[2.86]  fill-lime-400 "
+        className="overflow-hidden max-md:mx-auto  max-md:text-[10px]  button-bg md:mx-0 relative flex-col justify-center items-center self-start px-2 py-6 sm:px-4 sm:py-8 text-xs md:text-sm leading-7 text-black whitespace-nowrap  aspect-[2.86]  fill-lime-400 "
       >
         {ownerAddress ? "wallet connected 👍" : "connect wallet"}
       </button>

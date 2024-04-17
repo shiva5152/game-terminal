@@ -3,8 +3,8 @@ import React from 'react'
 const Imageline = () => {
   return (
     <div>
-      <div className="flex gap-5 justify-between px-5 mt-20 w-full text-center max-w-[1100px] max-md:flex-wrap max-md:mt-10 max-md:max-w-full">
-      <div className="flex flex-col items-center">
+      <div className="flex sm:gap-10 gap-1 justify-between sm:px-5 px-8 mt-20 w-full text-center max-w-[1100px] max-md:flex-wrap max-md:mt-10 max-md:max-w-full">
+      <div className="flex flex-col sm:ml-0 ml-16 justify-center sm:justify-between items-center">
         <img
           loading="lazy"
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/ef29d20fc851328696ee8b88b67185ca98b3a1e7362e79d4ffddc8903ebc4551?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
@@ -17,6 +17,7 @@ const Imageline = () => {
           Total $GTT Distributed per-day
         </div>
       </div>
+      <div className='flex flex-row gap-4 sm:ml-0 sm:mt-0 ml-4 mt-5 sm:gap-10'>
       <div className="flex flex-col items-center">
         <img
           loading="lazy"
@@ -43,6 +44,8 @@ const Imageline = () => {
           Current Price (USD)
         </div>
       </div>
+      </div>
+      <div className='flex flex-row sm:ml-0 sm:mt-0 ml-4 mt-5 sm:gap-10'>
       <div className="flex flex-col items-center">
         <img
           loading="lazy"
@@ -56,6 +59,7 @@ const Imageline = () => {
           Node Licenses Remaining
         </div>
       </div>
+      
       <div className="flex flex-col items-center self-start">
         <img
           loading="lazy"
@@ -67,6 +71,7 @@ const Imageline = () => {
           Before Node Price Raises
         </div>
       </div>
+    </div>
     </div>
     </div>
   )

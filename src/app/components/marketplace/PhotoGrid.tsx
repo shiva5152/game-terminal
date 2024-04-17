@@ -9,7 +9,7 @@ function PhotoGrid() {
             <img
               loading="lazy"
               srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/73a8d182c358087032bdb931d1fe26fa348db3f35f392c38dc553a483e389a1e?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/73a8d182c358087032bdb931d1fe26fa348db3f35f392c38dc553a483e389a1e?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/73a8d182c358087032bdb931d1fe26fa348db3f35f392c38dc553a483e389a1e?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/73a8d182c358087032bdb931d1fe26fa348db3f35f392c38dc553a483e389a1e?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/73a8d182c358087032bdb931d1fe26fa348db3f35f392c38dc553a483e389a1e?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/73a8d182c358087032bdb931d1fe26fa348db3f35f392c38dc553a483e389a1e?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/73a8d182c358087032bdb931d1fe26fa348db3f35f392c38dc553a483e389a1e?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/73a8d182c358087032bdb931d1fe26fa348db3f35f392c38dc553a483e389a1e?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
-              className="w-full aspect-[1.27] rounded-3xl"
+              className="w-full aspect-[1.27]  rounded-3xl "
             />
           </div>
         </div>

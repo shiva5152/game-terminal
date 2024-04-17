@@ -71,14 +71,17 @@ const Number = () => {
       
     </div>
     <div className='justify-center flex'>
-    <div className="overflow-hidden relative flex-col justify-center items-center px-16 py-6 mt-8 max-w-full text-base font-bold leading-5 text-center aspect-[4.11] fill-lime-400 text-neutral-900 w-[259px] max-md:px-5">
+    {/* <div className="overflow-hidden relative flex-col justify-center items-center px-16 py-6 mt-8 max-w-full text-base font-bold leading-5 text-center aspect-[4.11] fill-lime-400 text-neutral-900 w-[259px] max-md:px-5">
       <img
         loading="lazy"
         src="https://cdn.builder.io/api/v1/image/assets/TEMP/5c12e237cdc8fa8812094e6983bc073f06f95b439850d2b0673ca3b5e00c85ee?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
         className="object-cover absolute inset-0 size-full"
       />
       <div className='absolute'>Buy a GTT Node</div>
-    </div>
+    </div> */}
+    <a href="" className=
+     " flex flex-col text-center justify-center px-16 py-20 p-10 text-sm  text-black text-bold max-md:px-5" style={{ backgroundImage: `url('/rect9.png')`, backgroundRepeat:'no-repeat', backgroundPosition:'center', backgroundSize:'100%'}}
+    >Buy a GTT Node</a>
     </div>
     </div>
   )

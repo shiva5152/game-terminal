@@ -5,7 +5,7 @@ const Benfits = () => {
     <div>
       <div className="px-5 mt-12 w-full max-w-[1304px] max-md:mt-10 max-md:max-w-full">
       <div className="flex gap-5 max-md:flex-col max-md:gap-0">
-        <div className="flex flex-col w-3/12 max-md:ml-0 max-md:w-full">
+        <div className="flex flex-col p-4 sm:p-0 w-3/12 max-md:ml-0 max-md:w-full">
           <div className="flex overflow-hidden relative flex-col grow items-center px-5 py-8 aspect-[1.21] fill-neutral-900 max-md:pl-5 max-md:mt-8">
             <img
               loading="lazy"
@@ -41,14 +41,14 @@ const Benfits = () => {
             <div className="relative mt-7 text-base font-bold leading-5 text-center text-white">
               Daily $GMT Token Rewards
             </div>
-            <div className="relative self-stretch mt-3.5 text-xs leading-4 text-center text-zinc-600">
+            <div className="relative self-stretch px-6 sm:px-0 mt-3.5 text-xs leading-4 text-center text-zinc-600">
               Node operators are rewarded with $GMT tokens on a daily basis for
               their active participation and contribution to the network's
               operations.
             </div>
           </div>
         </div>
-        <div className="flex flex-col ml-5 w-3/12 max-md:ml-0 max-md:w-full">
+        <div className="flex flex-col p-4 sm:p-0 sm:ml-5 w-3/12 max-md:ml-0 max-md:w-full">
           <div className="flex overflow-hidden relative flex-col grow items-center px-5 py-9 aspect-[1.21] fill-neutral-900 max-md:mt-8">
             <img
               loading="lazy"
@@ -70,14 +70,14 @@ const Benfits = () => {
             <div className="relative mt-7 text-base font-bold leading-5 text-center text-white">
               Voting Rights
             </div>
-            <div className="relative self-stretch mt-3.5 text-xs leading-4 text-center text-zinc-600">
+            <div className="relative self-stretch px-6 sm:px-0 mt-3.5 text-xs leading-4 text-center text-zinc-600">
               Nodes possess voting privileges, enabling them to participate in
               key governance decisions, protocol upgrades, and ecosystem
               developments.
             </div>
           </div>
         </div>
-        <div className="flex flex-col ml-5 w-3/12 max-md:ml-0 max-md:w-full">
+        <div className="flex flex-col p-4 sm:p-0 sm:ml-5 w-3/12 max-md:ml-0 max-md:w-full">
           <div className="flex overflow-hidden relative flex-col grow items-center px-5 py-9 aspect-[1.21] fill-neutral-900 max-md:mt-8">
             <img
               loading="lazy"
@@ -105,14 +105,14 @@ const Benfits = () => {
             <div className="relative mt-7 text-base font-bold leading-5 text-center text-white">
             Exclusive NFT Rewards
             </div>
-            <div className="relative self-stretch mt-3.5 text-xs leading-4 text-center text-zinc-600">
+            <div className="relative self-stretch px-6 sm:px-0 mt-3.5 text-xs leading-4 text-center text-zinc-600">
               Nodes possess voting privileges, enabling them to participate in
               key governance decisions, protocol upgrades, and ecosystem
               developments.
             </div>
           </div>
         </div>
-        <div className="flex flex-col ml-5 w-3/12 max-md:ml-0 max-md:w-full">
+        <div className="flex flex-col sm:ml-5 p-4 sm:p-0 w-3/12 max-md:ml-0 max-md:w-full">
           <div className="flex overflow-hidden relative flex-col grow items-center px-5 py-9 aspect-[1.21] fill-neutral-900 max-md:mt-8">
             <img
               loading="lazy"
@@ -139,7 +139,7 @@ const Benfits = () => {
             <div className="relative mt-7 text-base font-bold leading-5 text-center text-white">
             Daily $GMT Token Rewards:
             </div>
-            <div className="relative self-stretch mt-3.5 text-xs leading-4 text-center text-zinc-600">
+            <div className="relative self-stretch mt-3.5 text-xs px-6 sm:px-0 leading-4 text-center text-zinc-600">
               Nodes possess voting privileges, enabling them to participate in
               key governance decisions, protocol upgrades, and ecosystem
               developments.
@@ -150,14 +150,17 @@ const Benfits = () => {
     </div>
 
     <div className='justify-center flex'>
-    <div className="overflow-hidden relative flex-col justify-center items-center px-16 py-6 mt-8 max-w-full text-base font-bold leading-5 text-center aspect-[4.11] fill-lime-400 text-neutral-900 w-[259px] max-md:px-5">
+    {/* <div className="overflow-hidden relative flex-col justify-center items-center px-16 py-6 mt-8 max-w-full text-base font-bold leading-5 text-center aspect-[4.11] fill-lime-400 text-neutral-900 w-[259px] max-md:px-5">
       <img
         loading="lazy"
         src="https://cdn.builder.io/api/v1/image/assets/TEMP/5c12e237cdc8fa8812094e6983bc073f06f95b439850d2b0673ca3b5e00c85ee?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
         className="object-cover absolute inset-0 size-full"
       />
       <div className='absolute'>Buy a GTT Node</div>
-    </div>
+    </div> */}
+    <a href="" className=
+     " flex flex-col text-center justify-center px-16 py-20 p-10 text-sm  text-black text-bold max-md:px-5" style={{ backgroundImage: `url('/rect9.png')`, backgroundRepeat:'no-repeat', backgroundPosition:'center', backgroundSize:'100%'}}
+    >Buy a GTT Node</a>
     </div>
     </div>
   )
