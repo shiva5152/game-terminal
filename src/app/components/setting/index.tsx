@@ -62,8 +62,7 @@ const Setting = () => {
   };
 
   const handleDiscordAuth = () => {
-    window.location.href =
-      "https://discord.com/oauth2/authorize?client_id=1222398580518686791&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A8000%2Fauth%2Fdiscord%2Fcallback&scope=identify";
+    window.location.href = `https://discord.com/oauth2/authorize?client_id=1222398580518686791&response_type=code&redirect_uri=${process.env.NEXT_PUBLIC_SERVER_ENDPOINT}/auth/discord/callback&scope=identify`;
   };
 
   const handleDisconnectTwitter = () => {
