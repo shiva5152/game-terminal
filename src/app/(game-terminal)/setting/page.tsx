@@ -1,5 +1,5 @@
 import React from "react";
-import Ksetting from "../components/setting";
+import Ksetting from "../../components/setting";
 
 const Setting = () => {
   return (

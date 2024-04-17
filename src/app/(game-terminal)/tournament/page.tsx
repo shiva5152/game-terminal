@@ -1,10 +1,10 @@
-import React from 'react'
-import Headermain from '../components/tournament/headermain'
-import Cardholder from '../components/games/Cardholder'
+import React from "react";
+import Headermain from "../../components/tournament/headermain";
+import Cardholder from "../../components/games/Cardholder";
 
 const page = () => {
   return (
-    <div className='p-4'>
+    <div className="p-4">
       <div>
         <Headermain />
       </div>
@@ -22,7 +22,7 @@ const page = () => {
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/ecc61d7362b01b5a4e0cad94491aa14ba8dbe21822f9474d1b141b0a6d1c34a9?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
               className="object-cover absolute inset-0 size-full"
             />
-            <button className='absolute'>See more</button>
+            <button className="absolute">See more</button>
           </div>
         </div>
       </div>
@@ -42,7 +42,7 @@ const page = () => {
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/ecc61d7362b01b5a4e0cad94491aa14ba8dbe21822f9474d1b141b0a6d1c34a9?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
               className="object-cover absolute inset-0 size-full"
             />
-            <button className='absolute'>See more</button>
+            <button className="absolute">See more</button>
           </div>
         </div>
       </div>
@@ -51,7 +51,7 @@ const page = () => {
         <Cardholder />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;
