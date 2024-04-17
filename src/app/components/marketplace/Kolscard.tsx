@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import Namecard from './Namecard'; // Assuming Namecard component is in a separate file
 
