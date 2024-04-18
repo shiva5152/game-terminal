@@ -97,7 +97,7 @@ const Profile = () => {
                     <div>Alexis is a Top Creator</div>
                     <div className="mt-4 text-base leading-5 text-zinc-600">
                       Top creators have completed multiple orders and have a high
-                      rating from brands.
+                      rating from brands. 
                     </div>
                     <div className="mt-12 max-md:mt-10">
                       Alexis is a Top Creator

@@ -65,4 +65,9 @@ const navItems: NavItemProps[] = [
     label: "Add Tournament",
     link: "/admin/add-tournaments",
   },
+  {
+    icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/2a15415a290cb12d0ed5aaeb2c403d4dda5301873212ffdbf98be7865ac13c12?apiKey=caf73ded90744adfa0fe2d98abed61c0&",
+    label: "All Tournament",
+    link: "/admin/all-tournaments",
+  },
 ];

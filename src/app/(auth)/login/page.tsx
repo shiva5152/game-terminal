@@ -47,7 +47,7 @@ const page = () => {
   };
 
   return (
-    <div className="pl-20 h-screen w-full bg-neutral-900 max-md:pl-5">
+    <div className="sm:pl-20 p-4 h-screen w-full bg-neutral-900 ">
       <div className="flex gap-5 max-md:flex-col max-md:gap-0">
         <div className="flex flex-col w-1/2 max-md:ml-0 max-md:w-full">
           <div className="flex flex-col mt-36 max-md:mt-10 max-md:max-w-full">
@@ -92,7 +92,7 @@ const page = () => {
                 {text2.length} <span className=" text-zinc-600">/100</span>
               </div>
             </div>
-            <div className="flex gap-5 justify-between items-center  mt-10 font-bold text-center max-md:flex-wrap max-md:max-w-full">
+            <div className="flex gap-5 justify-center sm:justify-between items-center  mt-10 font-bold text-center max-md:flex-wrap max-md:max-w-full">
               <div className="overflow-hidden relative flex-col justify-center items-center px-16 py-6 text-base leading-5 whitespace-nowrap aspect-[3] fill-lime-400 text-neutral-900 w-[189px] max-md:px-5">
                 <img
                   loading="lazy"
@@ -118,6 +118,7 @@ const page = () => {
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/7632f246a2bf2de51869c7c539eeb82371a629a8271b6db87e26b517a63fc6db?apiKey=caf73ded90744adfa0fe2d98abed61c0&"
               className="mt-10 w-full stroke-[1px] stroke-neutral-600 max-md:max-w-full"
             /> */}
+            <img src="/loginvector.png" alt="" className="sm:hidden flex mt-2 w-full"/>
             <div className="flex gap-5 self-center mt-6">
               <button
                 onClick={handleGoogle}
@@ -148,7 +149,7 @@ const page = () => {
             </div>
           </div>
         </div>
-        <div className="flex h-screen overflow-y-hidden flex-col ml-5 w-1/2 max-md:ml-0 max-md:w-full">
+        <div className="sm:flex hidden h-screen overflow-y-hidden flex-col ml-5 w-1/2 max-md:ml-0 max-md:w-full">
           <img
             loading="lazy"
             srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/425541622c59bea5d0786df11993eeea1dedb485c1fdabb451ce55fbddf0b6de?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/425541622c59bea5d0786df11993eeea1dedb485c1fdabb451ce55fbddf0b6de?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/425541622c59bea5d0786df11993eeea1dedb485c1fdabb451ce55fbddf0b6de?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/425541622c59bea5d0786df11993eeea1dedb485c1fdabb451ce55fbddf0b6de?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/425541622c59bea5d0786df11993eeea1dedb485c1fdabb451ce55fbddf0b6de?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/425541622c59bea5d0786df11993eeea1dedb485c1fdabb451ce55fbddf0b6de?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/425541622c59bea5d0786df11993eeea1dedb485c1fdabb451ce55fbddf0b6de?apiKey=caf73ded90744adfa0fe2d98abed61c0&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/425541622c59bea5d0786df11993eeea1dedb485c1fdabb451ce55fbddf0b6de?apiKey=caf73ded90744adfa0fe2d98abed61c0&"

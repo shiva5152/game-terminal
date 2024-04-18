@@ -25,7 +25,7 @@ const ImageGrid2 = () => {
     <div>
       <div className="flex flex-row gap-3 mt-11 w-full h-full text-xl font-bold leading-7 text-white max-md:flex-wrap ">
         {gridItems.map((item, index) => (
-          <div key={index} className="overflow-hidden relative flex flex-row items-start px-5 pt-32 pb-7 whitespace-nowrap aspect-[1.55] max-md:pt-10">
+          <div key={index} className={`overflow-hidden relative flex flex-row items-start px-5 pt-32 pb-7 whitespace-nowrap aspect-[1.55] max-md:pt-10 ${index >= 3 ? 'hidden lg:flex' : ''}`}>
             <img
               loading="lazy"
               src={item.imageUrl}
