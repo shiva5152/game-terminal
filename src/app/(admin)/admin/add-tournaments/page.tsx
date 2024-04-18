@@ -22,7 +22,7 @@ import React, { useState } from "react";
 import { useDropzone } from "react-dropzone";
 import shortUUID from "short-uuid";
 
-type FormData = {
+export type FormData = {
   map: string;
   gameType: string;
   matchDuration: string;

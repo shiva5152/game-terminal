@@ -1,15 +1,6 @@
-// EditPopupForm.tsx
 "use client";
-import React, { useState } from "react";
-import { useAppSelector, useAppDispatch } from "@/redux/hooks";
-import { setIsEditingTournament } from "@/redux/features/ui/slice";
-import { set } from "date-fns";
-import type { FormData } from "@/app/(admin)/admin/add-tournaments/page";
-import type { Tournament } from "@/app/(admin)/admin/tournament/page";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
-import { format } from "date-fns";
-import { Calendar as CalendarIcon } from "lucide-react";
 import {
   Popover,
   PopoverContent,
@@ -23,36 +14,68 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import instance from "@/config/axios";
 import { cn } from "@/lib/utils";
+import { updateGameTournament } from "@/redux/features/game/api";
+import { format, set } from "date-fns";
+import { Calendar as CalendarIcon } from "lucide-react";
+import { useParams } from "next/navigation";
+import React, { useEffect, useState } from "react";
+import shortUUID from "short-uuid";
+import type { Tournament } from "../page";
+import type { FormData } from "../../add-tournaments/page";
 
-interface EditPopupFormProps {
-  tournament: Tournament | undefined;
-  onSave: () => void;
-  onCancel: () => void;
-}
+const AddGameDetailsPage: React.FC = () => {
+  const { id } = useParams();
+  const [tournament, setTournament] = useState<Tournament | null>(null);
 
-const EditPopupForm = ({ tournament, onCancel }: EditPopupFormProps) => {
-  const dispatch = useAppDispatch();
+  useEffect(() => {
+    const getTournament = async () => {
+      const { data } = await instance(`/tournament/${id}`);
+      // console.log(data.tournament);
+      setTournament(data.tournament);
+      const tournament = data.tournament;
+      setFormData({
+        map: tournament?.map || "",
+        gameType: tournament?.gameType || "",
+        matchDuration: tournament?.matchDuration.toString() || "15",
+        goalTarget: tournament?.goal.target.toString() || "",
+        goalFor: tournament?.goal.targetOf || "",
+        bonusAmount: tournament?.bonus.amount.toString() || "",
+        bonusChain: tournament?.bonus.chain || "",
+        entryFeeAmount: tournament?.entryFee.amount.toString() || "",
+        entryFeeCurrency: tournament?.entryFee.currency || "",
+        xpLevel: tournament?.xpLevel.toString() || "",
+        players: tournament?.players.toString() || "",
+        reEntry: tournament?.reEntry ? "allowed" : "notAllowed",
+        scheduleType: tournament?.scheduleType || "",
+      });
+
+      setReleaseDate(tournament?.startDate && new Date(tournament?.startDate));
+    };
+    getTournament();
+  }, [id]);
 
   const [formData, setFormData] = useState<FormData>({
-    map: tournament?.map || "",
-    gameType: tournament?.gameType || "",
-    matchDuration: (tournament?.matchDuration || 0).toString(),
-    goalTarget: (tournament?.goal.target || 0).toString(),
-    goalFor: tournament?.goal.targetOf || "kills",
-    bonusAmount: (tournament?.bonus.amount || 0).toString(),
-    bonusChain: tournament?.bonus.chain || "",
-    entryFeeAmount: (tournament?.entryFee.amount || 0).toString(),
-    entryFeeCurrency: tournament?.entryFee.currency || "",
-    xpLevel: (tournament?.xpLevel || 0).toString(),
-    players: (tournament?.players || 0).toString(),
-    reEntry: tournament?.reEntry ? "allowed" : "not-allowed",
-    scheduleType: tournament?.scheduleType || "daily",
+    map: "",
+    gameType: "",
+    matchDuration: "",
+    goalTarget: "",
+    goalFor: "",
+    bonusAmount: "",
+    bonusChain: "",
+    entryFeeAmount: "",
+    entryFeeCurrency: "",
+    xpLevel: "",
+    players: "",
+    reEntry: "allowed",
+    scheduleType: "",
   });
-  const [releaseDate, setReleaseDate] = React.useState<Date>();
+  const [releaseDate, setReleaseDate] = React.useState<Date | undefined>(
+    tournament?.startDate && new Date(tournament?.startDate)
+  );
 
   const handleSetFormData = (property: keyof FormData, value: string) => {
-    console.log("value", value);
     setFormData({
       ...formData,
       [property]: value,
@@ -62,41 +85,55 @@ const EditPopupForm = ({ tournament, onCancel }: EditPopupFormProps) => {
     handleSetFormData(property, value);
   };
 
-  // const handleSaveChanges = async () => {
-  //   try {
-  //     const response = await fetch(
-  //       `http://localhost:8000/tournaments/updateTournament/${editedTournament.tournamentId}`,
-  //       {
-  //         method: "PUT",
-  //         headers: {
-  //           "Content-Type": "application/json",
-  //         },
-  //         body: JSON.stringify(editedTournament),
-  //       }
-  //     );
+  const [loading, setLoading] = useState<boolean>(false);
 
-  //     if (response.ok) {
-  //       // Handle successful response
-  //       console.log("Tournament updated successfully");
-  //     } else {
-  //       console.error("Failed to update tournament:", response.statusText);
-  //     }
-  //   } catch (error) {
-  //     console.error("Error updating tournament:", error);
-  //   }
-  // };
-
-  const handleCancelEdit = () => {
-    dispatch(setIsEditingTournament(false));
-  };
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("formData", formData);
+    if (!tournament) return;
+
+    const data: Tournament = {
+      map: formData.map,
+      gameType: formData.gameType,
+      matchDuration: parseInt(formData.matchDuration),
+      goal: {
+        target: parseInt(formData.goalTarget),
+        targetOf: formData.goalFor as "kills" | "headshot",
+      },
+      reEntry: formData.reEntry === "allowed",
+      bonus: {
+        amount: parseInt(formData.bonusAmount),
+        chain: formData.bonusChain,
+      },
+      xpLevel: parseInt(formData.xpLevel),
+      entryFee: {
+        amount: parseInt(formData.entryFeeAmount),
+        currency: formData.entryFeeCurrency,
+      },
+      players: parseInt(formData.players),
+      startDate: releaseDate as Date,
+      scheduleType: formData.scheduleType as "daily" | "weekly",
+    };
+    console.log(formData, "formData");
+    setLoading(true);
+    try {
+      await updateGameTournament({ tournamentData: data, id: tournament._id });
+      alert("Tournament details  updated successfully");
+    } catch (e) {
+      console.error(e);
+      alert("Failed to update tournament details");
+    } finally {
+      setLoading(false);
+    }
   };
+
+  // console.log(formData, "formData");
 
   return (
-    <div className="min-h-screen fixed inset-0 backdrop-blur-md w-full overflow-scroll flex justify-center items-center">
-      <div className=" w-[80%]  bg-[#161616] p-4 px-8 ">
+    <div className="bg-[#161616] w-full my-10 flex justify-center items-center flex-col text-white p-4">
+      <h1 className="text-2xl font-bold mb-4">
+        Edit Tournament: {tournament?.tournamentId}
+      </h1>
+      {tournament && (
         <form
           onSubmit={handleSubmit}
           className="w-full flex flex-wrap justify-between "
@@ -117,7 +154,7 @@ const EditPopupForm = ({ tournament, onCancel }: EditPopupFormProps) => {
                   <SelectGroup>
                     <SelectItem value="IsLand">Is Land</SelectItem>
                     <SelectItem value="Industry">Industry</SelectItem>
-                    <SelectItem value="Factory">Factory</SelectItem>
+                    <SelectItem value="CrazyFactory">Factory</SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>
@@ -385,14 +422,14 @@ const EditPopupForm = ({ tournament, onCancel }: EditPopupFormProps) => {
                 type="submit"
                 className=" h-fit mx-auto  button-bg mt-4  text-white px-11 py-8"
               >
-                {/* {loading ? "Loading..." : "Submit"} */}
+                {loading ? "Loading..." : "Submit"}
               </button>
             </div>
           </div>
         </form>
-      </div>
+      )}
     </div>
   );
 };
 
-export default EditPopupForm;
+export default AddGameDetailsPage;

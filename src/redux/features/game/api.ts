@@ -4,8 +4,14 @@ import type { GameDetailsForm } from "@/types/user";
 
 export const createGameTournament = async (bodyObj: any) => {
 
-
     const { data } = await instance.post(`/tournament`, bodyObj);
+    console.log(data);
+
+}
+
+export const updateGameTournament = async (bodyObj: any) => {
+
+    const { data } = await instance.patch(`/tournament/updateTournament`, bodyObj);
     console.log(data);
 
 }
