@@ -31,6 +31,35 @@ export default function ConnectButton({
       try {
         const accounts = await window.ethereum.enable();
         setOwnerAddress(accounts[0]);
+        const chainId = 80001; // Polygon mumbai
+
+        if (window.ethereum.networkVersion !== chainId) {
+          try {
+            await window.ethereum.request({
+              method: "wallet_switchEthereumChain",
+              params: [{ chainId: web3.utils.toHex(chainId) }],
+            });
+          } catch (err: any) {
+            // This error code indicates that the chain has not been added to MetaMask
+            if (err.code === 4902) {
+              await window.ethereum.request({
+                method: "wallet_addEthereumChain",
+                params: [
+                  {
+                    chainName: "Polygon Mumbai Testnet",
+                    chainId: web3.utils.toHex(chainId),
+                    nativeCurrency: {
+                      name: "MATIC",
+                      decimals: 18,
+                      symbol: "MATIC",
+                    },
+                    rpcUrls: ["https://polygon-mumbai-bor-rpc.publicnode.com"],
+                  },
+                ],
+              });
+            }
+          }
+        }
         // notifyInfo("Wallet connected successfully");
       } catch (error) {
         console.log(error);

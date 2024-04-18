@@ -4,12 +4,16 @@ import UserDropDown from "./UserDropDown";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 const Header = () => {
   const dispatch = useAppDispatch();
   const { user, isAuthenticatedUser } = useAppSelector((state) => state.user);
   const [open, setOpen] = React.useState(false);
   const toggle = () => setOpen(!open);
+  const pathName = usePathname();
+
   return (
     <motion.div
       initial={{ y: -400 }}
@@ -34,23 +38,60 @@ const Header = () => {
                 />
               </Link>
               <div className=" hidden md:flex flex-col flex-1 self-start mt-3.5 font-thin text-gray-200">
-                <div className="flex gap-10  justify-start">
-                  <div className="cursor-pointer  leading-wide hover:text-lime-400">
+                {/* <div className="flex gap-10  justify-start">
+                  <Link
+                    href={"/"}
+                    className="cursor-pointer  leading-wide hover:text-lime-400"
+                  >
                     Home
-                  </div>
-                  {/* is active-> font-medium text-lime-400 */}
-                  <div className="cursor-pointer leading-wide hover:text-lime-400">
+                  </Link>
+                
+                  <Link
+                    href={"/games"}
+                    className="cursor-pointer leading-wide hover:text-lime-400"
+                  >
                     Games
-                  </div>
-                  <div className="cursor-pointer leading-wide hover:text-lime-400">
+                  </Link>
+                  <Link
+                    href={"/marketplace"}
+                    className="cursor-pointer leading-wide hover:text-lime-400"
+                  >
                     Marketplace
-                  </div>
-                  <div className="cursor-pointer leading-wide hover:text-lime-400">
+                  </Link>
+                  <Link
+                    href={"/tournament"}
+                    className="cursor-pointer leading-wide hover:text-lime-400"
+                  >
                     Tournament
-                  </div>
+                  </Link>
                   <div className="cursor-pointer leading-wide hover:text-lime-400">
                     Nodes
                   </div>
+                </div> */}
+                <div className="flex gap-10 justify-start">
+                  {links.map((link, index) =>
+                    link.href ? (
+                      <Link
+                        key={index}
+                        href={link.href}
+                        className={cn(
+                          "cursor-pointer leading-wide hover:text-lime-400",
+                          pathName === link.href
+                            ? "font-medium text-lime-400"
+                            : ""
+                        )}
+                      >
+                        {link.text}
+                      </Link>
+                    ) : (
+                      <div
+                        key={index}
+                        className="cursor-pointer leading-wide hover:text-lime-400"
+                      >
+                        {link.text}
+                      </div>
+                    )
+                  )}
                 </div>
               </div>
             </div>
@@ -141,3 +182,11 @@ const Header = () => {
 };
 
 export default Header;
+
+const links = [
+  { href: "/", text: "Home" },
+  { href: "/games", text: "Games" },
+  { href: "/marketplace", text: "Marketplace" },
+  { href: "/tournament", text: "Tournament" },
+  { href: null, text: "Nodes" },
+];
