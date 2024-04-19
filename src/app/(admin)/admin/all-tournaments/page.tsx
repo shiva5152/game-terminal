@@ -107,6 +107,7 @@ const Page: React.FC = () => {
         </div>
       )}
       {editTournamentId && (
+      <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50">
         <EditPopupForm
           tournament={tournaments.find(tournament => tournament._id === editTournamentId) || {
             _id: '',
@@ -121,8 +122,13 @@ const Page: React.FC = () => {
             startDate: ''
           }}
           onCancel={() => setEditTournamentId(null)}
+          onSave={() => {
+            // Implement save functionality here
+          }}
         />
-      )}
+  </div>
+)}
+
     </div>
   );
 };
