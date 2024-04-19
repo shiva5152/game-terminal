@@ -1,11 +1,5 @@
 "use client";
-import { Button } from "@/components/ui/button";
-import { Calendar } from "@/components/ui/calendar";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
+import { DateTimePicker } from "@/components/ui/date-time-picker/date-time-picker";
 import {
   Select,
   SelectContent,
@@ -14,13 +8,16 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { cn } from "@/lib/utils";
+import { giveDate } from "@/lib/giveDate";
 import { createGameTournament } from "@/redux/features/game/api";
-import { format } from "date-fns";
-import { Calendar as CalendarIcon } from "lucide-react";
 import React, { useState } from "react";
-import { useDropzone } from "react-dropzone";
+import { DateValue } from "react-aria";
 import shortUUID from "short-uuid";
+
+type MyDate = DateValue & {
+  hour: number;
+  minute: number;
+};
 
 export type FormData = {
   map: string;
@@ -54,7 +51,7 @@ const AddGameDetailsPage: React.FC = () => {
     reEntry: "allowed",
     scheduleType: "",
   });
-  const [releaseDate, setReleaseDate] = React.useState<Date>();
+  const [startDate, setStartDate] = React.useState<DateValue>();
 
   const handleSetFormData = (property: keyof FormData, value: string) => {
     console.log("value", value);
@@ -71,6 +68,11 @@ const AddGameDetailsPage: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!startDate) {
+      alert("Please select start date");
+      return;
+    }
+    const myDate = startDate as MyDate;
     const data = {
       tournamentId: shortUUID.generate(),
       map: formData.map,
@@ -91,7 +93,15 @@ const AddGameDetailsPage: React.FC = () => {
         currency: formData.entryFeeCurrency,
       },
       players: parseInt(formData.players),
-      startDate: releaseDate,
+      startDate: giveDate(
+        myDate.year,
+        myDate.month,
+        myDate.day,
+        myDate.hour,
+        myDate.minute,
+        0,
+        0
+      ),
       scheduleType: formData.scheduleType,
     };
     console.log(data);
@@ -217,34 +227,13 @@ const AddGameDetailsPage: React.FC = () => {
           </div>
           <div className="mb-4 w-[49%]">
             <label htmlFor="title" className="block mb-2">
-              Start Time:
+              Start Time: (UTC)
             </label>
-            <Popover>
-              <PopoverTrigger asChild>
-                <Button
-                  variant={"outline"}
-                  className={cn(
-                    "bg-gray-800 text-white w-full justify-start text-left font-normal",
-                    !releaseDate && "text-muted-foreground"
-                  )}
-                >
-                  <CalendarIcon className="mr-2 h-4 w-4" />
-                  {releaseDate ? (
-                    format(releaseDate, "PPP")
-                  ) : (
-                    <span>Pick a date</span>
-                  )}
-                </Button>
-              </PopoverTrigger>
-              <PopoverContent className="w-auto  p-0">
-                <Calendar
-                  mode="single"
-                  selected={releaseDate}
-                  onSelect={setReleaseDate}
-                  initialFocus
-                />
-              </PopoverContent>
-            </Popover>
+            <DateTimePicker
+              onChange={(value: any) => setStartDate(value)}
+              value={startDate}
+              granularity={"minute"}
+            />
           </div>
           <div className="mb-4 w-[49%]">
             <label htmlFor="title" className="block h mb-2">
