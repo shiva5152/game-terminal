@@ -14,6 +14,19 @@ export type TUser = {
     updatedAt?: Date;
 }
 
+export type ProfileDetailsForm = {
+    name: string;
+    category: string;
+    uuid: string;
+    description: string;
+    price: string;
+    socialMedia: {
+        platform: string;
+        link: string;
+    }[];
+    banner: File;
+}
+
 export type GameDetailsForm = {
     title: string;
     uuid: string;

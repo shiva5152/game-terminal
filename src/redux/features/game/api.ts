@@ -1,6 +1,6 @@
 import axios from "axios";
 import instance from "@/config/axios";
-import type { GameDetailsForm } from "@/types/user";
+import type { GameDetailsForm, ProfileDetailsForm } from "@/types/user";
 
 export const createGameTournament = async (bodyObj: any) => {
 
@@ -35,6 +35,40 @@ export const addGameDetails = async (gameDetailsData: GameDetailsForm) => {
     console.log(data);
 
 
+}
+
+export const addProfileDetails = async (profileDetailsData: ProfileDetailsForm) => {
+
+    const banner = await uploadImage(profileDetailsData.banner, profileDetailsData.uuid);
+    if (!banner) {
+        alert("Failed to upload banner");
+    };
+    const bodyObj = {
+        ...profileDetailsData,
+        banner
+    }
+    const { data } = await instance.post(`/profile`, bodyObj);
+    console.log(data);
+
+
+}
+const uploadImage = async (banner: File, uuid: string) => {
+
+    try {
+        const { data } = await instance.post(`/profile/s3/image`, { fileName: banner.name, uuid });
+        if (data) {
+            await axios.put(data.url.url, banner, {
+                headers: {
+                    "Content-Type": banner.type,
+                },
+            });
+        }
+        return data.url.s3key as string;
+    } catch (error) {
+        const e = error as any;
+        console.log(e);
+        return "";
+    }
 }
 
 const uploadBanner = async (banner: File, uuid: string) => {
