@@ -144,10 +144,18 @@ const Page: React.FC = () => {
                     <span className="text-white">{tournament.players}</span>
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-gray-400">Start Date:</span>
+                    <span className="text-gray-400">Start Date:(UTC)</span>
                     <span className="text-white">
                       {format(
-                        new Date(tournament.startDate),
+                        new Date(
+                          new Date(tournament?.startDate).getUTCFullYear(),
+                          new Date(tournament?.startDate).getUTCMonth(),
+                          new Date(tournament?.startDate).getUTCDate(),
+                          new Date(tournament?.startDate).getUTCHours(),
+                          new Date(tournament?.startDate).getUTCMinutes(),
+                          0,
+                          0
+                        ),
                         "yyyy-MM-dd HH:mm"
                       )}
                     </span>
@@ -157,13 +165,6 @@ const Page: React.FC = () => {
             ))}
           </div>
         </div>
-      )}
-      {isEditingTournament && (
-        <EditPopupForm
-          tournament={selectedTournament}
-          onSave={() => {}}
-          onCancel={() => {}}
-        />
       )}
     </div>
   );

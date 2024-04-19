@@ -1,11 +1,5 @@
 "use client";
-import { Button } from "@/components/ui/button";
-import { Calendar } from "@/components/ui/calendar";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
+import { DateTimePicker } from "@/components/ui/date-time-picker/date-time-picker";
 import {
   Select,
   SelectContent,
@@ -15,24 +9,26 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import instance from "@/config/axios";
-import { cn } from "@/lib/utils";
 import { updateGameTournament } from "@/redux/features/game/api";
-import { format, set } from "date-fns";
-import { Calendar as CalendarIcon } from "lucide-react";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import shortUUID from "short-uuid";
-import type { Tournament } from "../page";
+import { DateValue } from "react-aria";
 import type { FormData } from "../../add-tournaments/page";
+import type { Tournament } from "../page";
+import type { MyDate } from "../../add-tournaments/page";
+import { giveDate } from "@/lib/giveDate";
+import { CalendarDateTime } from "@internationalized/date";
+import { useRouter } from "next/navigation";
 
 const AddGameDetailsPage: React.FC = () => {
   const { id } = useParams();
   const [tournament, setTournament] = useState<Tournament | null>(null);
+  const router = useRouter();
 
   useEffect(() => {
     const getTournament = async () => {
       const { data } = await instance(`/tournament/${id}`);
-      // console.log(data.tournament);
+
       setTournament(data.tournament);
       const tournament = data.tournament;
       setFormData({
@@ -51,7 +47,16 @@ const AddGameDetailsPage: React.FC = () => {
         scheduleType: tournament?.scheduleType || "",
       });
 
-      setReleaseDate(tournament?.startDate && new Date(tournament?.startDate));
+      const date = new CalendarDateTime(
+        new Date(tournament?.startDate).getUTCFullYear(),
+        new Date(tournament?.startDate).getUTCMonth(),
+        new Date(tournament?.startDate).getUTCDate(),
+        new Date(tournament?.startDate).getUTCHours(),
+        new Date(tournament?.startDate).getUTCMinutes(),
+        0,
+        0
+      );
+      setStartDate(date);
     };
     getTournament();
   }, [id]);
@@ -71,9 +76,7 @@ const AddGameDetailsPage: React.FC = () => {
     reEntry: "allowed",
     scheduleType: "",
   });
-  const [releaseDate, setReleaseDate] = React.useState<Date | undefined>(
-    tournament?.startDate && new Date(tournament?.startDate)
-  );
+  const [startDate, setStartDate] = React.useState<DateValue>();
 
   const handleSetFormData = (property: keyof FormData, value: string) => {
     setFormData({
@@ -90,6 +93,8 @@ const AddGameDetailsPage: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!tournament) return;
+
+    const myDate = startDate as MyDate;
 
     const data: Tournament = {
       map: formData.map,
@@ -110,13 +115,22 @@ const AddGameDetailsPage: React.FC = () => {
         currency: formData.entryFeeCurrency,
       },
       players: parseInt(formData.players),
-      startDate: releaseDate as Date,
+      startDate: giveDate(
+        myDate.year,
+        myDate.month,
+        myDate.day,
+        myDate.hour,
+        myDate.minute,
+        0,
+        0
+      ),
       scheduleType: formData.scheduleType as "daily" | "weekly",
     };
     console.log(formData, "formData");
     setLoading(true);
     try {
       await updateGameTournament({ tournamentData: data, id: tournament._id });
+      router.push("/admin/tournament");
       alert("Tournament details  updated successfully");
     } catch (e) {
       console.error(e);
@@ -241,34 +255,13 @@ const AddGameDetailsPage: React.FC = () => {
             </div>
             <div className="mb-4 w-[49%]">
               <label htmlFor="title" className="block mb-2">
-                Start Time:
+                Start Time: (UTC)
               </label>
-              <Popover>
-                <PopoverTrigger asChild>
-                  <Button
-                    variant={"outline"}
-                    className={cn(
-                      "bg-gray-800 text-white w-full justify-start text-left font-normal",
-                      !releaseDate && "text-muted-foreground"
-                    )}
-                  >
-                    <CalendarIcon className="mr-2 h-4 w-4" />
-                    {releaseDate ? (
-                      format(releaseDate, "PPP")
-                    ) : (
-                      <span>Pick a date</span>
-                    )}
-                  </Button>
-                </PopoverTrigger>
-                <PopoverContent className="w-auto  p-0">
-                  <Calendar
-                    mode="single"
-                    selected={releaseDate}
-                    onSelect={setReleaseDate}
-                    initialFocus
-                  />
-                </PopoverContent>
-              </Popover>
+              <DateTimePicker
+                onChange={(value) => setStartDate(value)}
+                value={startDate}
+                granularity={"minute"}
+              />
             </div>
             <div className="mb-4 w-[49%]">
               <label htmlFor="title" className="block h mb-2">

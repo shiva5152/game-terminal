@@ -14,7 +14,7 @@ import React, { useState } from "react";
 import { DateValue } from "react-aria";
 import shortUUID from "short-uuid";
 
-type MyDate = DateValue & {
+export type MyDate = DateValue & {
   hour: number;
   minute: number;
 };
@@ -65,7 +65,7 @@ const AddGameDetailsPage: React.FC = () => {
   };
 
   const [loading, setLoading] = useState<boolean>(false);
-
+  console.log(startDate);
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!startDate) {
@@ -108,6 +108,22 @@ const AddGameDetailsPage: React.FC = () => {
     setLoading(true);
     try {
       await createGameTournament(data);
+      setFormData({
+        map: "",
+        gameType: "",
+        matchDuration: "",
+        goalTarget: "",
+        goalFor: "",
+        bonusAmount: "",
+        bonusChain: "",
+        entryFeeAmount: "",
+        entryFeeCurrency: "",
+        xpLevel: "",
+        players: "",
+        reEntry: "allowed",
+        scheduleType: "",
+      });
+      setStartDate(undefined);
       alert("Game Details added successfully");
     } catch (e) {
       console.error(e);
