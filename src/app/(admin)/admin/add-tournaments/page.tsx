@@ -13,10 +13,15 @@ import { createGameTournament } from "@/redux/features/game/api";
 import React, { useState } from "react";
 import { DateValue } from "react-aria";
 import shortUUID from "short-uuid";
+import { validateAddTournamentForm } from "@/lib/validateForm";
 
 export type MyDate = DateValue & {
   hour: number;
   minute: number;
+};
+
+export type TAddTournamentError = FormData & {
+  startDate: undefined | DateValue | string;
 };
 
 export type FormData = {
@@ -51,15 +56,38 @@ const AddGameDetailsPage: React.FC = () => {
     reEntry: "allowed",
     scheduleType: "",
   });
+
+  const [error, setError] = useState<TAddTournamentError>({
+    map: "",
+    gameType: "",
+    matchDuration: "",
+    goalTarget: "",
+    goalFor: "",
+    bonusAmount: "",
+    bonusChain: "",
+    entryFeeAmount: "",
+    entryFeeCurrency: "",
+    xpLevel: "",
+    players: "",
+    reEntry: "",
+    scheduleType: "",
+    startDate: "",
+  });
+
   const [startDate, setStartDate] = React.useState<DateValue>();
 
   const handleSetFormData = (property: keyof FormData, value: string) => {
-    console.log("value", value);
+    if (error[property]) setError({ ...error, [property]: "" });
     setFormData({
       ...formData,
       [property]: value,
     });
   };
+  const handleStartDate = (value: DateValue) => {
+    if (error.startDate) setError({ ...error, startDate: "" });
+    setStartDate(value);
+  };
+
   const handleValueChange = (property: keyof FormData) => (value: string) => {
     handleSetFormData(property, value);
   };
@@ -68,10 +96,12 @@ const AddGameDetailsPage: React.FC = () => {
   console.log(startDate);
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (validateAddTournamentForm({ ...formData, startDate }, setError)) return;
     if (!startDate) {
-      alert("Please select start date");
       return;
     }
+
     const myDate = startDate as MyDate;
     const data = {
       tournamentId: shortUUID.generate(),
@@ -160,6 +190,8 @@ const AddGameDetailsPage: React.FC = () => {
                 </SelectGroup>
               </SelectContent>
             </Select>
+
+            {error.map && <p className="text-red-500">{error.map}</p>}
           </div>
 
           <div className="mb-4 w-[49%]">
@@ -181,6 +213,7 @@ const AddGameDetailsPage: React.FC = () => {
                 </SelectGroup>
               </SelectContent>
             </Select>
+            {error.gameType && <p className="text-red-500">{error.gameType}</p>}
           </div>
           <div className="mb-4 w-[49%]">
             <label htmlFor="title" className="block mb-2">
@@ -202,6 +235,9 @@ const AddGameDetailsPage: React.FC = () => {
                 </SelectGroup>
               </SelectContent>
             </Select>
+            {error.matchDuration && (
+              <p className="text-red-500">{error.matchDuration}</p>
+            )}
           </div>
           <div className="mb-4 w-[49%]">
             <label htmlFor="title" className="block mb-2">
@@ -221,6 +257,7 @@ const AddGameDetailsPage: React.FC = () => {
                 </SelectGroup>
               </SelectContent>
             </Select>
+            {error.reEntry && <p className="text-red-500">{error.reEntry}</p>}
           </div>
           <div className="mb-4 w-[49%]">
             <label htmlFor="title" className="block mb-2">
@@ -240,16 +277,22 @@ const AddGameDetailsPage: React.FC = () => {
                 </SelectGroup>
               </SelectContent>
             </Select>
+            {error.scheduleType && (
+              <p className="text-red-500">{error.scheduleType}</p>
+            )}
           </div>
           <div className="mb-4 w-[49%]">
             <label htmlFor="title" className="block mb-2">
               Start Time: (UTC)
             </label>
             <DateTimePicker
-              onChange={(value: any) => setStartDate(value)}
+              onChange={(value: any) => handleStartDate(value)}
               value={startDate}
               granularity={"minute"}
             />
+            {error.startDate && (
+              <p className="text-red-500">{String(error.startDate)}</p>
+            )}
           </div>
           <div className="mb-4 w-[49%]">
             <label htmlFor="title" className="block h mb-2">
@@ -263,6 +306,7 @@ const AddGameDetailsPage: React.FC = () => {
               onChange={(e) => handleSetFormData("xpLevel", e.target.value)}
               className="w-full px-3 py-2 rounded bg-gray-800 text-white"
             />
+            {error.xpLevel && <p className="text-red-500">{error.xpLevel}</p>}
           </div>
           <div className="mb-4 w-[49%]">
             <label htmlFor="title" className="block h mb-2">
@@ -278,6 +322,7 @@ const AddGameDetailsPage: React.FC = () => {
               onChange={(e) => handleSetFormData("players", e.target.value)}
               className="w-full px-3 py-2 rounded bg-gray-800 text-white"
             />
+            {error.players && <p className="text-red-500">{error.players}</p>}
           </div>
 
           <div className="w-[49%]">
@@ -298,6 +343,9 @@ const AddGameDetailsPage: React.FC = () => {
                 }
                 className="w-full px-3 py-2 rounded bg-gray-800 text-white"
               />
+              {error.goalTarget && (
+                <p className="text-red-500">{error.goalTarget}</p>
+              )}
             </div>
             <div className="mb-4">
               <label htmlFor="title" className="block h mb-2">
@@ -317,6 +365,7 @@ const AddGameDetailsPage: React.FC = () => {
                   </SelectGroup>
                 </SelectContent>
               </Select>
+              {error.goalFor && <p className="text-red-500">{error.goalFor}</p>}
             </div>
           </div>
           <div className="w-[49%]">
@@ -337,6 +386,9 @@ const AddGameDetailsPage: React.FC = () => {
                 }
                 className="w-full px-3 py-2 rounded bg-gray-800 text-white"
               />
+              {error.bonusAmount && (
+                <p className="text-red-500">{error.bonusAmount}</p>
+              )}
             </div>
             <div className="mb-4">
               <label htmlFor="title" className="block h mb-2">
@@ -357,6 +409,9 @@ const AddGameDetailsPage: React.FC = () => {
                   </SelectGroup>
                 </SelectContent>
               </Select>
+              {error.bonusChain && (
+                <p className="text-red-500">{error.bonusChain}</p>
+              )}
             </div>
           </div>
           <div className="w-[49%]">
@@ -377,6 +432,9 @@ const AddGameDetailsPage: React.FC = () => {
                 }
                 className="w-full px-3 py-2 rounded bg-gray-800 text-white"
               />
+              {error.entryFeeAmount && (
+                <p className="text-red-500">{error.entryFeeAmount}</p>
+              )}
             </div>
             <div className="mb-4">
               <label htmlFor="title" className="block h mb-2">
@@ -395,6 +453,9 @@ const AddGameDetailsPage: React.FC = () => {
                   </SelectGroup>
                 </SelectContent>
               </Select>
+              {error.entryFeeCurrency && (
+                <p className="text-red-500">{error.entryFeeCurrency}</p>
+              )}
             </div>
           </div>
           <div className="w-[49%] flex justify-center items-center">
