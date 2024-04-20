@@ -1,148 +1,63 @@
-"use client";
-import React from "react";
-import Namecard from "./Namecard"; // Assuming Namecard component is in a separate file
+'use client'
+import React,{ useState,useEffect } from "react";
+import axios from "axios";
+import Namecard from "./Namecard"; 
+
+interface Card {
+  id: number;
+  name: string;
+  category: string;
+  description: string;
+  banner: string;
+  price: number;
+}
 
 function Kolscard() {
-  // Array of card data
-  const cardsData = [
-    {
-      id: 1,
-      name: "James Charles",
-      description:
-        "A little bit of everything  My main goal is to create authentic positive content that people can enjoy",
-      price: 3000,
-      imageUrl: "/Kols.png",
-    },
-    {
-      id: 2,
-      name: "James Charles",
-      description:
-        "A little bit of everything  My main goal is to create authentic positive content that people can enjoy",
-      price: 3000,
-      imageUrl: "/Kols.png",
-      // imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&",
-    },
-    {
-      id: 3,
-      name: "James Charles",
-      description:
-        "A little bit of everything  My main goal is to create authentic positive content that people can enjoy",
-      price: 3000,
-      imageUrl: "/Kols.png",
-      // imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&",
-    },
-    {
-      id: 4,
-      name: "James Charles",
-      description:
-        "A little bit of everything  My main goal is to create authentic positive content that people can enjoy",
-      price: 3000,
-      imageUrl: "/Kols.png",
-      // imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&",
-    },
-    {
-      id: 4,
-      name: "James Charles",
-      description:
-        "A little bit of everything  My main goal is to create authentic positive content that people can enjoy",
-      price: 3000,
-      imageUrl: "/Kols.png",
-      // imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&",
-    },
-    {
-      id: 4,
-      name: "James Charles",
-      description:
-        "A little bit of everything  My main goal is to create authentic positive content that people can enjoy",
-      price: 6000,
-      imageUrl: "/Kols.png",
-      // imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&",
-    },
-    {
-      id: 4,
-      name: "James Charles",
-      description:
-        "A little bit of everything  My main goal is to create authentic positive content that people can enjoy",
-      price: 6000,
-      imageUrl: "/Kols.png",
-      // imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&",
-    },
-    {
-      id: 4,
-      name: "James Charles",
-      description:
-        "A little bit of everything  My main goal is to create authentic positive content that people can enjoy",
-      price: 8000,
-      imageUrl: "/Kols.png",
-      // imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&",
-    },
-    {
-      id: 4,
-      name: "James Charles",
-      description:
-        "A little bit of everything  My main goal is to create authentic positive content that people can enjoy",
-      price: 8000,
-      imageUrl: "/Kols.png",
-      // imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&",
-    },
-    {
-      id: 4,
-      name: "James Charles",
-      description:
-        "A little bit of everything  My main goal is to create authentic positive content that people can enjoy",
-      price: 8000,
-      imageUrl: "/Kols.png",
-      // imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&",
-    },
-    {
-      id: 4,
-      name: "James Charles",
-      description:
-        "A little bit of everything  My main goal is to create authentic positive content that people can enjoy",
-      price: 8000,
-      imageUrl: "/Kols.png",
-      // imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&",
-    },
-    {
-      id: 4,
-      name: "James Charles",
-      description:
-        "A little bit of everything  My main goal is to create authentic positive content that people can enjoy",
-      price: 8000,
-      imageUrl: "/Kols.png",
-      // imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/b47024807aa5074648933ccf6da72debe8822b2ce5ea7c6068622e6ccabf953c?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&",
-    },
-  ];
+
+  
+
+  const [cardsData, setCardsData] = useState<Card[]>([]);
+
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_SERVER_ENDPOINT}/profile/allprofiles`);
+        setCardsData(response.data.profiles); 
+        console.log(response.data.profiles);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+    fetchData();
+  }, []); 
 
   const screenWidth = window.innerWidth;
   const chunkSize = screenWidth < 768 ? 2 : 4;
 
-  const chunkedData = [];
-  for (let i = 0; i < cardsData.length; i += chunkSize) {
-    chunkedData.push(cardsData.slice(i, i + chunkSize));
-  }
+  // const chunkedData = [];
+  // for (let i = 0; i < cardsData.length; i += chunkSize) {
+  //   chunkedData.push(cardsData.slice(i, i + chunkSize));
+  // }
 
   return (
     <div>
-      {chunkedData.map((row, rowIndex) => (
-        <div
-          className="sm:flex flex-row sm:w-full sm:flex-nowrap justify-center flex flex-wrap"
-          key={rowIndex}
-        >
-          {row.map((card) => (
-            <div key={card.id} className="sm:flex-1 flex w-1/2 flex-row">
-              <Namecard
-                name={card.name}
-                description={card.description}
-                imageUrl={card.imageUrl}
-                price={card.price}
-              />
-            </div>
-          ))}
-        </div>
-      ))}
+      <div className="sm:flex sm:w-full sm:flex-wrap justify-center flex flex-wrap">
+        {cardsData?.map((card, index) => (
+          <div key={card.id} className={`sm:flex-1 flex-wrap flex w-1/2 ${index % 4 === 0 ? 'flex-row' : 'flex-col'}`}>
+            <Namecard
+              name={card.name}
+              description={card.description}
+              category={card.category}
+              imageUrl={`${process.env.NEXT_PUBLIC_S3_DOMAIN}/${card.banner}`}
+              price={card.price}
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
+  
 }
 
 export default Kolscard;
