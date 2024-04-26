@@ -27,6 +27,15 @@ export type ProfileDetailsForm = {
     banner: File;
 }
 
+export type WeaponDetailsForm = {
+    name: string;
+    crypto:string;
+    price:string;
+    code:string;
+    uuid: string;
+    banner: File;
+}
+
 export type GameDetailsForm = {
     title: string;
     uuid: string;
@@ -36,6 +45,17 @@ export type GameDetailsForm = {
     platform: string[];
     releaseDate: Date;
     overView: string;
+    gameReview: string;
+    osrequirement: string;
+    minos: string;
+    cpu: string;
+    mincpu:string;
+    hdd: string;
+    minhdd:string;
+    ram: string;
+    minram:string;
+    gpu :string;
+    mingpu:string;
     socialMedia: {
         platform: string;
         link: string;

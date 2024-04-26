@@ -1,6 +1,6 @@
 import axios from "axios";
 import instance from "@/config/axios";
-import type { GameDetailsForm, ProfileDetailsForm } from "@/types/user";
+import type { GameDetailsForm, ProfileDetailsForm, WeaponDetailsForm } from "@/types/user";
 
 export const createGameTournament = async (bodyObj: any) => {
 
@@ -36,6 +36,25 @@ export const addGameDetails = async (gameDetailsData: GameDetailsForm) => {
 
 
 }
+
+export const addWeapontails = async (weaponDetailsData: WeaponDetailsForm) => {
+
+    const banner = await uploadBanner(weaponDetailsData.banner, weaponDetailsData.uuid);
+    if (!banner) {
+        alert("Failed to upload banner");
+    };
+    const bodyObj = {
+        ...weaponDetailsData,
+        banner
+    }
+    const { data } = await instance.post(`/weapon`, bodyObj);
+    console.log(data);
+
+
+}
+
+
+
 
 export const addProfileDetails = async (profileDetailsData: ProfileDetailsForm) => {
 

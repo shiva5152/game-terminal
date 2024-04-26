@@ -33,14 +33,29 @@ const AddGameDetailsPage: React.FC = () => {
     developer: "",
     publisher: "",
     recommendedAge: "",
+    cpu: "",
+    osrequirement: "",
+    minos:"",
+    minhdd:"",
+    minram:"",
+    hdd: "",
+    mincpu:"",
+    ram: "",
   });
   const [releaseDate, setReleaseDate] = React.useState<Date>();
   const [platform, setPlatform] = useState<string[]>([]);
+  const [gameReview, setGameReview] = useState<string>("");
+  const [gpu, setGpu] = useState<string>("");
+  const [mingpu, setminGpu] = useState<string>("");
   const [overView, setOverView] = useState<string>("");
   const [socialMedia, setSocialMedia] = useState([{ platform: "", link: "" }]);
   const [banner, setBanner] = useState<File | null>(null);
   const [previewImages, setPreviewImages] = useState<File[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
+
+  const handleGpuChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setGpu(e.target.value);
+  };
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -55,6 +70,13 @@ const AddGameDetailsPage: React.FC = () => {
   const addSocialMedia = () => {
     setSocialMedia([...socialMedia, { platform: "", link: "" }]);
   };
+
+  const handleReviewChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setGameReview(e.target.value);
+  };
+  
 
   const handleSocialMediaChange = (
     index: number,
@@ -78,20 +100,32 @@ const AddGameDetailsPage: React.FC = () => {
       gameDetails,
       platform,
       releaseDate,
+      gameReview,
       overView,
       socialMedia,
       banner,
       previewImages,
     });
     setLoading(true);
-    const { title, developer, publisher, recommendedAge } = gameDetails;
+    const { title, developer, publisher, recommendedAge,osrequirement,minos, cpu, mincpu, minram, ram, minhdd, hdd  } = gameDetails;
     if (
       !title ||
       !developer ||
       !publisher ||
+      !osrequirement||
+      !minos||
+      !cpu||
+      !mincpu||
+      !hdd||
+      !minhdd||
+      !ram||
+      !minram||
+      !mingpu||
+      !gpu||
       !recommendedAge ||
       !releaseDate ||
       !overView ||
+      !gameReview||
       !socialMedia.length ||
       !banner ||
       !previewImages.length
@@ -105,9 +139,20 @@ const AddGameDetailsPage: React.FC = () => {
       developer,
       publisher,
       recommendedAge,
+      osrequirement,
+      minos,
+      cpu,
+      mincpu,
+      hdd,
+      minhdd,
+      ram,
+      minram,
+      gpu,
+      mingpu,
       platform,
       releaseDate,
       overView,
+      gameReview,
       socialMedia,
       banner,
       previewImages,
@@ -119,13 +164,26 @@ const AddGameDetailsPage: React.FC = () => {
       developer: "",
       publisher: "",
       recommendedAge: "",
+      cpu: "",
+      mincpu:"",
+      osrequirement: "",
+      minos: "",
+      hdd: "",
+      minhdd:"",
+      ram: "",
+      minram:""
     });
     setPlatform([]);
     setReleaseDate(undefined);
     setOverView("");
+    setGameReview("");
+    setGpu("");
+    setminGpu("");
     setSocialMedia([{ platform: "", link: "" }]);
     setBanner(null);
     setPreviewImages([]);
+    alert("Game Data added successfully");
+      return;
   };
 
   const {
@@ -366,6 +424,259 @@ const AddGameDetailsPage: React.FC = () => {
             </button>
           </div>
         </div>
+
+        <div className="mb-4 w-[100%]">
+          <label htmlFor="gameReview" className="block mb-2">
+            Game Preview:
+          </label>
+          <textarea
+            id="gameReview"
+            name="gameReview"
+            value={gameReview}
+            onChange={handleReviewChange}
+            className="w-full px-3 py-2 rounded bg-gray-800 text-white"
+            placeholder="Enter your review"
+            rows={4}
+            required
+          ></textarea>
+        </div>
+
+        <div className="mb-4 w-[23%]">
+          <label htmlFor="gpu" className="block mb-2">
+           Minimum GPU:
+          </label>
+          <Select
+            value={mingpu}
+            onValueChange={(value) => setminGpu(value)}
+          >
+            <SelectTrigger className="bg-gray-800 text-white">
+              <SelectValue placeholder="Select GPU" />
+            </SelectTrigger>
+            <SelectContent className="bg-gray-800 text-white">
+              <SelectItem value="Nvidia GeForce GTX 970 / AMD RX480">
+                Nvidia GeForce GTX 970 / AMD RX480
+              </SelectItem>
+              <SelectItem value="Nvidia GeForce GTX 6GB VRAM">
+                Nvidia GeForce GTX 6GB VRAM
+              </SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+        <div className="mb-4 w-[23%]">
+          <label htmlFor="gpu" className="block mb-2">
+            GPU:
+          </label>
+          <Select
+            value={gpu}
+            onValueChange={(value) => setGpu(value)}
+          >
+            <SelectTrigger className="bg-gray-800 text-white">
+              <SelectValue placeholder="Select GPU" />
+            </SelectTrigger>
+            <SelectContent className="bg-gray-800 text-white">
+              <SelectItem value="Nvidia GeForce GTX 970 / AMD RX480">
+                Nvidia GeForce GTX 970 / AMD RX480
+              </SelectItem>
+              <SelectItem value="Nvidia GeForce GTX 6GB VRAM">
+                Nvidia GeForce GTX 6GB VRAM
+              </SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+
+
+        <div className="mb-4 w-[23%]">
+          <label htmlFor="minos" className="block mb-2">
+           Minimum OS Requirement:
+          </label>
+          <Select
+            value={gameDetails.minos}
+            onValueChange={(value) =>
+              setGameDetails((prevDetails) => ({
+                ...prevDetails,
+                minos: value,
+              }))
+            }
+          >
+            <SelectTrigger className="bg-gray-800 text-white">
+              <SelectValue placeholder="Select OS Requirement" />
+            </SelectTrigger>
+            <SelectContent className="bg-gray-800 text-white">
+              <SelectItem value="Windows-OS">Windows-OS</SelectItem>
+              <SelectItem value="Mac-OS">Mac-OS</SelectItem>
+              <SelectItem value="Linux">Linux</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+
+        <div className="mb-4 w-[23%]">
+          <label htmlFor="osrequirement" className="block mb-2">
+            OS Requirement:
+          </label>
+          <Select
+            value={gameDetails.osrequirement}
+            onValueChange={(value) =>
+              setGameDetails((prevDetails) => ({
+                ...prevDetails,
+                osrequirement: value,
+              }))
+            }
+          >
+            <SelectTrigger className="bg-gray-800 text-white">
+              <SelectValue placeholder="Select OS Requirement" />
+            </SelectTrigger>
+            <SelectContent className="bg-gray-800 text-white">
+              <SelectItem value="Windows-OS">Windows-OS</SelectItem>
+              <SelectItem value="Mac-OS">Mac-OS</SelectItem>
+              <SelectItem value="Linux">Linux</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+
+          <div className="mb-4 w-[23%]">
+            <label htmlFor="mincpu" className="block mb-2">
+             Minimum CPU:
+            </label>
+            <Select
+              value={gameDetails.mincpu}
+              onValueChange={(value) =>
+                setGameDetails((prevDetails) => ({
+                  ...prevDetails,
+                  mincpu: value,
+                }))
+              }
+            >
+              <SelectTrigger className="bg-gray-800 text-white">
+                <SelectValue placeholder="Select CPU" />
+              </SelectTrigger>
+              <SelectContent className="bg-gray-800 text-white">
+                <SelectItem value="Intel i3 / AMD Ryzen 3">Intel i3 / AMD Ryzen 3</SelectItem>
+                <SelectItem value="Intel i5 / AMD Ryzen 5">Intel i5 / AMD Ryzen 5</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+
+          <div className="mb-4 w-[23%]">
+            <label htmlFor="cpu" className="block mb-2">
+              CPU:
+            </label>
+            <Select
+              value={gameDetails.cpu}
+              onValueChange={(value) =>
+                setGameDetails((prevDetails) => ({
+                  ...prevDetails,
+                  cpu: value,
+                }))
+              }
+            >
+              <SelectTrigger className="bg-gray-800 text-white">
+                <SelectValue placeholder="Select CPU" />
+              </SelectTrigger>
+              <SelectContent className="bg-gray-800 text-white">
+                <SelectItem value="Intel i3 / AMD Ryzen 3">Intel i3 / AMD Ryzen 3</SelectItem>
+                <SelectItem value="Intel i5 / AMD Ryzen 5">Intel i5 / AMD Ryzen 5</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+
+          <div className="mb-4 w-[23%]">
+            <label htmlFor="minhdd" className="block mb-2">
+             Minimum HDD:
+            </label>
+            <Select
+              value={gameDetails.minhdd}
+              onValueChange={(value) =>
+                setGameDetails((prevDetails) => ({
+                  ...prevDetails,
+                  minhdd: value,
+                }))
+              }
+            >
+              <SelectTrigger className="bg-gray-800 text-white">
+                <SelectValue placeholder="Select HDD" />
+              </SelectTrigger>
+              <SelectContent className="bg-gray-800 text-white">
+                <SelectItem value="5GB">5 GB</SelectItem>
+                <SelectItem value="10GB">10 GB</SelectItem>
+                <SelectItem value="15GB">15 GB</SelectItem>
+                <SelectItem value="20GB">20 GB</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+
+          <div className="mb-4 w-[23%]">
+            <label htmlFor="hdd" className="block mb-2">
+              HDD:
+            </label>
+            <Select
+              value={gameDetails.hdd}
+              onValueChange={(value) =>
+                setGameDetails((prevDetails) => ({
+                  ...prevDetails,
+                  hdd: value,
+                }))
+              }
+            >
+              <SelectTrigger className="bg-gray-800 text-white">
+                <SelectValue placeholder="Select HDD" />
+              </SelectTrigger>
+              <SelectContent className="bg-gray-800 text-white">
+                <SelectItem value="5GB">5 GB</SelectItem>
+                <SelectItem value="10GB">10 GB</SelectItem>
+                <SelectItem value="15GB">15 GB</SelectItem>
+                <SelectItem value="20GB">20 GB</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+
+          <div className="mb-4 w-[49%]">
+            <label htmlFor="minram" className="block mb-2">
+             Minimum RAM:
+            </label>
+            <Select
+              value={gameDetails.minram}
+              onValueChange={(value) =>
+                setGameDetails((prevDetails) => ({
+                  ...prevDetails,
+                  minram: value,
+                }))
+              }
+            >
+              <SelectTrigger className="bg-gray-800 text-white">
+                <SelectValue placeholder="Select RAM" />
+              </SelectTrigger>
+              <SelectContent className="bg-gray-800 text-white">
+                <SelectItem value="8GB">8GB</SelectItem>
+                <SelectItem value="16GB">16GB</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+
+
+          <div className="mb-4 w-[49%]">
+            <label htmlFor="ram" className="block mb-2">
+              RAM:
+            </label>
+            <Select
+              value={gameDetails.ram}
+              onValueChange={(value) =>
+                setGameDetails((prevDetails) => ({
+                  ...prevDetails,
+                  ram: value,
+                }))
+              }
+            >
+              <SelectTrigger className="bg-gray-800 text-white">
+                <SelectValue placeholder="Select RAM" />
+              </SelectTrigger>
+              <SelectContent className="bg-gray-800 text-white">
+                <SelectItem value="8GB">8GB</SelectItem>
+                <SelectItem value="16GB">16GB</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+
+        
         <div className="mb-4 w-[100%]">
           <label htmlFor="title" className="block mb-2">
             Overview:
@@ -404,4 +715,12 @@ interface GameDetails {
   recommendedAge: string;
   developer: string;
   publisher: string;
+  osrequirement: string;
+  minos: string;
+  cpu: string;
+  mincpu: string;
+  hdd: string;
+  minhdd: string;
+  ram: string;
+  minram: string;
 }
