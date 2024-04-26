@@ -1,14 +1,55 @@
-import React from 'react'
+'use client'
+import React,{ useState,useEffect } from 'react'
+import axios from 'axios';
+
+interface SocialMedia {
+  platform: string;
+  link: string;
+  _id: string;
+}
+
+interface Data {
+  banner: string;
+  id: string;
+  title: string;
+  platform: string;
+  recommendedAge: number;
+  developer: string;
+  publisher: string;
+  previewImages: string[];
+  overView: string;
+  socialMedia: SocialMedia[];
+}
 
 const page = () => {
+
+  const [data, setData] = useState<Data[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try{
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_SERVER_ENDPOINT}/game/allgames`);
+        setData(response.data.games)
+        console.log(response.data.games)
+      }catch(error){
+        console.error('Error fetching data:', error);
+      }
+    };
+    fetchData();
+  }, []);
+
+
   return (
     <div className='bg-black mb-56'>
       <div className="flex overflow-hidden relative flex-col pt-9 w-[1540px]  text-base min-h-[315px] max-md:max-w-full">
+      {data.map((item, index) => (
         <img
+          key={index}
           loading="lazy"
-          srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/fa93e6794df0e1208585191ea3ff238dff6301b9ce05ac92b1bcafb2f99e26e2?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/fa93e6794df0e1208585191ea3ff238dff6301b9ce05ac92b1bcafb2f99e26e2?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/fa93e6794df0e1208585191ea3ff238dff6301b9ce05ac92b1bcafb2f99e26e2?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/fa93e6794df0e1208585191ea3ff238dff6301b9ce05ac92b1bcafb2f99e26e2?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/fa93e6794df0e1208585191ea3ff238dff6301b9ce05ac92b1bcafb2f99e26e2?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/fa93e6794df0e1208585191ea3ff238dff6301b9ce05ac92b1bcafb2f99e26e2?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/fa93e6794df0e1208585191ea3ff238dff6301b9ce05ac92b1bcafb2f99e26e2?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/fa93e6794df0e1208585191ea3ff238dff6301b9ce05ac92b1bcafb2f99e26e2?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
+          srcSet={`${process.env.NEXT_PUBLIC_S3_DOMAIN}/${item.banner}`}
           className="object-cover absolute inset-0 "
         />
+      ))}
       
         <div className="flex relative z-10 gap-5 justify-between items-start self-center w-[1540px]  max-w-[1540px] max-md:flex-wrap max-md:max-w-full">
           <div className="flex gap-5 justify-center px-6 ml-12 py-3.5 mt-5 whitespace-nowrap rounded-2xl bg-black bg-opacity-30 leading-[155%] text-zinc-100 max-md:px-5">
@@ -51,7 +92,9 @@ const page = () => {
       <div className="flex flex-col pt-5 pr-6 pl-20 w-[1540px] bg-gray-900 rounded shadow-xl max-md:px-5 max-md:max-w-full">
         <div className="flex gap-5 ml-8 font-bold whitespace-nowrap max-md:flex-wrap max-md:max-w-full">
           <div className="flex-auto my-auto text-5xl uppercase leading-[54.6px] text-zinc-100">
-            Shockwaves
+          {data.map((item, index) => (
+              <div key={index}>{item.title}</div>
+            ))}
           </div>
           <div className="overflow-hidden relative flex-col justify-center items-center px-16 py-7 text-base leading-7 aspect-[3.01] fill-lime-400 text-neutral-900 w-[214px] max-md:px-5">
             <img
@@ -103,27 +146,41 @@ const page = () => {
           </div>
           <div className="flex gap-5  py-2.5 mt-4 text-sm font-thin leading-5 whitespace-nowrap border-b border-gray-800 border-solid text-zinc-100 max-md:flex-wrap max-md:mr-2.5 max-md:max-w-full">
             <div className="my-auto">Platform</div>
-            <img
+            {/* <img
               loading="lazy"
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/e4d88c832ea1c444cace63ef44d4d2d6c41e96a44dd483f0666ef6490f3b61bb?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
               className="shrink-0 ml-90 w-9 aspect-[0.97]"
-            />
+            /> */}
+            {data.map((item, index) => (
+              <div key={index}>{item.platform}</div>
+            ))}
           </div>
           <div className="flex gap-5  py-3 text-sm font-thin leading-5 border-b border-gray-800 border-solid text-zinc-100 max-md:flex-wrap max-md:mr-2.5 max-md:max-w-full">
             <div className="flex-auto my-auto">Recommended age</div>
-            <img
+            {/* <img
               loading="lazy"
               srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/f635975dcd343f8a94e1b7fca1edaaac058806f8a4626dea8c4df97e15d19c08?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/f635975dcd343f8a94e1b7fca1edaaac058806f8a4626dea8c4df97e15d19c08?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/f635975dcd343f8a94e1b7fca1edaaac058806f8a4626dea8c4df97e15d19c08?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/f635975dcd343f8a94e1b7fca1edaaac058806f8a4626dea8c4df97e15d19c08?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/f635975dcd343f8a94e1b7fca1edaaac058806f8a4626dea8c4df97e15d19c08?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/f635975dcd343f8a94e1b7fca1edaaac058806f8a4626dea8c4df97e15d19c08?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/f635975dcd343f8a94e1b7fca1edaaac058806f8a4626dea8c4df97e15d19c08?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/f635975dcd343f8a94e1b7fca1edaaac058806f8a4626dea8c4df97e15d19c08?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
               className="shrink-0 w-8 aspect-square"
-            />
+            /> */}
+            {data.map((item, index) => (
+              <div key={index}>{item.recommendedAge}</div>
+            ))}
           </div>
           <div className="flex gap-5  py-5 whitespace-nowrap border-b border-gray-800 border-solid leading-[155%] text-zinc-100 max-md:flex-wrap max-md:mr-2.5 max-md:max-w-full">
             <div className="text-sm font-thin">Developer</div>
-            <div className="flex-auto ml-72 text-base">Shockwaves</div>
+            <div className="flex-auto ml-72 text-base">
+            {data.map((item, index) => (
+              <div key={index}>{item.developer}</div>
+            ))}
+            </div>
           </div>
           <div className="flex gap-5 justify-center py-6 whitespace-nowrap border-b border-gray-800 border-solid leading-[155%] text-zinc-100 max-md:flex-wrap max-md:mr-2.5 max-md:max-w-full">
             <div className="self-start text-sm font-thin">Publisher</div>
-            <div className="flex-auto ml-72 text-base">Shockwaves</div>
+            <div className="flex-auto ml-72 text-base">
+            {data.map((item, index) => (
+              <div key={index}>{item.publisher}</div>
+            ))}
+            </div>
           </div>
           <div className="flex gap-3 self-end mt-4 max-w-full w-[423px] max-md:flex-wrap">
             <div className="flex flex-1 gap-3 self-start">
@@ -142,11 +199,15 @@ const page = () => {
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/2c3a4d9b4f2b524d22fb118fc9a005ac396bb0e4caeb6b4a11735f6a732c5ff7?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
                 className="shrink-0 border border-solid aspect-square border-zinc-700 w-[42px]"
               />
-              <img
-                loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/6027ad8c800df9936da0a6d67651c539c84398460f6303c4ea264eae590b1289?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
-                className="shrink-0 border border-solid aspect-square border-zinc-700 w-[42px]"
-              />
+              {data.map((item, index) => (
+                <a key={index} href={item.socialMedia.find(social => social.platform === 'facebook')?.link}>
+                  <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/6027ad8c800df9936da0a6d67651c539c84398460f6303c4ea264eae590b1289?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
+                    className="shrink-0 border border-solid aspect-square border-zinc-700 w-[42px]"
+                  />
+                </a>
+              ))}
             </div>
             <div className="flex flex-1 gap-1.5 items-start text-base font-bold leading-7 text-neutral-900">
               <img
@@ -175,7 +236,19 @@ const page = () => {
       </div>
       {/* thumbnails */}
       <div>
-      <div className="flex gap-5 mt-5 px-8 ml-16 max-md:flex-wrap w-[full]">
+      {data.map((item, index) => (
+        <div key={index} className="flex gap-5 mt-5 px-8 ml-16 max-md:flex-wrap w-full">
+          {item.previewImages.map((image, imageIndex) => (
+            <img
+              key={imageIndex}
+              loading="lazy"
+              src={`${process.env.NEXT_PUBLIC_S3_DOMAIN}/${image}`}
+              className="shrink-0 max-w-full aspect-[1.67] w-[162px]"
+            />
+          ))}
+        </div>
+      ))}
+      {/* <div className="flex gap-5 mt-5 px-8 ml-16 max-md:flex-wrap w-[full]">
       <img
         loading="lazy"
         src='/outpost.png'
@@ -206,19 +279,22 @@ const page = () => {
         // srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/2e59feaec67251eb892320427cf97cbc0007f654f0abd9a9fa046ad878cbf2ae?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/2e59feaec67251eb892320427cf97cbc0007f654f0abd9a9fa046ad878cbf2ae?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/2e59feaec67251eb892320427cf97cbc0007f654f0abd9a9fa046ad878cbf2ae?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/2e59feaec67251eb892320427cf97cbc0007f654f0abd9a9fa046ad878cbf2ae?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/2e59feaec67251eb892320427cf97cbc0007f654f0abd9a9fa046ad878cbf2ae?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/2e59feaec67251eb892320427cf97cbc0007f654f0abd9a9fa046ad878cbf2ae?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/2e59feaec67251eb892320427cf97cbc0007f654f0abd9a9fa046ad878cbf2ae?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/2e59feaec67251eb892320427cf97cbc0007f654f0abd9a9fa046ad878cbf2ae?apiKey=fc314cf36d364dbdb6a0cce0fe9d0082&"
         className="shrink-0 max-w-full aspect-[1.67] w-[162px]"
       />
-    </div>
+    </div> */}
       </div>
       <div className='px-8 ml-16 w-[60%]'>
       <div className="mt-10  text-2xl leading-9 text-zinc-100 max-md:mt-10 max-md:max-w-full">
         Overview
       </div>
       <div className="mt-2  text-base font-light leading-6 text-zinc-100 max-md:max-w-full">
-        SHOCKWAVES is a groundbreaking online first person shooter where music and
+      {data.map((item, index) => (
+        <div key={index}>{item.overView}</div>
+      ))}
+        {/* SHOCKWAVES is a groundbreaking online first person shooter where music and
         AIs are an integral part of the gameplay. Shockwaves is currently in
         <br />
-        closed pre-alpha.
+        closed pre-alpha. */}
       </div>
-      <div className="mt-5 text-xl font-semibold leading-7 text-zinc-100 max-md:max-w-full">
+      {/* <div className="mt-5 text-xl font-semibold leading-7 text-zinc-100 max-md:max-w-full">
         Algorithmically Generated Cities
       </div>
       <div className="mt-4  text-base font-light leading-6 text-zinc-100 max-md:max-w-full">
@@ -253,7 +329,7 @@ const page = () => {
       <div className="mt-4  text-base font-light leading-6 text-zinc-100 max-md:max-w-full">
         Community development is a critical aspect of Shockwaves. Ensuring that
         the gaming community feels engaged and heard is essential for creating
-      </div>
+      </div> */}
       <div className="flex justify-center items-center px-16 py-3 mt-2.5 text-lg leading-7 text-white capitalize bg-lime-400 rounded max-md:px-5 max-md:max-w-full">
         <div className="flex gap-2.5">
           <img

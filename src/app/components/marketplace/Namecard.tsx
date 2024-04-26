@@ -6,19 +6,20 @@ interface NamecardProps {
   description: string;
   imageUrl: string;
   price: number;
+  category: string;
 }
 
-const Namecard: React.FC<NamecardProps> = ({ name, description, imageUrl, price }) => {
+const Namecard: React.FC<NamecardProps> = ({ name, description, category, imageUrl, price }) => {
   return (
     <div className="flex relative flex-col sm:px-4 px-2 mt-5 w-full">
       <img
         loading="lazy"
         src={imageUrl}
-        className="w-full"
+        className="w-[100%]"
       />
       <div className="flex p-4">
         <div className="grow sm:text-2xl text-sm font-bold leading-7 text-white">{name}</div>
-        <div className="flex-auto text-xs leading-7 text-zinc-600">(influencer)</div>
+        <div className="flex-auto text-[6px] sm:text-base leading-7 text-zinc-600">( {category} )</div>
       </div>
       <div className=" text-xs p-4 leading-3 text-zinc-600">{description}</div>
       <div className="flex gap-1.5 ml-2 sm:gap-1.5 w-[40%] sm:w-full sm:mt-4 sm:ml-4">

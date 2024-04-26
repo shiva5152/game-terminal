@@ -51,7 +51,7 @@ const Page = () => {
       </div>
 
       <div className="flex gap-3 mt-16 w-full flex-row  flex-wrap sm:flex-nowrap max-md:mt-10 ">
-        <div className="flex-auto hidden sm:flex sm:w-[100%]">
+        <div className="flex-auto hidden sm:flex sm:w-[140%]">
           <Sideprop />
         </div>
         <div className="flex-auto flex">
