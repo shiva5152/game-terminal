@@ -35,10 +35,7 @@ function Kolscard() {
   const screenWidth = window.innerWidth;
   const chunkSize = screenWidth < 768 ? 2 : 4;
 
-  // const chunkedData = [];
-  // for (let i = 0; i < cardsData.length; i += chunkSize) {
-  //   chunkedData.push(cardsData.slice(i, i + chunkSize));
-  // }
+  
 
   return (
     <div>
