@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   const pathname = usePathname();
   console.log(pathname);
-
+  const ignorePathName = ["/", "/setting", "/callback"];
   // flex flex-col relative overflow-x-hidden items-center w-full py-4 md:py-11 bg-neutral-900 mx-auto
   return (
     <html lang="en">
@@ -31,9 +31,9 @@ export default function RootLayout({
         <AppProvider>
           <InitialLoad>
             <main className="flex flex-col relative overflow-x-hidden mt-4 items-center w-full bg-neutral-900 mx-auto ">
-              {pathname !== "/" && <Header />}
+              {!ignorePathName.includes(pathname) && <Header />}
               {children}
-              {pathname !== "/" && <Footer />}
+              {!ignorePathName.includes(pathname) && <Footer />}
             </main>
           </InitialLoad>
         </AppProvider>

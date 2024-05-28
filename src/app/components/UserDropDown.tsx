@@ -32,14 +32,14 @@ const UserDropDown = ({ user }: { user: TUser }) => {
         </div>
       </div>
       <div className="flex gap-5 justify-between px-2 py-3.5 mt-4 w-full text-xs whitespace-nowrap rounded-md bg-neutral-900">
-        <div className="flex gap-2 justify-between">
+        <Link href={"/profile"} className="flex gap-2 justify-between">
           <img
             loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/dff21130ed4077d484c4d7755a13819db9efa612f194494c26272b3861e647ea?apiKey=caf73ded90744adfa0fe2d98abed61c0&"
             className="aspect-square w-[18px]"
           />
           <div className="my-auto">Profile</div>
-        </div>
+        </Link>
         <img
           loading="lazy"
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/7ebc452817a4e165a8d1f97f17b2abcada2a695c3e031a19009d22179d759ac1?apiKey=caf73ded90744adfa0fe2d98abed61c0&"
