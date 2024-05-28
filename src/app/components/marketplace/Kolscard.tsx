@@ -1,7 +1,7 @@
-'use client'
-import React,{ useState,useEffect } from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Namecard from "./Namecard"; 
+import Namecard from "./Namecard";
 
 interface Card {
   id: number;
@@ -13,35 +13,33 @@ interface Card {
 }
 
 function Kolscard() {
-
-  
-
   const [cardsData, setCardsData] = useState<Card[]>([]);
-
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_SERVER_ENDPOINT}/profile/allprofiles`);
-        setCardsData(response.data.profiles); 
+        const response = await axios.get(
+          `${process.env.NEXT_PUBLIC_SERVER_ENDPOINT}/profile/allprofiles`
+        );
+        setCardsData(response.data.profiles);
         console.log(response.data.profiles);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
     fetchData();
-  }, []); 
-
-  const screenWidth = window.innerWidth;
-  const chunkSize = screenWidth < 768 ? 2 : 4;
-
-  
+  }, []);
 
   return (
     <div>
       <div className="sm:flex sm:w-full sm:flex-wrap justify-center flex flex-wrap">
         {cardsData?.map((card, index) => (
-          <div key={card.id} className={`sm:flex-1 flex-wrap flex w-1/2 ${index % 4 === 0 ? 'flex-row' : 'flex-col'}`}>
+          <div
+            key={card.id}
+            className={`sm:flex-1 flex-wrap flex w-1/2 ${
+              index % 4 === 0 ? "flex-row" : "flex-col"
+            }`}
+          >
             <Namecard
               name={card.name}
               description={card.description}
@@ -54,7 +52,6 @@ function Kolscard() {
       </div>
     </div>
   );
-  
 }
 
 export default Kolscard;
